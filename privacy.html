@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Privacy Policy · Wesnoski Coaching</title>
+<meta name="description" content="Privacy Policy for Wesnoski Coaching Ltd. How we collect, use, store, and protect your information including health data.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+:root {
+  --cream: #F5E8DA;
+  --sand: #EBD5BD;
+  --peach: #E8C5A8;
+  --terracotta: #C97B5C;
+  --copper: #B8643F;
+  --terra-deep: #8B4A2E;
+  --warm-brown: #4A2E1F;
+  --text: #3D2817;
+  --text-soft: #6B4F3E;
+  --subtext: #8B6F5C;
+  --muted: #A88B73;
+  --border: rgba(74, 46, 31, 0.12);
+  --dark-bg: #2A1810;
+  --display: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+html, body {
+  background: var(--cream);
+  color: var(--text);
+  font-family: var(--sans);
+  font-weight: 300;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+.container.narrow { max-width: 760px; }
+
+.nav {
+  position: sticky; top: 0;
+  background: rgba(245, 232, 218, 0.88);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+  padding: 18px 0;
+  z-index: 100;
+}
+.nav-inner { display: flex; align-items: center; justify-content: space-between; }
+.wordmark {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--warm-brown);
+  letter-spacing: 0.5px;
+  text-decoration: none;
+}
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a {
+  font-size: 14px;
+  color: var(--text-soft);
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 150ms;
+}
+.nav-links a:hover { color: var(--terracotta); }
+.btn {
+  display: inline-block;
+  background: var(--terracotta);
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  transition: background 180ms;
+  text-transform: uppercase;
+}
+.btn:hover { background: var(--copper); }
+@media (max-width: 720px) {
+  .nav-links a:not(.btn) { display: none; }
+}
+
+.page-header {
+  background: linear-gradient(180deg, var(--peach) 0%, var(--sand) 100%);
+  padding: 80px 0 60px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.page-header::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: radial-gradient(ellipse at 80% 20%, rgba(184, 100, 63, 0.25) 0%, transparent 55%);
+  pointer-events: none;
+}
+.page-header-inner { position: relative; z-index: 1; }
+.eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--copper);
+  margin-bottom: 20px;
+}
+.page-header h1 {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(38px, 5vw, 58px);
+  line-height: 1.05;
+  color: var(--warm-brown);
+  margin-bottom: 16px;
+}
+.page-header h1 em { font-style: italic; color: var(--terracotta); }
+.page-header .updated {
+  font-size: 13px;
+  color: var(--text-soft);
+  letter-spacing: 1px;
+}
+
+.legal {
+  padding: 80px 0 96px;
+}
+.legal h2 {
+  font-family: var(--display);
+  font-size: clamp(24px, 3vw, 30px);
+  font-weight: 500;
+  color: var(--warm-brown);
+  margin: 56px 0 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+.legal h2:first-child { border-top: none; margin-top: 0; padding-top: 0; }
+.legal h2 em { font-style: italic; color: var(--terracotta); }
+.legal h3 {
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--terra-deep);
+  margin: 28px 0 10px;
+}
+.legal p {
+  font-size: 15.5px;
+  color: var(--text-soft);
+  margin-bottom: 16px;
+  line-height: 1.75;
+}
+.legal p strong { color: var(--warm-brown); font-weight: 500; }
+.legal a {
+  color: var(--copper);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+.legal a:hover { color: var(--terra-deep); }
+.legal ul {
+  margin: 12px 0 20px;
+  padding-left: 24px;
+}
+.legal li {
+  font-size: 15.5px;
+  color: var(--text-soft);
+  margin-bottom: 8px;
+  line-height: 1.75;
+}
+.legal li::marker { color: var(--terracotta); }
+.legal .callout {
+  background: rgba(201, 123, 92, 0.08);
+  border-left: 3px solid var(--copper);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin: 24px 0;
+  font-style: italic;
+  color: var(--terra-deep);
+  font-family: var(--display);
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+.footer {
+  background: var(--dark-bg);
+  padding: 56px 0 36px;
+  color: var(--muted);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  margin-bottom: 36px;
+}
+@media (min-width: 720px) {
+  .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; }
+}
+.footer .wordmark { color: #fff; font-style: italic; }
+.footer-tag {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 14px;
+  line-height: 1.6;
+  max-width: 280px;
+}
+.footer-col h5 {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 14px;
+}
+.footer-col a {
+  display: block;
+  font-size: 13.5px;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 5px 0;
+}
+.footer-col a:hover { color: var(--terracotta); }
+.footer-bottom {
+  padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+}
+.footer-bottom a { color: rgba(255, 255, 255, 0.4); text-decoration: none; }
+.footer-bottom a:hover { color: var(--terracotta); }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="/" class="wordmark">wesnoski coaching</a>
+    <div class="nav-links">
+      <a href="/#method">The Method</a>
+      <a href="/#about">About</a>
+      <a href="/#testimonials">Stories</a>
+      <a href="/#apply" class="btn">Apply</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="container narrow page-header-inner">
+    <div class="eyebrow">Legal</div>
+    <h1>Privacy <em>Policy</em></h1>
+    <div class="updated">Last updated June 17, 2026</div>
+  </div>
+</header>
+
+<section class="legal">
+  <div class="container narrow">
+
+    <h2>1. <em>Who we are</em></h2>
+    <p><strong>Wesnoski Coaching Ltd.</strong> ("Wesnoski Coaching," "we," "us," or "our") is a health coaching practice incorporated in British Columbia, Canada. This Privacy Policy explains what information we collect, how we use it, who we share it with, and the rights you have over your information.</p>
+    <p>By using this website or our services, you agree to the practices described in this Policy.</p>
+
+    <div class="callout">
+      Some of the information we collect from you, including bloodwork, symptoms, medications, and health history, is sensitive personal health information. We treat it with care, store it securely, and only share it with the third-party service providers needed to deliver coaching.
+    </div>
+
+    <h2>2. Information we <em>collect</em></h2>
+    <h3>Information you provide directly</h3>
+    <ul>
+      <li>Name, email address, phone number, and mailing details</li>
+      <li>Date of birth, age, and biological sex</li>
+      <li>Health history including conditions, medications, supplements, allergies, and past surgeries</li>
+      <li>Bloodwork and other lab results that you upload or send to us</li>
+      <li>Biofeedback data including sleep, energy, mood, digestion, cycle, and training notes</li>
+      <li>Goals, lifestyle context, and personal information you share during intake, check-ins, and conversations</li>
+      <li>Payment information when you enroll in coaching</li>
+      <li>Messages, emails, and other communications between you and our team</li>
+    </ul>
+
+    <h3>Information collected automatically</h3>
+    <ul>
+      <li>Standard web analytics including device type, browser, IP address, pages viewed, and time on page</li>
+      <li>Cookies and similar tracking technologies (described below)</li>
+    </ul>
+
+    <h2>3. How we <em>use your information</em></h2>
+    <ul>
+      <li>Interpret your bloodwork and biofeedback to design and adjust your protocol</li>
+      <li>Communicate with you about your case, check-ins, and questions</li>
+      <li>Process payments and manage your coaching engagement</li>
+      <li>Improve our services, content, and the coaching app</li>
+      <li>Send you educational content, updates, and (with your consent) marketing communications</li>
+      <li>Comply with legal obligations and protect our rights</li>
+    </ul>
+
+    <h2>4. Third-party <em>service providers</em></h2>
+    <p>We use trusted third-party services to operate our practice. These providers receive only the information they need to perform their function, and they are contractually required to keep your information confidential and secure.</p>
+    <ul>
+      <li><strong>AR Funnel / GoHighLevel (GHL)</strong> for our CRM, application form, calendar booking, payment processing, and email automation.</li>
+      <li><strong>Stripe</strong> for payment processing where applicable.</li>
+      <li><strong>DocuSign</strong> for service agreement signatures.</li>
+      <li><strong>Mailgun</strong> for transactional email delivery.</li>
+      <li><strong>Cloudflare</strong> for content delivery and infrastructure.</li>
+      <li><strong>Our coaching app</strong> for protocol delivery, check-ins, and communications.</li>
+      <li><strong>Google Workspace</strong> for email and document storage.</li>
+      <li><strong>Analytics providers</strong> such as Google Analytics for understanding how the website is used.</li>
+    </ul>
+    <p>We do not sell, rent, or trade your personal information to third parties for their independent marketing purposes.</p>
+
+    <h2>5. <em>Health data</em></h2>
+    <p>We collect and process sensitive personal health information including bloodwork, biofeedback, symptoms, and medications. This information is used solely for the purpose of providing coaching services to you.</p>
+    <p>We do not sell, share, or disclose your health information for advertising or other commercial purposes. Access to your health information within our team is limited to the personnel who need it to deliver your coaching.</p>
+    <p>If you are a resident of the European Economic Area (EEA) or other jurisdictions with applicable health data laws, you have additional rights described below.</p>
+
+    <h2>6. <em>Cookies</em> and tracking</h2>
+    <p>Our website uses cookies and similar technologies for essential site functionality, analytics, and (where you consent) marketing. You can disable cookies in your browser settings, though some site features may not function as expected if you do.</p>
+
+    <h2>7. <em>Data storage</em> and security</h2>
+    <p>We store your information on servers operated by reputable third-party providers, primarily located in the United States and Canada. We use reasonable administrative, technical, and physical safeguards to protect your information against unauthorized access, alteration, disclosure, or destruction.</p>
+    <p>That said, no system is perfectly secure. While we take protection of your information seriously, we cannot guarantee absolute security. You share information with us at your own risk.</p>
+
+    <h2>8. <em>Data retention</em></h2>
+    <p>We retain your personal information for as long as your coaching engagement is active and for a reasonable period afterward, in accordance with our business needs and any applicable legal or tax requirements. Client records, including bloodwork and case notes, may be retained for up to seven (7) years after the end of your engagement.</p>
+    <p>You may request earlier deletion of your information, subject to the limitations described in Section 9.</p>
+
+    <h2>9. <em>Your rights</em></h2>
+    <p>You have the following rights regarding your personal information:</p>
+    <ul>
+      <li><strong>Access.</strong> Request a copy of the information we hold about you.</li>
+      <li><strong>Correction.</strong> Request that we correct inaccurate or incomplete information.</li>
+      <li><strong>Deletion.</strong> Request deletion of your information, subject to our legal and contractual retention requirements.</li>
+      <li><strong>Withdrawal of consent.</strong> Withdraw consent at any time for any processing that relies on your consent.</li>
+      <li><strong>Marketing opt-out.</strong> Unsubscribe from marketing emails at any time using the unsubscribe link in any email.</li>
+      <li><strong>Complaint.</strong> File a complaint with the Office of the Privacy Commissioner of Canada or your local data protection authority.</li>
+    </ul>
+    <p>To exercise any of these rights, contact us at <a href="mailto:farren@wesnoskicoaching.com">farren@wesnoskicoaching.com</a>.</p>
+
+    <h2>10. International <em>clients</em></h2>
+    <p>We work with clients across the United States, Canada, the United Kingdom, Sweden, Australia, India, Taiwan, Mexico, and other countries. If you are located outside of Canada, your information may be transferred to and stored in Canada or the United States. By using our services, you consent to this transfer.</p>
+    <p>For clients in the European Economic Area (EEA), we process your information based on your consent and the necessity to perform our coaching agreement with you. You have additional rights under the GDPR which we will honor on request.</p>
+
+    <h2>11. Children's <em>privacy</em></h2>
+    <p>Our services are not directed at individuals under 18 years of age. We do not knowingly collect personal information from anyone under 18. If you believe we have inadvertently collected such information, please contact us and we will promptly delete it.</p>
+
+    <h2>12. Changes to this <em>policy</em></h2>
+    <p>We may update this Privacy Policy from time to time. The most current version will always be posted on this page with the "Last updated" date shown above. Material changes will be communicated to active clients via email or in-app notification.</p>
+
+    <h2>13. <em>Contact</em></h2>
+    <p>Questions about this Privacy Policy or about how we handle your information can be sent to <a href="mailto:farren@wesnoskicoaching.com">farren@wesnoskicoaching.com</a>.</p>
+    <p>Mailing reference: Wesnoski Coaching Ltd., Langley, British Columbia, Canada.</p>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="/" class="wordmark">wesnoski coaching</a>
+        <p class="footer-tag">1-on-1 functional health coaching for hormones, gut, energy, and the body that finally feels like yours. Built on the MARCH Method.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Practice</h5>
+        <a href="/#method">The Method</a>
+        <a href="/#about">About Farren</a>
+        <a href="/#testimonials">Client Stories</a>
+        <a href="/#apply">Apply</a>
+      </div>
+      <div class="footer-col">
+        <h5>Learn</h5>
+        <a href="https://www.youtube.com/@wesnoski.coaching">YouTube</a>
+        <a href="https://whop.com/wesnoski-coaching-9">Community</a>
+        <a href="https://wesnoskicoaching.github.io/links/">All links</a>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <a href="mailto:farren@wesnoskicoaching.com">farren@wesnoskicoaching.com</a>
+        <a href="https://share.google/i8pB1SQj0vwmXqdMk">Langley, BC</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Wesnoski Coaching Ltd. All Rights Reserved.</div>
+      <div>
+        <a href="/terms.html">Terms</a> &middot;
+        <a href="/privacy.html">Privacy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

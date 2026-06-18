@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Terms of Service · Wesnoski Coaching</title>
+<meta name="description" content="Terms of Service for Wesnoski Coaching Ltd. 1-on-1 functional health coaching, the MARCH Method, and the work I do with clients.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+:root {
+  --cream: #F5E8DA;
+  --sand: #EBD5BD;
+  --peach: #E8C5A8;
+  --terracotta: #C97B5C;
+  --copper: #B8643F;
+  --terra-deep: #8B4A2E;
+  --warm-brown: #4A2E1F;
+  --text: #3D2817;
+  --text-soft: #6B4F3E;
+  --subtext: #8B6F5C;
+  --muted: #A88B73;
+  --border: rgba(74, 46, 31, 0.12);
+  --dark-bg: #2A1810;
+  --display: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+html, body {
+  background: var(--cream);
+  color: var(--text);
+  font-family: var(--sans);
+  font-weight: 300;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+.container.narrow { max-width: 760px; }
+
+/* ==== NAV ==== */
+.nav {
+  position: sticky;
+  top: 0;
+  background: rgba(245, 232, 218, 0.88);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+  padding: 18px 0;
+  z-index: 100;
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.wordmark {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--warm-brown);
+  letter-spacing: 0.5px;
+  text-decoration: none;
+}
+.nav-links {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+.nav-links a {
+  font-size: 14px;
+  color: var(--text-soft);
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 150ms;
+}
+.nav-links a:hover { color: var(--terracotta); }
+.btn {
+  display: inline-block;
+  background: var(--terracotta);
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  transition: background 180ms;
+  text-transform: uppercase;
+}
+.btn:hover { background: var(--copper); }
+@media (max-width: 720px) {
+  .nav-links a:not(.btn) { display: none; }
+}
+
+/* ==== PAGE HEADER ==== */
+.page-header {
+  background: linear-gradient(180deg, var(--peach) 0%, var(--sand) 100%);
+  padding: 80px 0 60px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.page-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(ellipse at 80% 20%, rgba(184, 100, 63, 0.25) 0%, transparent 55%);
+  pointer-events: none;
+}
+.page-header-inner { position: relative; z-index: 1; }
+.eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--copper);
+  margin-bottom: 20px;
+}
+.page-header h1 {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(38px, 5vw, 58px);
+  line-height: 1.05;
+  color: var(--warm-brown);
+  margin-bottom: 16px;
+}
+.page-header h1 em { font-style: italic; color: var(--terracotta); }
+.page-header .updated {
+  font-size: 13px;
+  color: var(--text-soft);
+  letter-spacing: 1px;
+}
+
+/* ==== CONTENT ==== */
+.legal {
+  padding: 80px 0 96px;
+}
+.legal h2 {
+  font-family: var(--display);
+  font-size: clamp(24px, 3vw, 30px);
+  font-weight: 500;
+  color: var(--warm-brown);
+  margin: 56px 0 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+.legal h2:first-child { border-top: none; margin-top: 0; padding-top: 0; }
+.legal h2 em { font-style: italic; color: var(--terracotta); }
+.legal h3 {
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--terra-deep);
+  margin: 28px 0 10px;
+}
+.legal p {
+  font-size: 15.5px;
+  color: var(--text-soft);
+  margin-bottom: 16px;
+  line-height: 1.75;
+}
+.legal p strong { color: var(--warm-brown); font-weight: 500; }
+.legal a {
+  color: var(--copper);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+.legal a:hover { color: var(--terra-deep); }
+.legal ul {
+  margin: 12px 0 20px;
+  padding-left: 24px;
+}
+.legal li {
+  font-size: 15.5px;
+  color: var(--text-soft);
+  margin-bottom: 8px;
+  line-height: 1.75;
+}
+.legal li::marker { color: var(--terracotta); }
+.legal .callout {
+  background: rgba(201, 123, 92, 0.08);
+  border-left: 3px solid var(--copper);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin: 24px 0;
+  font-style: italic;
+  color: var(--terra-deep);
+  font-family: var(--display);
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+/* ==== FOOTER ==== */
+.footer {
+  background: var(--dark-bg);
+  padding: 56px 0 36px;
+  color: var(--muted);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  margin-bottom: 36px;
+}
+@media (min-width: 720px) {
+  .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; }
+}
+.footer .wordmark { color: #fff; font-style: italic; }
+.footer-tag {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 14px;
+  line-height: 1.6;
+  max-width: 280px;
+}
+.footer-col h5 {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 14px;
+}
+.footer-col a {
+  display: block;
+  font-size: 13.5px;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 5px 0;
+}
+.footer-col a:hover { color: var(--terracotta); }
+.footer-bottom {
+  padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+}
+.footer-bottom a { color: rgba(255, 255, 255, 0.4); text-decoration: none; }
+.footer-bottom a:hover { color: var(--terracotta); }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="/" class="wordmark">wesnoski coaching</a>
+    <div class="nav-links">
+      <a href="/#method">The Method</a>
+      <a href="/#about">About</a>
+      <a href="/#testimonials">Stories</a>
+      <a href="/#apply" class="btn">Apply</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="container narrow page-header-inner">
+    <div class="eyebrow">Legal</div>
+    <h1>Terms of <em>Service</em></h1>
+    <div class="updated">Last updated June 17, 2026</div>
+  </div>
+</header>
+
+<section class="legal">
+  <div class="container narrow">
+
+    <h2>1. Acceptance of these <em>terms</em></h2>
+    <p>These Terms of Service ("Terms") govern your use of the Wesnoski Coaching website and the coaching services provided by <strong>Wesnoski Coaching Ltd.</strong>, a British Columbia, Canada incorporated company ("Wesnoski Coaching," "we," "us," or "our"). By accessing this website, submitting an application, or enrolling in any coaching engagement, you agree to be bound by these Terms.</p>
+    <p>If you do not agree to these Terms, please do not use this website or our services.</p>
+
+    <h2>2. About <em>our services</em></h2>
+    <p>Wesnoski Coaching offers 1-on-1 functional health coaching for hormones, bloodwork, gut function, energy, recovery, and metabolic health. Our work is structured around the proprietary MARCH Method. Coaching includes bloodwork interpretation, personalized protocols covering training, nutrition, supplementation, and lifestyle, weekly or bi-weekly check-ins, community access, and the coaching app.</p>
+
+    <div class="callout">
+      Wesnoski Coaching is a health coaching practice. We are not a medical practice. Our services do not constitute medical advice, diagnosis, or treatment, and they do not replace care from a licensed physician.
+    </div>
+
+    <h2>3. <em>Eligibility</em></h2>
+    <p>You must be at least 18 years of age to apply for or use our services. By enrolling, you represent and warrant that you meet this age requirement and that you have the legal capacity to enter into a coaching agreement.</p>
+    <p>We reserve the right to decline any application or terminate a coaching engagement at our discretion, including in cases where we believe the work falls outside our scope or where a physician's care would better serve you.</p>
+
+    <h2>4. The coaching <em>relationship</em></h2>
+    <h3>What we provide</h3>
+    <p>Education on the body, mechanisms, and protocols. Interpretation of your bloodwork through functional reference ranges. Personalized protocols built around your real biology, phase of life, and goals. Weekly or bi-weekly structured check-ins. Direct in-app access to your coach. Community access. Office hours.</p>
+
+    <h3>What we do not provide</h3>
+    <p>Medical diagnoses. Prescriptions. Treatment of disease. Emergency care. Anything outside the scope of health coaching.</p>
+
+    <p>You acknowledge that you remain responsible for your own health decisions and that you will consult a licensed physician for all medical concerns, prescriptions, and emergencies. We work alongside your physician where one is in place. We do not replace your physician.</p>
+
+    <h2>5. Medical <em>disclaimer</em></h2>
+    <p><strong>The information and services provided by Wesnoski Coaching are for educational and coaching purposes only and are not a substitute for medical advice, diagnosis, or treatment.</strong> Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition. Never disregard professional medical advice or delay seeking it because of something you have learned through our services.</p>
+    <p>If you think you may have a medical emergency, call your physician or emergency services immediately. Wesnoski Coaching does not recommend, endorse, or make any representation about the efficacy or appropriateness of any specific test, physician, product, procedure, opinion, or other information that may be referenced through our services.</p>
+    <p>Any reliance on the information provided is solely at your own risk.</p>
+
+    <h2>6. Payment, refunds, and <em>cancellation</em></h2>
+    <h3>Pricing</h3>
+    <p>Pricing for coaching engagements is shared during the discovery call process. All fees are in United States Dollars (USD) unless otherwise specified. Payment may be made in full at enrollment or via an approved payment plan as offered.</p>
+
+    <h3>Refunds</h3>
+    <p>Coaching engagements are personalized work with significant up-front time investment. As such, fees are generally non-refundable once the engagement has begun. Specific refund or pause provisions, if any, are outlined in the individual coaching agreement you sign at enrollment. The terms of that signed agreement take precedence in case of any conflict with these general Terms.</p>
+
+    <h3>Payment plans</h3>
+    <p>Where a payment plan is selected, all scheduled installments are due on the agreed dates. Failed or missed payments may result in a temporary suspension of services until brought current.</p>
+
+    <h2>7. Your <em>conduct</em> and responsibilities</h2>
+    <p>By engaging with us, you agree to:</p>
+    <ul>
+      <li>Provide accurate and complete information during intake and onboarding.</li>
+      <li>Communicate openly about your health history, medications, and any conditions that may affect the work.</li>
+      <li>Follow the protocols agreed upon, or communicate proactively when something is not working.</li>
+      <li>Treat your coach, our team, and other community members with respect.</li>
+      <li>Not share, redistribute, or sell any proprietary protocols, education, or coaching materials provided to you.</li>
+    </ul>
+
+    <h2>8. Intellectual <em>property</em></h2>
+    <p>All content on this website and within the coaching app, including the MARCH Method framework, protocols, written materials, video content, the Lab Brain doctrine, and any other educational or coaching materials provided to you, is the intellectual property of Wesnoski Coaching Ltd. and is protected by copyright and other intellectual property laws.</p>
+    <p>You receive a personal, non-transferable, non-exclusive license to use these materials solely for your own personal use during your coaching engagement. You may not reproduce, distribute, modify, create derivative works of, publicly display, or otherwise exploit any of these materials without our prior written consent.</p>
+
+    <h2>9. Testimonials and <em>results</em></h2>
+    <p>Testimonials, case studies, and results shared on this website and across our channels are individual experiences and not guaranteed outcomes. Results vary based on your individual circumstances, the consistency of your effort, your starting point, and many other factors. We make no guarantee of any specific result.</p>
+
+    <h2>10. Limitation of <em>liability</em></h2>
+    <p>To the maximum extent permitted by applicable law, Wesnoski Coaching Ltd., its officers, directors, employees, contractors, and affiliates shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from or related to your use of our services or website, even if advised of the possibility of such damages.</p>
+    <p>Our total liability to you for any direct damages arising from these Terms or our services shall not exceed the total amount you have paid us in the twelve (12) months preceding the event giving rise to the claim.</p>
+
+    <h2>11. <em>Indemnification</em></h2>
+    <p>You agree to indemnify and hold harmless Wesnoski Coaching Ltd., its officers, directors, employees, contractors, and affiliates from any claims, damages, losses, liabilities, costs, or expenses (including reasonable attorneys' fees) arising from your use of our services, your violation of these Terms, or your violation of any rights of a third party.</p>
+
+    <h2>12. Governing <em>law</em></h2>
+    <p>These Terms are governed by and construed in accordance with the laws of the Province of British Columbia, Canada, without regard to its conflict of law principles. Any disputes arising out of or relating to these Terms or our services shall be resolved exclusively in the courts of British Columbia.</p>
+
+    <h2>13. Changes to <em>these terms</em></h2>
+    <p>We may update these Terms from time to time. The most current version will always be posted on this page with the "Last updated" date shown above. Material changes will be communicated to active clients via email or in-app notification. Your continued use of our services after changes are posted constitutes your acceptance of the updated Terms.</p>
+
+    <h2>14. <em>Contact</em></h2>
+    <p>Questions about these Terms can be sent to <a href="mailto:farren@wesnoskicoaching.com">farren@wesnoskicoaching.com</a>.</p>
+    <p>Mailing reference: Wesnoski Coaching Ltd., Langley, British Columbia, Canada.</p>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="/" class="wordmark">wesnoski coaching</a>
+        <p class="footer-tag">1-on-1 functional health coaching for hormones, gut, energy, and the body that finally feels like yours. Built on the MARCH Method.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Practice</h5>
+        <a href="/#method">The Method</a>
+        <a href="/#about">About Farren</a>
+        <a href="/#testimonials">Client Stories</a>
+        <a href="/#apply">Apply</a>
+      </div>
+      <div class="footer-col">
+        <h5>Learn</h5>
+        <a href="https://www.youtube.com/@wesnoski.coaching">YouTube</a>
+        <a href="https://whop.com/wesnoski-coaching-9">Community</a>
+        <a href="https://wesnoskicoaching.github.io/links/">All links</a>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <a href="mailto:farren@wesnoskicoaching.com">farren@wesnoskicoaching.com</a>
+        <a href="https://share.google/i8pB1SQj0vwmXqdMk">Langley, BC</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Wesnoski Coaching Ltd. All Rights Reserved.</div>
+      <div>
+        <a href="/terms.html">Terms</a> &middot;
+        <a href="/privacy.html">Privacy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
