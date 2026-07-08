@@ -373,6 +373,33 @@ html, body {
   letter-spacing: 0.5px;
 }
 
+/* ==== HONEST AUTHORITY (NEW) ==== */
+.honest-authority {
+  background: rgba(255, 255, 255, 0.6);
+  border-left: 3px solid var(--terracotta);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-top: 28px;
+  backdrop-filter: blur(6px);
+}
+.honest-authority .clabel {
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--copper);
+  margin-bottom: 10px;
+}
+.honest-authority p {
+  font-family: var(--display);
+  font-style: italic;
+  color: var(--warm-brown);
+  font-size: 16.5px;
+  line-height: 1.55;
+  margin: 0;
+}
+
 /* ==== INCLUDED ==== */
 .included {
   padding: 96px 0;
@@ -491,6 +518,18 @@ html, body {
   letter-spacing: 0.3px;
 }
 
+/* ==== STORIES DISCLAIMER (NEW) ==== */
+.stories-disclaimer {
+  margin: 40px auto 0;
+  max-width: 720px;
+  text-align: center;
+  font-family: var(--display);
+  font-style: italic;
+  color: var(--subtext);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
 /* ==== PROCESS ==== */
 .process {
   background: linear-gradient(180deg, var(--cream) 0%, var(--peach) 100%);
@@ -543,6 +582,78 @@ html, body {
   color: var(--text-soft);
   line-height: 1.6;
 }
+
+/* ==== FAQ (NEW · BUBBLE ACCORDION) ==== */
+.faq {
+  padding: 96px 0;
+  background: var(--cream);
+}
+.faq h2 { text-align: center; }
+.faq .lede { text-align: center; margin-bottom: 48px; }
+.faq-wrap {
+  max-width: 780px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+details.faq-bubble {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  overflow: hidden;
+  backdrop-filter: blur(6px);
+  transition: border-color 200ms, box-shadow 200ms, background 200ms;
+}
+details.faq-bubble[open] {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(201, 123, 92, 0.35);
+  box-shadow: 0 10px 30px rgba(74, 46, 31, 0.08);
+}
+details.faq-bubble summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 22px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  font-family: var(--display);
+  font-size: clamp(17px, 1.9vw, 21px);
+  font-weight: 500;
+  color: var(--warm-brown);
+  line-height: 1.35;
+  transition: color 180ms;
+}
+details.faq-bubble summary::-webkit-details-marker { display: none; }
+details.faq-bubble summary:hover { color: var(--terracotta); }
+.faq-toggle {
+  min-width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--terracotta);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 300;
+  flex-shrink: 0;
+  transition: transform 300ms, background 200ms;
+}
+details.faq-bubble[open] .faq-toggle {
+  transform: rotate(45deg);
+  background: var(--copper);
+}
+.faq-answer {
+  padding: 0 28px 26px;
+  font-size: 15px;
+  color: var(--text-soft);
+  line-height: 1.7;
+}
+.faq-answer p { margin-bottom: 12px; }
+.faq-answer p:last-child { margin-bottom: 0; }
 
 /* ==== FINAL CTA ==== */
 .final {
@@ -611,6 +722,13 @@ html, body {
   padding: 5px 0;
 }
 .footer-col a:hover { color: var(--terracotta); }
+.footer-disclaimer {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.65;
+  margin-bottom: 24px;
+  max-width: 100%;
+}
 .footer-bottom {
   padding-top: 28px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -629,7 +747,7 @@ html, body {
 
 @media (max-width: 720px) {
   .hero { padding: 56px 0 96px; }
-  .reframe, .method, .about, .included, .testimonials, .process { padding: 64px 0; }
+  .reframe, .method, .about, .included, .testimonials, .process, .faq { padding: 64px 0; }
   .final { padding: 88px 0 72px; }
 }
 </style>
@@ -644,6 +762,7 @@ html, body {
       <a href="#method">The Method</a>
       <a href="#about">About</a>
       <a href="#testimonials">Stories</a>
+      <a href="#faq">FAQ</a>
       <a href="https://info.wesnoskicoaching.com/application" class="btn">Apply</a>
     </div>
     <div class="nav-links cta-only" style="display:none">
@@ -738,6 +857,12 @@ html, body {
           <div class="cred-pill">200+ Clients</div>
           <div class="cred-pill">15 Years</div>
         </div>
+
+        <!-- P1.2 · HONEST-AUTHORITY BLOCK -->
+        <div class="honest-authority">
+          <span class="clabel">A note before you keep reading</span>
+          <p>I am not a physician, and I don't pretend to be one. I don't diagnose, treat, or change your medications. I read your bloodwork through a functional lens, build the protocol around it, and work alongside your medical team, not instead of them. My clients' best outcomes happened because their doctor and I were looking at the same data.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -751,7 +876,7 @@ html, body {
     <p class="lede">Every plan is structured around the same proven framework. Every client gets all of it.</p>
     <div class="feature-grid">
       <div class="feature">
-        <div class="feature-icon">L</div>
+        <div class="feature-icon">B</div>
         <h4>Bloodwork interpretation</h4>
         <p>Every marker read against our in-house functional reference ranges. So you finally see what is upstream of how you have been feeling.</p>
       </div>
@@ -771,12 +896,12 @@ html, body {
         <p>Between calls, in the coaching app. When something shifts on a Tuesday, you bring it to me Tuesday. No two-week silence.</p>
       </div>
       <div class="feature">
-        <div class="feature-icon">O</div>
+        <div class="feature-icon">L</div>
         <h4>Live office hours</h4>
         <p>Twice a month. Real-time troubleshooting alongside the rest of the coaching team. More angles on your case than any one call delivers.</p>
       </div>
       <div class="feature">
-        <div class="feature-icon">W</div>
+        <div class="feature-icon">C</div>
         <h4>Community</h4>
         <p>An active group of men and women doing the same work, walking each other through the rebuild. You are not doing this alone.</p>
       </div>
@@ -814,8 +939,9 @@ html, body {
         </div>
       </div>
 
+      <!-- P0.2 · COLITIS CARD · UPDATED LABEL (gated on physician verify) -->
       <div class="testi">
-        <div class="case-tag">Colitis · Gut Blitz Recovery</div>
+        <div class="case-tag">Colitis · Gut Blitz Recovery · Care coordinated alongside his GI team</div>
         <blockquote>I came in with 10 bowel movements daily. Hospitalized. Colitis. Now I'm at almost zero bloating, bowel movements averaging 1.5 a day. Biggest win is feeling my digestive motor doing what it's supposed to do. My body is starting to absorb nutrients again.</blockquote>
         <div class="name">GUT BLITZ CLIENT</div>
         <div class="stats">
@@ -836,8 +962,9 @@ html, body {
         </div>
       </div>
 
+      <!-- P0.2 · PPI CARD · UPDATED LABEL (gated on physician verify) -->
       <div class="testi">
-        <div class="case-tag">Acid Reflux · Off the PPI</div>
+        <div class="case-tag">Reflux Recovery · Omeprazole tapered with his physician's oversight</div>
         <blockquote>This is day 5 without my prescription omeprazole. Been on it for years. The last few days have been the best I've felt GI-wise. Sunday had 1 BM. Monday had 2. No bloating. Today I was up at 1 AM for work and felt zero fatigue. Didn't feel tired once I got up.</blockquote>
         <div class="name">CLIENT, 50s</div>
         <div class="stats">
@@ -847,8 +974,9 @@ html, body {
         </div>
       </div>
 
+      <!-- P0.2 · STATIN CARD · UPDATED LABEL (gated on physician verify) -->
       <div class="testi">
-        <div class="case-tag">Off the Statins · Root Cause Work</div>
+        <div class="case-tag">Cardiovascular Rebuild · Statin discontinued by his physician after reviewing his updated panel</div>
         <blockquote>Hey bro, I'm off the statins. It's all because you fixed everything from the inside out. I feel way better being off the med. Your system fucking works. I'm stoked. Will do a 6-month run off followed with bloodwork to see how things are being managed.</blockquote>
         <div class="name">NAS O.</div>
         <div class="stats">
@@ -859,6 +987,9 @@ html, body {
       </div>
 
     </div>
+
+    <!-- P0.3 · STORIES DISCLAIMER -->
+    <p class="stories-disclaimer">Results shared are individual client experiences and are not typical or guaranteed. All changes to prescription medication described above were made by clients' own physicians. Coaching is educational in nature and is not medical advice, diagnosis, or treatment.</p>
   </div>
 </section>
 
@@ -889,6 +1020,61 @@ html, body {
   </div>
 </section>
 
+<!-- ==== P1.1 · FAQ · BUBBLE ACCORDION ==== -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-label" style="text-align:center; display:block;">Questions before you apply</div>
+    <h2 class="h2" style="text-align:center;">Real questions. Straight <em>answers.</em></h2>
+
+    <div class="faq-wrap">
+
+      <details class="faq-bubble">
+        <summary>What does coaching cost? <span class="faq-toggle">+</span></summary>
+        <div class="faq-answer">
+          <p>This is a serious 1-on-1 engagement, not an app subscription. Expect a four-figure commitment over the course of our work together. Exact investment depends on your case and program length, and we cover it transparently on the call. If budget is the primary constraint right now, the free content library is the right place to start.</p>
+        </div>
+      </details>
+
+      <details class="faq-bubble">
+        <summary>Are you a doctor? <span class="faq-toggle">+</span></summary>
+        <div class="faq-answer">
+          <p>No. And I'll never position myself as one. I'm a certified functional health coach. My practice spans functional bloodwork interpretation, hormone recalibration, gut rebuilds, metabolic work, and day-to-day protocol design across the MARCH method. I don't diagnose or prescribe, and any medication decision belongs to you and your physician.</p>
+          <p>What I bring is the layer most medical visits don't have time for: reading your full panel against functional ranges, connecting the pattern to how you actually feel, and building the protocol that fits.</p>
+        </div>
+      </details>
+
+      <details class="faq-bubble">
+        <summary>My doctor already said my labs are normal. How is this different? <span class="faq-toggle">+</span></summary>
+        <div class="faq-answer">
+          <p>Standard reference ranges are built from population averages, including sick populations. Functional ranges ask a different question: not "are you within two standard deviations of everyone else," but "is this marker where a thriving body runs." A TSH of 4.2 is "normal" and can still explain your fatigue, hair loss, and cold hands. That gap is the entire practice.</p>
+        </div>
+      </details>
+
+      <details class="faq-bubble">
+        <summary>Do I need to already have bloodwork? <span class="faq-toggle">+</span></summary>
+        <div class="faq-answer">
+          <p>No. If you have recent labs, we start there. If you don't, we have testing partners across North America and the UK who can run the exact panel your case needs. Either way, your first draw actually answers the right questions instead of the standard minimum.</p>
+        </div>
+      </details>
+
+      <details class="faq-bubble">
+        <summary>How long until I feel different? <span class="faq-toggle">+</span></summary>
+        <div class="faq-answer">
+          <p>Most clients report meaningful shifts in energy, digestion, or sleep within the first 4 to 8 weeks, because we fix the floor first. Full hormonal recalibration takes longer. That's biology, not marketing. Anyone promising a 2-week hormone fix is selling you the thing that got you here.</p>
+        </div>
+      </details>
+
+      <details class="faq-bubble">
+        <summary>What happens after I apply? <span class="faq-toggle">+</span></summary>
+        <div class="faq-answer">
+          <p>I read every application personally. If it looks like a fit, you'll get a booking link within 48 hours for a real conversation with our Client Success Director. That call is where we confirm the case is one we can serve and where we walk through the program together. No pressure pitch. If it's not a fit, we'll tell you that too, and point you toward what will actually help.</p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
 <!-- ==== FINAL CTA ==== -->
 <section class="final backdrop-slot" id="apply">
     <div class="backdrop-overlay"></div>
@@ -913,6 +1099,7 @@ html, body {
         <a href="#method">The Method</a>
         <a href="#about">About Farren</a>
         <a href="#testimonials">Client Stories</a>
+        <a href="#faq">FAQ</a>
         <a href="https://info.wesnoskicoaching.com/application">Apply</a>
       </div>
       <div class="footer-col">
@@ -927,8 +1114,13 @@ html, body {
         <a href="https://share.google/i8pB1SQj0vwmXqdMk">Langley, BC</a>
       </div>
     </div>
+
+    <!-- P0.4 · FOOTER LEGAL DISCLAIMER -->
+    <p class="footer-disclaimer">Wesnoski Coaching provides health and performance coaching for educational purposes. Services are not medical advice, diagnosis, or treatment and are not a substitute for care from a licensed physician. Client results shared on this site are individual experiences and are not typical or guaranteed. Never start, stop, or change prescription medication without your physician.</p>
+
     <div class="footer-bottom">
-      <div>© 2026 Wesnoski Coaching Ltd. All Rights Reserved.</div>
+      <!-- P0.4 · ENTITY CORRECTION: Ltd → Inc. -->
+      <div>© 2026 Wesnoski Coaching Inc. All Rights Reserved.</div>
       <div>
         <a href="/terms.html">Terms</a> &middot;
         <a href="/privacy.html">Privacy</a>
