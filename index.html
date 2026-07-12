@@ -4,1127 +4,1236 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Wesnoski Coaching · Functional Health, Hormones, Bloodwork</title>
-<meta name="description" content="1-on-1 functional health coaching that reads your bloodwork before building the plan. The MARCH Method for hormones, gut, energy, and recovery.">
-<link rel="canonical" href="https://www.wesnoskicoaching.com/">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.wesnoskicoaching.com/">
-<meta property="og:title" content="Wesnoski Coaching · Functional Health, Hormones, Bloodwork">
-<meta property="og:description" content="1-on-1 functional health coaching that reads your bloodwork before building the plan. The MARCH Method for hormones, gut, energy, and recovery.">
-<meta property="og:image" content="https://pub-247859007ce34c2693a2497cdce138dd.r2.dev/wesnoski-og.jpg">
-<meta property="og:site_name" content="Wesnoski Coaching">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Wesnoski Coaching · Functional Health, Hormones, Bloodwork">
-<meta name="twitter:description" content="1-on-1 functional health coaching that reads your bloodwork before building the plan.">
-<meta name="twitter:image" content="https://pub-247859007ce34c2693a2497cdce138dd.r2.dev/wesnoski-og.jpg">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<meta name="description" content="Rebuild your energy, hormones, and gut from the bloodwork your doctor already ran. The MARCH Method. 1-on-1 coaching. Data first.">
 <style>
-* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  :root {
+    --terra: #C46B4E;
+    --terra-deep: #A94F35;
+    --terra-lt: #D68B70;
+    --cover-top: #C97C5C;
+    --cover-bot: #6E3A28;
+    --cream: #F5E5D5;
+    --peach: #F0D5BF;
+    --dark: #2A2015;
+    --body: #3A2F2A;
+    --muted: #6B5A50;
+    --paper: #FBF6EF;
+    --hair: rgba(42, 32, 21, 0.12);
+    --hair-strong: rgba(42, 32, 21, 0.2);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--paper);
+    color: var(--body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  em { font-style: italic; color: var(--terra-deep); }
 
-:root {
-  --cream: #F5E8DA;
-  --sand: #EBD5BD;
-  --peach: #E8C5A8;
-  --terracotta: #C97B5C;
-  --copper: #B8643F;
-  --terra-deep: #8B4A2E;
-  --warm-brown: #4A2E1F;
-  --text: #3D2817;
-  --text-soft: #6B4F3E;
-  --subtext: #8B6F5C;
-  --muted: #A88B73;
-  --border: rgba(74, 46, 31, 0.12);
-  --border-strong: rgba(74, 46, 31, 0.22);
-  --card-bg: rgba(255, 255, 255, 0.55);
-  --card-bg-strong: rgba(255, 255, 255, 0.85);
-  --dark-bg: #2A1810;
-  --display: 'Cormorant Garamond', Georgia, serif;
-  --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-}
+  .preview-banner {
+    background: var(--terra-deep);
+    color: white;
+    padding: 12px 24px;
+    text-align: center;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+  }
+  .preview-banner strong { font-weight: 600; }
 
-html, body {
-  background: var(--cream);
-  color: var(--text);
-  font-family: var(--sans);
-  font-weight: 300;
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-}
+  nav {
+    position: sticky;
+    top: 0;
+    background: rgba(251, 246, 239, 0.96);
+    backdrop-filter: saturate(180%) blur(10px);
+    -webkit-backdrop-filter: saturate(180%) blur(10px);
+    border-bottom: 1px solid var(--hair);
+    z-index: 100;
+    padding: 16px 32px;
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo {
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--dark);
+    text-decoration: none;
+  }
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+  }
+  .nav-links a {
+    color: var(--body);
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+  }
+  .nav-links a:hover { color: var(--terra-deep); }
+  .btn-primary,
+  .nav-links a.btn-primary {
+    background: var(--terra-deep);
+    color: #FFFFFF;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    transition: background 0.15s;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+  }
+  .btn-primary:hover,
+  .nav-links a.btn-primary:hover { background: var(--cover-bot); color: #FFFFFF; }
+  .btn-large {
+    padding: 18px 36px;
+    font-size: 15px;
+    letter-spacing: 0.03em;
+  }
 
-.container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
-.container.narrow { max-width: 880px; }
+  section {
+    padding: 88px 32px;
+  }
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 12px;
+    color: var(--terra-deep);
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  h1 {
+    font-family: Georgia, serif;
+    font-weight: 500;
+    font-size: 60px;
+    line-height: 1.08;
+    color: var(--dark);
+    letter-spacing: -0.015em;
+    margin-bottom: 28px;
+  }
+  h2 {
+    font-family: Georgia, serif;
+    font-weight: 500;
+    font-size: 44px;
+    line-height: 1.15;
+    color: var(--dark);
+    letter-spacing: -0.01em;
+    margin-bottom: 20px;
+  }
+  h3 {
+    font-family: Georgia, serif;
+    font-weight: 500;
+    font-size: 22px;
+    color: var(--dark);
+    margin-bottom: 12px;
+  }
+  p { margin-bottom: 20px; }
+  p.lead {
+    font-size: 19px;
+    color: var(--body);
+    max-width: 680px;
+    line-height: 1.55;
+  }
 
-/* ==== NAV ==== */
-.nav {
-  position: sticky;
-  top: 0;
-  background: rgba(245, 232, 218, 0.88);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--border);
-  padding: 18px 0;
-  z-index: 100;
-}
-.nav-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.wordmark {
-  font-family: var(--display);
-  font-style: italic;
-  font-size: 24px;
-  font-weight: 500;
-  color: var(--warm-brown);
-  letter-spacing: 0.5px;
-}
-.nav-links {
-  display: flex;
-  gap: 32px;
-  align-items: center;
-}
-.nav-links a {
-  font-size: 14px;
-  color: var(--text-soft);
-  text-decoration: none;
-  font-weight: 400;
-  transition: color 150ms;
-}
-.nav-links a:hover { color: var(--terracotta); }
-.btn {
-  display: inline-block;
-  background: var(--terracotta);
-  color: #fff;
-  padding: 12px 22px;
-  border-radius: 8px;
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  transition: background 180ms, transform 100ms;
-  text-transform: uppercase;
-  font-family: inherit;
-}
-.btn:hover { background: var(--copper); }
-.btn:active { transform: scale(0.98); }
-.btn.large { padding: 16px 32px; font-size: 14px; }
-@media (max-width: 720px) {
-  .nav-links { display: none; }
-  .nav-links.cta-only { display: flex; }
-  .nav-links.cta-only a:not(.btn) { display: none; }
-}
+  /* HERO */
+  .hero {
+    padding: 60px 32px 80px;
+    background: linear-gradient(180deg, var(--paper) 0%, rgba(245, 229, 213, 0.4) 100%);
+  }
+  .hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .hero h1 {
+    max-width: 920px;
+    margin: 0 auto 28px;
+  }
+  .hero p.lead {
+    max-width: 720px;
+    margin: 0 auto 40px;
+    color: var(--muted);
+    font-size: 20px;
+  }
+  .hero-ctas {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+  }
+  .btn-ghost {
+    color: var(--terra-deep);
+    padding: 18px 12px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    border-bottom: 1px solid var(--terra);
+  }
+  .proof-strip {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    padding-top: 40px;
+    border-top: 1px solid var(--hair);
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .proof-item {
+    font-size: 14px;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+  }
+  .proof-item strong {
+    color: var(--terra-deep);
+    font-weight: 700;
+  }
+  .scarcity {
+    display: inline-block;
+    background: white;
+    border: 1px solid var(--terra);
+    padding: 10px 18px;
+    border-radius: 20px;
+    margin-bottom: 32px;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+    color: var(--terra-deep);
+    font-weight: 600;
+  }
+  .scarcity-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--terra);
+    margin-right: 8px;
+    vertical-align: middle;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
 
-/* ==== SHARED ==== */
-.section-label {
-  display: inline-block;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: var(--copper);
-  margin-bottom: 18px;
-}
-.h2 {
-  font-family: var(--display);
-  font-weight: 400;
-  font-size: clamp(30px, 4.5vw, 50px);
-  line-height: 1.1;
-  letter-spacing: -0.3px;
-  margin-bottom: 22px;
-  color: var(--warm-brown);
-}
-.h2 em { font-style: italic; color: var(--terracotta); }
-.lede {
-  font-size: clamp(15px, 1.7vw, 17px);
-  color: var(--text-soft);
-  max-width: 640px;
-  margin: 0 auto 16px;
-  line-height: 1.7;
-}
-.backdrop-slot { position: relative; overflow: hidden; }
-.backdrop-img {
-  position: absolute; inset: 0;
-  background-size: cover;
-  background-position: center;
-  z-index: 0;
-  opacity: 0.32;
-  pointer-events: none;
-}
-.backdrop-overlay { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
-.backdrop-slot > .container, .backdrop-slot > .inner { position: relative; z-index: 2; }
+  /* WALL OF PROOF (now section 2) */
+  .proof {
+    background: var(--paper);
+  }
+  .featured-testimonial {
+    background: white;
+    border: 1px solid var(--hair);
+    border-radius: 16px;
+    overflow: hidden;
+    margin: 56px 0 40px;
+    box-shadow: 0 8px 24px rgba(42, 32, 21, 0.06);
+  }
+  .featured-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+  }
+  .featured-video {
+    background: linear-gradient(135deg, var(--cover-bot) 0%, var(--cover-top) 100%);
+    min-height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .video-placeholder {
+    text-align: center;
+    color: white;
+    padding: 40px;
+  }
+  .play-circle {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.95);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    cursor: pointer;
+  }
+  .play-triangle {
+    width: 0;
+    height: 0;
+    border-left: 22px solid var(--terra-deep);
+    border-top: 14px solid transparent;
+    border-bottom: 14px solid transparent;
+    margin-left: 6px;
+  }
+  .video-placeholder-text {
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.9;
+  }
+  .featured-copy {
+    padding: 44px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .featured-tag {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--terra-deep);
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  .featured-quote {
+    font-family: Georgia, serif;
+    font-size: 22px;
+    line-height: 1.4;
+    color: var(--dark);
+    font-style: italic;
+    margin-bottom: 24px;
+  }
+  .featured-name {
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--body);
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+  .featured-stats {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .stat-chip {
+    background: var(--cream);
+    color: var(--terra-deep);
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .wall {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .proof-card {
+    background: white;
+    border: 1px solid var(--hair);
+    border-radius: 14px;
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-tag {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--terra-deep);
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .card-quote {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--body);
+    margin-bottom: 20px;
+    flex-grow: 1;
+    font-style: italic;
+  }
+  .card-name {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--dark);
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+  .card-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .card-stat {
+    font-size: 12px;
+    color: var(--muted);
+    padding-left: 12px;
+    border-left: 2px solid var(--terra);
+  }
+  .card-stat strong { color: var(--dark); font-weight: 600; }
+  .results-disclaimer {
+    margin-top: 40px;
+    padding: 20px 24px;
+    background: rgba(196, 107, 78, 0.05);
+    border-left: 3px solid var(--terra);
+    border-radius: 4px;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
 
-/* ==== HERO ==== */
-.hero {
-  background: linear-gradient(180deg, #E8C5A8 0%, #D8A887 60%, #C97B5C 100%);
-  padding: 80px 0 120px;
-  position: relative;
-  overflow: hidden;
-  text-align: center;
-}
-.hero::before {
-  content: '';
-  position: absolute; inset: 0;
-  background-image: radial-gradient(ellipse at 80% 20%, rgba(184, 100, 63, 0.45) 0%, transparent 55%),
-                    radial-gradient(ellipse at 15% 80%, rgba(245, 232, 218, 0.35) 0%, transparent 50%);
-  pointer-events: none;
-}
-.hero-inner { position: relative; z-index: 2; }
-.hero .eyebrow {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: #fff;
-  margin-bottom: 28px;
-  padding: 7px 18px;
-  background: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 100px;
-  backdrop-filter: blur(4px);
-}
-.hero h1 {
-  font-family: var(--display);
-  font-weight: 400;
-  font-size: clamp(42px, 7vw, 84px);
-  line-height: 1.02;
-  letter-spacing: -1px;
-  margin-bottom: 24px;
-  color: #fff;
-}
-.hero h1 em {
-  font-style: italic;
-  font-weight: 400;
-  color: #F5E8DA;
-}
-.hero p.lede {
-  font-size: clamp(15px, 1.7vw, 19px);
-  color: rgba(255, 255, 255, 0.92);
-  max-width: 620px;
-  margin: 0 auto 36px;
-  line-height: 1.6;
-  font-weight: 300;
-}
-.hero .trust {
-  margin-top: 32px;
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.75);
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-weight: 500;
-}
+  /* METHOD */
+  .method {
+    background: var(--cream);
+  }
+  .phases {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    margin-top: 56px;
+  }
+  .phase {
+    background: white;
+    padding: 28px 22px;
+    border-radius: 12px;
+    border: 1px solid var(--hair);
+  }
+  .phase-letter {
+    font-family: Georgia, serif;
+    font-size: 48px;
+    color: var(--terra-deep);
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+  .phase h3 { font-size: 17px; margin-bottom: 6px; }
+  .phase-tagline {
+    font-size: 12px;
+    color: var(--terra-deep);
+    font-weight: 600;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .phase p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 0;
+  }
 
-/* ==== REFRAME ==== */
-.reframe {
-  padding: 96px 0;
-  text-align: center;
-  background: var(--cream);
-}
-.reframe .backdrop-overlay {
-  background: linear-gradient(180deg, rgba(245, 232, 218, 0.0) 0%, rgba(245, 232, 218, 0.85) 100%);
-}
-.reframe p {
-  font-size: clamp(15px, 1.7vw, 17px);
-  color: var(--text-soft);
-  max-width: 660px;
-  margin: 0 auto 16px;
-  line-height: 1.75;
-}
-.reframe p.signature {
-  font-family: var(--display);
-  font-style: italic;
-  color: var(--terra-deep);
-  font-size: clamp(17px, 2vw, 22px);
-  margin-top: 32px;
-}
+  /* ABOUT (condensed) */
+  .about {
+    background: var(--paper);
+  }
+  .about-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 72px;
+    align-items: center;
+  }
+  .about-visual {
+    background: linear-gradient(135deg, var(--cover-top) 0%, var(--cover-bot) 100%);
+    border-radius: 16px;
+    aspect-ratio: 4/5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    text-align: center;
+    padding: 40px;
+  }
+  .about-body h2 { margin-bottom: 24px; }
+  .about-body p { font-size: 17px; color: var(--body); margin-bottom: 18px; }
+  .credentials {
+    display: flex;
+    gap: 32px;
+    margin-top: 28px;
+    padding-top: 28px;
+    border-top: 1px solid var(--hair);
+    flex-wrap: wrap;
+  }
+  .credential {
+    font-size: 13px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+  }
 
-/* ==== MARCH ==== */
-.method {
-  background: linear-gradient(180deg, var(--cream) 0%, var(--sand) 100%);
-  padding: 96px 0;
-}
-.method-intro { text-align: center; max-width: 660px; margin: 0 auto 56px; }
-.method-intro p { font-size: 16px; color: var(--text-soft); margin-top: 16px; line-height: 1.7; }
-.phases-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
-}
-@media (min-width: 720px) {
-  .phases-grid { grid-template-columns: 1fr 1fr; }
-  .phases-grid .phase:nth-child(5) { grid-column: span 2; max-width: calc(50% - 8px); justify-self: center; }
-}
-.phase {
-  background: var(--card-bg-strong);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 28px 28px 28px 96px;
-  position: relative;
-  backdrop-filter: blur(8px);
-  transition: all 250ms ease;
-}
-.phase:hover {
-  border-color: var(--terracotta);
-  transform: translateY(-2px);
-}
-.phase .letter {
-  position: absolute;
-  left: 24px;
-  top: 28px;
-  width: 52px;
-  height: 52px;
-  background: var(--terracotta);
-  color: #fff;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--display);
-  font-size: 26px;
-  font-weight: 600;
-  font-style: italic;
-}
-.phase h3 {
-  font-family: var(--display);
-  font-size: 22px;
-  font-weight: 500;
-  color: var(--warm-brown);
-  margin-bottom: 4px;
-}
-.phase .tag {
-  font-size: 11px;
-  color: var(--copper);
-  font-weight: 600;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  margin-bottom: 12px;
-}
-.phase p {
-  font-size: 14px;
-  color: var(--text-soft);
-  line-height: 1.6;
-}
+  /* OFFER STACK */
+  .offer-stack {
+    background: var(--cream);
+  }
+  .stack-container {
+    max-width: 780px;
+    margin: 56px auto 0;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(42, 32, 21, 0.08);
+    border: 1px solid var(--hair);
+  }
+  .stack-header {
+    background: var(--dark);
+    color: white;
+    padding: 24px 32px;
+    text-align: center;
+    font-family: Georgia, serif;
+    font-size: 20px;
+    letter-spacing: 0.02em;
+  }
+  .stack-row {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 20px;
+    padding: 20px 32px;
+    border-bottom: 1px solid var(--hair);
+    align-items: center;
+  }
+  .stack-row:last-of-type { border-bottom: none; }
+  .stack-check {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--terra);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+  .stack-item h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 4px;
+    font-family: -apple-system, sans-serif;
+  }
+  .stack-item p {
+    font-size: 13px;
+    color: var(--muted);
+    margin: 0;
+    line-height: 1.45;
+  }
+  .stack-value {
+    font-size: 15px;
+    color: var(--muted);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .stack-total {
+    background: var(--cream);
+    padding: 22px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid var(--terra);
+  }
+  .stack-total-label {
+    font-size: 14px;
+    color: var(--dark);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 600;
+  }
+  .stack-total-value {
+    font-family: Georgia, serif;
+    font-size: 28px;
+    color: var(--dark);
+    font-weight: 500;
+  }
+  .stack-price {
+    background: var(--terra-deep);
+    color: white;
+    padding: 32px;
+    text-align: center;
+  }
+  .stack-price-label {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    opacity: 0.85;
+    margin-bottom: 12px;
+  }
+  .stack-price-value {
+    font-family: Georgia, serif;
+    font-size: 42px;
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+  .stack-price-note {
+    font-size: 13px;
+    opacity: 0.85;
+  }
 
-/* ==== ABOUT ==== */
-.about {
-  padding: 96px 0;
-  background: var(--cream);
-}
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 48px;
-  align-items: center;
-}
-@media (min-width: 880px) {
-  .about-grid { grid-template-columns: 1fr 1.2fr; gap: 64px; }
-}
-.about-photo {
-  background-size: cover;
-  background-position: center;
-  background-color: var(--peach);
-  aspect-ratio: 4/5;
-  border-radius: 16px;
-  box-shadow: 0 16px 48px rgba(74, 46, 31, 0.18);
-  position: relative;
-  overflow: hidden;
-}
-.about-photo::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 60%, rgba(74, 46, 31, 0.2) 100%);
-}
-.about-text { max-width: none; }
-.about-text .section-label { margin-bottom: 14px; }
-.about-text h2 { text-align: left; margin-bottom: 24px; }
-.about-text p {
-  font-size: 15.5px;
-  color: var(--text-soft);
-  line-height: 1.75;
-  margin-bottom: 16px;
-}
-.about-text p.signature {
-  font-family: var(--display);
-  font-style: italic;
-  color: var(--terra-deep);
-  font-size: 19px;
-  margin-top: 20px;
-  line-height: 1.4;
-}
-.creds {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 24px;
-}
-.cred-pill {
-  background: rgba(201, 123, 92, 0.12);
-  border: 1px solid rgba(201, 123, 92, 0.3);
-  color: var(--copper);
-  font-size: 11px;
-  font-weight: 600;
-  padding: 6px 12px;
-  border-radius: 100px;
-  letter-spacing: 0.5px;
-}
+  /* GUARANTEE */
+  .guarantee-section {
+    background: var(--paper);
+  }
+  .guarantee-card {
+    max-width: 780px;
+    margin: 40px auto 0;
+    background: white;
+    border: 2px solid var(--terra);
+    border-radius: 16px;
+    padding: 48px 40px;
+    text-align: center;
+    position: relative;
+  }
+  .guarantee-badge {
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--terra-deep);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .guarantee-headline {
+    font-family: Georgia, serif;
+    font-size: 30px;
+    color: var(--dark);
+    line-height: 1.25;
+    margin-bottom: 18px;
+    margin-top: 12px;
+  }
+  .guarantee-body {
+    font-size: 16px;
+    color: var(--body);
+    max-width: 580px;
+    margin: 0 auto;
+    line-height: 1.55;
+  }
 
-/* ==== HONEST AUTHORITY (NEW) ==== */
-.honest-authority {
-  background: rgba(255, 255, 255, 0.6);
-  border-left: 3px solid var(--terracotta);
-  border-radius: 12px;
-  padding: 20px 24px;
-  margin-top: 28px;
-  backdrop-filter: blur(6px);
-}
-.honest-authority .clabel {
-  display: block;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--copper);
-  margin-bottom: 10px;
-}
-.honest-authority p {
-  font-family: var(--display);
-  font-style: italic;
-  color: var(--warm-brown);
-  font-size: 16.5px;
-  line-height: 1.55;
-  margin: 0;
-}
+  /* COMPARISON */
+  .comparison {
+    background: var(--cream);
+  }
+  .compare-table {
+    max-width: 900px;
+    margin: 56px auto 0;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--hair);
+    box-shadow: 0 8px 24px rgba(42, 32, 21, 0.06);
+  }
+  .compare-table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .compare-table th, .compare-table td {
+    padding: 20px 24px;
+    text-align: left;
+    border-bottom: 1px solid var(--hair);
+    font-size: 15px;
+  }
+  .compare-table th {
+    background: var(--dark);
+    color: white;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .compare-table th:first-child { text-align: left; }
+  .compare-table th.wesnoski-col {
+    background: var(--terra-deep);
+  }
+  .compare-table td { color: var(--body); }
+  .compare-table td.feature {
+    font-weight: 600;
+    color: var(--dark);
+  }
+  .compare-table td.check {
+    text-align: center;
+    color: var(--terra-deep);
+    font-weight: 700;
+    font-size: 20px;
+  }
+  .compare-table td.x {
+    text-align: center;
+    color: #B8AEA6;
+    font-size: 18px;
+  }
+  .compare-table tr:last-child td { border-bottom: none; }
+  .compare-table .price-row td { background: var(--cream); font-weight: 700; }
 
-/* ==== INCLUDED ==== */
-.included {
-  padding: 96px 0;
-  background: linear-gradient(180deg, var(--cream) 0%, var(--sand) 100%);
-}
-.included h2 { text-align: center; }
-.included .lede { text-align: center; margin-bottom: 56px; }
-.feature-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 14px;
-}
-@media (min-width: 720px) {
-  .feature-grid { grid-template-columns: 1fr 1fr; }
-}
-@media (min-width: 1024px) {
-  .feature-grid { grid-template-columns: 1fr 1fr 1fr; }
-}
-.feature {
-  background: rgba(255, 255, 255, 0.65);
-  border-radius: 14px;
-  padding: 24px 24px;
-  border: 1px solid var(--border);
-  backdrop-filter: blur(6px);
-}
-.feature-icon {
-  display: inline-flex;
-  width: 36px;
-  height: 36px;
-  background: rgba(201, 123, 92, 0.12);
-  border-radius: 50%;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--display);
-  font-style: italic;
-  color: var(--copper);
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 14px;
-}
-.feature h4 {
-  font-family: var(--display);
-  font-size: 19px;
-  font-weight: 500;
-  font-style: italic;
-  color: var(--terra-deep);
-  margin-bottom: 8px;
-}
-.feature p {
-  font-size: 13.5px;
-  color: var(--text-soft);
-  line-height: 1.6;
-}
+  /* FAQ */
+  .faq {
+    background: var(--paper);
+  }
+  .faq-list {
+    max-width: 780px;
+    margin: 56px auto 0;
+  }
+  .faq-item {
+    background: white;
+    border: 1px solid var(--hair);
+    border-radius: 12px;
+    margin-bottom: 14px;
+    overflow: hidden;
+  }
+  .faq-question {
+    padding: 22px 28px;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    color: var(--dark);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+  }
+  .faq-question::after {
+    content: '+';
+    color: var(--terra-deep);
+    font-size: 24px;
+    font-weight: 400;
+    transition: transform 0.2s;
+  }
+  .faq-item[open] .faq-question::after { transform: rotate(45deg); }
+  .faq-answer {
+    padding: 0 28px 22px;
+    color: var(--body);
+    font-size: 15px;
+    line-height: 1.6;
+  }
 
-/* ==== TESTIMONIALS ==== */
-.testimonials {
-  padding: 96px 0;
-  background: var(--cream);
-}
-.testimonials h2 { text-align: center; }
-.testimonials .lede { text-align: center; margin-bottom: 56px; }
-.testi-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-}
-@media (min-width: 720px) {
-  .testi-grid { grid-template-columns: 1fr 1fr; }
-}
-.testi {
-  background: rgba(255, 255, 255, 0.7);
-  border-radius: 16px;
-  padding: 32px 32px 28px;
-  border: 1px solid var(--border);
-  backdrop-filter: blur(6px);
-  border-left: 3px solid var(--terracotta);
-  position: relative;
-}
-.testi .case-tag {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--copper);
-  margin-bottom: 14px;
-}
-.testi blockquote {
-  font-family: var(--display);
-  font-style: italic;
-  font-size: clamp(16px, 1.7vw, 19px);
-  color: var(--warm-brown);
-  line-height: 1.55;
-  margin-bottom: 18px;
-}
-.testi blockquote::before { content: '"'; color: var(--terracotta); }
-.testi blockquote::after { content: '"'; color: var(--terracotta); }
-.testi .name {
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--terra-deep);
-  letter-spacing: 0.5px;
-}
-.testi .stats {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-  margin-top: 14px;
-}
-.testi .stat {
-  background: rgba(201, 123, 92, 0.12);
-  color: var(--copper);
-  font-size: 10.5px;
-  font-weight: 600;
-  padding: 4px 10px;
-  border-radius: 100px;
-  letter-spacing: 0.3px;
-}
+  /* CTA */
+  .final-cta {
+    background: linear-gradient(135deg, var(--cover-bot) 0%, var(--cover-top) 100%);
+    color: white;
+    text-align: center;
+  }
+  .final-cta .eyebrow { color: rgba(255, 255, 255, 0.75); }
+  .final-cta h2 { color: white; max-width: 780px; margin: 0 auto 28px; }
+  .final-cta p.lead { color: rgba(255, 255, 255, 0.9); margin: 0 auto 36px; }
+  .final-cta .btn-primary {
+    background: white;
+    color: var(--terra-deep);
+  }
+  .final-cta .btn-primary:hover { background: var(--cream); color: var(--terra-deep); }
+  .final-cta em { color: var(--cream); }
+  .final-cta .scarcity {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.3);
+  }
 
-/* ==== STORIES DISCLAIMER (NEW) ==== */
-.stories-disclaimer {
-  margin: 40px auto 0;
-  max-width: 720px;
-  text-align: center;
-  font-family: var(--display);
-  font-style: italic;
-  color: var(--subtext);
-  font-size: 15px;
-  line-height: 1.65;
-}
+  footer {
+    background: var(--dark);
+    color: rgba(255, 255, 255, 0.85);
+    padding: 60px 32px 30px;
+    font-size: 14px;
+  }
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+  footer h5 {
+    font-family: -apple-system, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 16px;
+    font-weight: 700;
+  }
+  footer a {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    display: block;
+    padding: 6px 0;
+    font-size: 14px;
+  }
+  footer a:hover { color: var(--terra-lt); }
+  footer .brand-blurb {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .footer-disclaimer {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 24px;
+    font-size: 12px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.65);
+  }
+  .footer-copy {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 24px;
+    margin-top: 24px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.55);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
 
-/* ==== PROCESS ==== */
-.process {
-  background: linear-gradient(180deg, var(--cream) 0%, var(--peach) 100%);
-  padding: 96px 0;
-  position: relative;
-  overflow: hidden;
-}
-.process .backdrop-overlay {
-  background: radial-gradient(ellipse at center, rgba(255, 248, 240, 0.4) 0%, transparent 60%);
-}
-.process .inner { position: relative; z-index: 2; }
-.process h2 { text-align: center; }
-.process .lede { text-align: center; margin-bottom: 56px; }
-.steps {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 18px;
-}
-@media (min-width: 720px) {
-  .steps { grid-template-columns: 1fr 1fr 1fr; }
-}
-.step {
-  background: rgba(255, 255, 255, 0.7);
-  border-radius: 14px;
-  padding: 32px 28px;
-  text-align: center;
-  border: 1px solid var(--border);
-  backdrop-filter: blur(6px);
-  position: relative;
-}
-.step .step-num {
-  font-family: var(--display);
-  font-style: italic;
-  font-size: 56px;
-  color: var(--terracotta);
-  line-height: 1;
-  margin-bottom: 16px;
-  opacity: 0.7;
-}
-.step h3 {
-  font-family: var(--display);
-  font-size: 22px;
-  font-weight: 500;
-  font-style: italic;
-  color: var(--warm-brown);
-  margin-bottom: 12px;
-}
-.step p {
-  font-size: 14px;
-  color: var(--text-soft);
-  line-height: 1.6;
-}
-
-/* ==== FAQ (NEW · BUBBLE ACCORDION) ==== */
-.faq {
-  padding: 96px 0;
-  background: var(--cream);
-}
-.faq h2 { text-align: center; }
-.faq .lede { text-align: center; margin-bottom: 48px; }
-.faq-wrap {
-  max-width: 780px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-details.faq-bubble {
-  background: rgba(255, 255, 255, 0.7);
-  border: 1px solid var(--border);
-  border-radius: 22px;
-  overflow: hidden;
-  backdrop-filter: blur(6px);
-  transition: border-color 200ms, box-shadow 200ms, background 200ms;
-}
-details.faq-bubble[open] {
-  background: rgba(255, 255, 255, 0.92);
-  border-color: rgba(201, 123, 92, 0.35);
-  box-shadow: 0 10px 30px rgba(74, 46, 31, 0.08);
-}
-details.faq-bubble summary {
-  list-style: none;
-  cursor: pointer;
-  padding: 22px 28px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  font-family: var(--display);
-  font-size: clamp(17px, 1.9vw, 21px);
-  font-weight: 500;
-  color: var(--warm-brown);
-  line-height: 1.35;
-  transition: color 180ms;
-}
-details.faq-bubble summary::-webkit-details-marker { display: none; }
-details.faq-bubble summary:hover { color: var(--terracotta); }
-.faq-toggle {
-  min-width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: var(--terracotta);
-  color: #fff;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  line-height: 1;
-  font-weight: 300;
-  flex-shrink: 0;
-  transition: transform 300ms, background 200ms;
-}
-details.faq-bubble[open] .faq-toggle {
-  transform: rotate(45deg);
-  background: var(--copper);
-}
-.faq-answer {
-  padding: 0 28px 26px;
-  font-size: 15px;
-  color: var(--text-soft);
-  line-height: 1.7;
-}
-.faq-answer p { margin-bottom: 12px; }
-.faq-answer p:last-child { margin-bottom: 0; }
-
-/* ==== FINAL CTA ==== */
-.final {
-  background: linear-gradient(180deg, var(--peach) 0%, var(--terracotta) 100%);
-  padding: 120px 0 96px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-.final .backdrop-overlay {
-  background: radial-gradient(ellipse at center, rgba(255, 248, 240, 0.25) 0%, transparent 60%);
-}
-.final .inner { position: relative; z-index: 2; }
-.final .section-label { color: rgba(255, 255, 255, 0.8); }
-.final h2 { color: #fff; margin-bottom: 28px; }
-.final h2 em { color: #FFF5E8; }
-.final p {
-  max-width: 580px;
-  margin: 0 auto 32px;
-  color: rgba(255, 255, 255, 0.95);
-  font-size: 17px;
-  line-height: 1.7;
-}
-.final .btn {
-  background: #fff;
-  color: var(--terracotta);
-}
-.final .btn:hover { background: #F5E8DA; }
-
-/* ==== FOOTER ==== */
-.footer {
-  background: var(--dark-bg);
-  padding: 56px 0 36px;
-  color: var(--muted);
-}
-.footer-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 32px;
-  margin-bottom: 36px;
-}
-@media (min-width: 720px) {
-  .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; }
-}
-.footer .wordmark { color: #fff; font-style: italic; }
-.footer-tag {
-  font-size: 13px;
-  color: var(--muted);
-  margin-top: 14px;
-  line-height: 1.6;
-  max-width: 280px;
-}
-.footer-col h5 {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.6);
-  margin-bottom: 14px;
-}
-.footer-col a {
-  display: block;
-  font-size: 13.5px;
-  color: var(--muted);
-  text-decoration: none;
-  padding: 5px 0;
-}
-.footer-col a:hover { color: var(--terracotta); }
-.footer-disclaimer {
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.5);
-  line-height: 1.65;
-  margin-bottom: 24px;
-  max-width: 100%;
-}
-.footer-bottom {
-  padding-top: 28px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  font-size: 11px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.4);
-}
-.footer-bottom a { color: rgba(255, 255, 255, 0.4); text-decoration: none; }
-.footer-bottom a:hover { color: var(--terracotta); }
-
-@media (max-width: 720px) {
-  .hero { padding: 56px 0 96px; }
-  .reframe, .method, .about, .included, .testimonials, .process, .faq { padding: 64px 0; }
-  .final { padding: 88px 0 72px; }
-}
+  @media (max-width: 900px) {
+    section { padding: 56px 20px; }
+    h1 { font-size: 40px; }
+    h2 { font-size: 32px; }
+    .phases { grid-template-columns: 1fr 1fr; }
+    .wall { grid-template-columns: 1fr; }
+    .featured-grid { grid-template-columns: 1fr; }
+    .about-inner { grid-template-columns: 1fr; gap: 40px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .compare-table { font-size: 13px; }
+    .compare-table th, .compare-table td { padding: 14px 12px; }
+  }
 </style>
 </head>
 <body>
 
-<!-- ==== NAV ==== -->
-<nav class="nav">
-  <div class="container nav-inner">
-    <a href="#" class="wordmark">wesnoski coaching</a>
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">wesnoski coaching</a>
     <div class="nav-links">
       <a href="#method">The Method</a>
       <a href="#about">About</a>
-      <a href="#testimonials">Stories</a>
+      <a href="#stories">Stories</a>
       <a href="#faq">FAQ</a>
-      <a href="https://info.wesnoskicoaching.com/application" class="btn">Apply</a>
-    </div>
-    <div class="nav-links cta-only" style="display:none">
-      <a href="https://info.wesnoskicoaching.com/application" class="btn">Apply</a>
+      <a href="https://info.wesnoskicoaching.com/application" class="btn-primary">Apply for the Rebuild</a>
     </div>
   </div>
 </nav>
 
-<!-- ==== HERO ==== -->
+<!-- HERO -->
 <section class="hero">
-  <div class="container hero-inner">
-    <div class="eyebrow">Functional Health Coaching</div>
-    <h1>Your labs say <em>normal.</em><br>You feel drained.<br><em>We close that gap.</em></h1>
-    <p class="lede">1-on-1 coaching that reads your bloodwork before building the plan. Hormones, thyroid, gut, nervous system. The MARCH Method rebuilds the system underneath the symptoms, in the order biology demands.</p>
-    <a href="https://info.wesnoskicoaching.com/application" class="btn large">Apply To Work With Farren</a>
-    <div class="trust">200+ Lifetime Clients · Functional Lab Interpretation · Hormone & Gut Specialist</div>
+  <div class="hero-inner">
+    <div class="scarcity"><span class="scarcity-dot"></span>12 new clients per quarter. Applications reviewed weekly.</div>
+    <p class="eyebrow">Functional Health Coaching</p>
+    <h1>Rebuild your energy, hormones, and gut. <em>From the bloodwork your doctor already ran.</em></h1>
+    <p class="lead">1-on-1 coaching that reads your labs before building the plan. The MARCH Method locks the foundation in 90 days. Full rebuild continues from there.</p>
+    <div class="hero-ctas">
+      <a href="https://info.wesnoskicoaching.com/application" class="btn-primary btn-large">Apply for the Rebuild</a>
+    </div>
   </div>
 </section>
 
-<!-- ==== REFRAME ==== -->
-<section class="reframe backdrop-slot">
-    <div class="backdrop-overlay"></div>
-  <div class="container narrow">
-    <div class="section-label">Who I built this for</div>
-    <h2 class="h2">Most of the men and women<br>I work with arrive <em>somewhere similar.</em></h2>
-    <p>Tired in a way that sleep doesn't fix. Carrying a body that doesn't feel like theirs anymore. Told by more than one doctor that everything looks normal while everything feels off.</p>
-    <p>Hashimoto's. Perimenopause. Postpartum recovery. Autoimmune patterns. Low testosterone. Gut chaos that nobody could name. Fatigue and inflammation that don't show up clearly on any single test.</p>
-    <p>The gap between what your labs read and what your body knows is real. It is where most people get lost. And it is what I built this practice to close.</p>
-    <p class="signature">If any of that sounds like you, you are in the right place.</p>
+<!-- WALL OF PROOF (moved above method) -->
+<section class="proof" id="stories">
+  <div class="container">
+    <p class="eyebrow">Real stories</p>
+    <h2>When the system underneath finally works.</h2>
+    <p class="lead">Clients who walked in feeling dismissed and rebuilt the system from the data underneath.</p>
+
+    <div class="featured-testimonial">
+      <div class="featured-grid">
+        <div class="featured-video" style="background: linear-gradient(135deg, var(--cover-bot) 0%, var(--cover-top) 100%); padding: 48px 40px;">
+          <div style="color: white; text-align: left;">
+            <p style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.16em; opacity: 0.85; margin-bottom: 20px; font-weight: 700;">Featured story</p>
+            <p style="font-family: Georgia, serif; font-size: 42px; line-height: 1.15; margin-bottom: 24px;">The 10-week rebuild.</p>
+            <p style="font-size: 15px; line-height: 1.6; opacity: 0.95; margin: 0;">HRV averaging 70-80, up from the 20s six weeks in. RHR steady at 45. Eight hours of solid sleep restored. Mood at a 10. Muscles waking up.</p>
+          </div>
+        </div>
+        <div class="featured-copy">
+          <p class="featured-tag">Perimenopause · Performance rebuild</p>
+          <p class="featured-quote">"Week 10 of my rebuild and I couldn't be happier with where I'm at. HRV up from the 20s to 70-80. RHR down to 45. Sleep solid 8 hours, no restlessness. Mood at a 10."</p>
+          <p class="featured-name">Melissa J.</p>
+          <div class="featured-stats">
+            <span class="stat-chip">HRV 20s → 80</span>
+            <span class="stat-chip">RHR 62 → 45</span>
+            <span class="stat-chip">8hr sleep restored</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wall">
+      <div class="proof-card">
+        <p class="card-tag">Cycle return · Sleep restoration</p>
+        <p class="card-quote">"I came in with four months of no period. Today is CD3 of my second normal 30-day cycle. No PMS. Sleeping soundly."</p>
+        <p class="card-name">Client, 40s</p>
+        <div class="card-stats">
+          <div class="card-stat"><strong>Cycle back</strong></div>
+          <div class="card-stat"><strong>Deep sleep restored</strong></div>
+          <div class="card-stat"><strong>Drive returning</strong></div>
+        </div>
+      </div>
+
+      <div class="proof-card">
+        <p class="card-tag">Colitis · Gut Blitz recovery</p>
+        <p class="card-quote">"Came in with 10 bowel movements daily. Hospitalized. Now I'm at zero bloating, BMs averaging 1.5 a day. Body absorbing again."</p>
+        <p class="card-name">Gut Blitz Client</p>
+        <div class="card-stats">
+          <div class="card-stat"><strong>10 BMs → 1.5/day</strong></div>
+          <div class="card-stat"><strong>Hospital-free</strong></div>
+          <div class="card-stat"><strong>Absorption back</strong></div>
+        </div>
+      </div>
+
+      <div class="proof-card">
+        <p class="card-tag">Cardiovascular rebuild</p>
+        <p class="card-quote">"Hey bro, I'm off the statins. It's all because you fixed everything from the inside out. Your system fucking works."</p>
+        <p class="card-name">Nas O.</p>
+        <div class="card-stats">
+          <div class="card-stat"><strong>2.5 yrs → off statins</strong></div>
+          <div class="card-stat"><strong>9 weeks in</strong></div>
+          <div class="card-stat"><strong>MD-supervised</strong></div>
+        </div>
+      </div>
+
+      <div class="proof-card">
+        <p class="card-tag">Reflux recovery</p>
+        <p class="card-quote">"Day 5 without my prescription omeprazole. Been on it for years. Best I've felt GI-wise. Up at 1 AM and felt zero fatigue."</p>
+        <p class="card-name">Client, 50s</p>
+        <div class="card-stats">
+          <div class="card-stat"><strong>Off years of PPI</strong></div>
+          <div class="card-stat"><strong>No bloating</strong></div>
+          <div class="card-stat"><strong>Zero fatigue</strong></div>
+        </div>
+      </div>
+
+      <div class="proof-card">
+        <p class="card-tag">Countless doctors · No answers</p>
+        <p class="card-quote">"Three days into the GI protocol and I'm not feeling crap after I eat. Huge relief. Eating without fear feels normal again."</p>
+        <p class="card-name">Client, 30s</p>
+        <div class="card-stats">
+          <div class="card-stat"><strong>Bloating gone in 3 days</strong></div>
+          <div class="card-stat"><strong>BMs normalized</strong></div>
+          <div class="card-stat"><strong>Food peace</strong></div>
+        </div>
+      </div>
+
+      <div class="proof-card">
+        <p class="card-tag">Perimenopause · Performance</p>
+        <p class="card-quote">"HRV averaging 70-80, up from the 20s six weeks ago. RHR steady at 45. Muscles are waking up. Mood at a 10."</p>
+        <p class="card-name">Client, 40s</p>
+        <div class="card-stats">
+          <div class="card-stat"><strong>HRV 3x baseline</strong></div>
+          <div class="card-stat"><strong>RHR down 17bpm</strong></div>
+          <div class="card-stat"><strong>Lifting again</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="results-disclaimer">
+      Results shared are individual client experiences and are not typical or guaranteed. All changes to prescription medication described above were made by clients' own physicians. Coaching is educational in nature and is not medical advice, diagnosis, or treatment.
+    </div>
   </div>
 </section>
 
-<!-- ==== MARCH METHOD ==== -->
+<!-- METHOD (tightened) -->
 <section class="method" id="method">
   <div class="container">
-    <div class="method-intro">
-      <div class="section-label">The Method</div>
-      <h2 class="h2">Five phases.<br>In the order <em>biology demands.</em></h2>
-      <p>Restore capacity before complexity. Rebuild before optimize. Each phase strengthens the terrain for the one that comes next.</p>
-    </div>
-    <div class="phases-grid">
+    <p class="eyebrow">The Method</p>
+    <h2>Five phases. In the order biology demands.</h2>
+    <p class="lead">Restore capacity before complexity. Rebuild before optimize. Each phase strengthens the terrain for the one that comes next.</p>
+    <div class="phases">
       <div class="phase">
-        <div class="letter">M</div>
+        <div class="phase-letter">M</div>
         <h3>Mitochondria</h3>
-        <div class="tag">Energy. The floor.</div>
-        <p>If your cells cannot make power, nothing layered on top of that has fuel to actually work. We restore energy production first by stabilizing blood glucose, restoring circadian rhythm, and correcting mineral imbalances.</p>
+        <p class="phase-tagline">Energy. The floor.</p>
+        <p>Stabilize blood glucose, restore circadian rhythm, correct mineral floors. If cells can't make power, nothing else works.</p>
       </div>
       <div class="phase">
-        <div class="letter">A</div>
+        <div class="phase-letter">A</div>
         <h3>Absorption & Detox</h3>
-        <div class="tag">Gut. Liver. Bile flow.</div>
-        <p>You cannot supplement your way out of poor absorption. We restore stomach acid, support bile flow, and rebuild digestion so you actually use what you take in and clear what you don't.</p>
+        <p class="phase-tagline">Gut. Liver. Bile.</p>
+        <p>Restore stomach acid, bile flow, and digestion. So you actually use what you take in and clear what you don't.</p>
       </div>
       <div class="phase">
-        <div class="letter">R</div>
+        <div class="phase-letter">R</div>
         <h3>Resilience</h3>
-        <div class="tag">Stress. Cortisol. Inflammation.</div>
-        <p>We normalize your cortisol rhythm and pull your nervous system out of survival mode, so your body has the bandwidth to rebuild instead of just holding the line.</p>
+        <p class="phase-tagline">Stress. Cortisol.</p>
+        <p>Normalize cortisol rhythm and pull the nervous system out of survival mode. Bandwidth to rebuild returns.</p>
       </div>
       <div class="phase">
-        <div class="letter">C</div>
+        <div class="phase-letter">C</div>
         <h3>Cycle & Signal</h3>
-        <div class="tag">Hormones. Thyroid. Fertility.</div>
-        <p>Most coaching starts here. We start here only once the foundation is stable, because anything layered on a broken floor comes undone.</p>
+        <p class="phase-tagline">Hormones. Thyroid.</p>
+        <p>Most coaching starts here. We start here only once the foundation holds. Anything on a broken floor comes undone.</p>
       </div>
       <div class="phase">
-        <div class="letter">H</div>
+        <div class="phase-letter">H</div>
         <h3>Healthspan & Strength</h3>
-        <div class="tag">Build. Periodize. Hold.</div>
-        <p>Body composition, lean tissue, and longevity. The natural consequence of the system underneath finally working. Not the goal. The result.</p>
+        <p class="phase-tagline">Build. Hold.</p>
+        <p>Body composition, lean tissue, and longevity. The natural consequence of the system underneath finally working.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ==== ABOUT ==== -->
+<!-- ABOUT (condensed to 2 paragraphs) -->
 <section class="about" id="about">
   <div class="container">
-    <div class="about-grid">
-      <div class="about-photo" style="background-image: url('https://pub-247859007ce34c2693a2497cdce138dd.r2.dev/farren-terracotta-portrait.jpg'); background-position: center top;">
-              </div>
-      <div class="about-text">
-        <div class="section-label">Meet your coach</div>
-        <h2 class="h2">Your biology.<br>Your bloodwork.<br><em>Your blueprint.</em></h2>
-        <p>I built this practice because the medical system did not give my wife the answers she needed when her Hashimoto's diagnosis came. Years of being told her labs looked fine while she felt anything but. Years of watching her get bounced between specialists who never went upstream of her TSH.</p>
-        <p>That experience taught me what the gap actually looks like from the inside. It is also what cracked open the work I do now: reading bloodwork through a functional lens, finding what is upstream of the symptoms, and building a protocol around real biology instead of guessing.</p>
-        <p>The method is simple. Read the data. Respect the biology. Build the plan around your real life. No template plans. No copy-paste protocols. A coach who reads the data, makes the call, and stays in the work with you.</p>
-        <p class="signature">Whether you are stepping out of an autoimmune flare, walking through perimenopause, or rebuilding after years of being dismissed, the same method holds. We start with the data.</p>
-        <div class="creds">
-          <div class="cred-pill">AFAA Level 1 Health Coach</div>
-          <div class="cred-pill">NASM Certified</div>
-          <div class="cred-pill">200+ Clients</div>
-          <div class="cred-pill">15 Years</div>
-        </div>
-
-        <!-- P1.2 · HONEST-AUTHORITY BLOCK -->
-        <div class="honest-authority">
-          <span class="clabel">A note before you keep reading</span>
-          <p>I am not a physician, and I don't pretend to be one. I don't diagnose, treat, or change your medications. I read your bloodwork through a functional lens, build the protocol around it, and work alongside your medical team, not instead of them. My clients' best outcomes happened because their doctor and I were looking at the same data.</p>
+    <div class="about-inner">
+      <div class="about-visual">Farren Brown<br>Founder & Head Coach</div>
+      <div class="about-body">
+        <p class="eyebrow">Meet your coach</p>
+        <h2>Your biology. Your bloodwork. Your blueprint.</h2>
+        <p>I built this practice because the medical system did not give my wife the answers she needed when her Hashimoto's diagnosis came. Years of being told her labs looked fine while she felt anything but. That experience cracked open the work I do now: reading bloodwork through a functional lens, finding what is upstream of the symptoms, and building the protocol around real biology.</p>
+        <p>I read your data. I make the call. I stay in the work with you. I'm not a physician, and I don't pretend to be one. I don't diagnose, treat, or change your medications. I work alongside your medical team, not instead of them. My clients' best outcomes happened because their doctor and I were looking at the same data.</p>
+        <div class="credentials">
+          <div class="credential">AFAA Level 1 Health Coach</div>
+          <div class="credential">NASM Certified</div>
+          <div class="credential">200+ Clients</div>
+          <div class="credential">15 Years in the Work</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ==== WHAT'S INCLUDED ==== -->
-<section class="included">
+<!-- OFFER STACK -->
+<section class="offer-stack">
   <div class="container">
-    <div class="section-label" style="text-align:center; display:block;">What's included</div>
-    <h2 class="h2" style="text-align:center;">The full <em>build.</em></h2>
-    <p class="lede">Every plan is structured around the same proven framework. Every client gets all of it.</p>
-    <div class="feature-grid">
-      <div class="feature">
-        <div class="feature-icon">B</div>
-        <h4>Bloodwork interpretation</h4>
-        <p>Every marker read against our in-house functional reference ranges. So you finally see what is upstream of how you have been feeling.</p>
+    <p class="eyebrow">What's included</p>
+    <h2>The full build.</h2>
+    <p class="lead">Every plan is structured around the same proven framework. Every client gets all of it.</p>
+    <div class="stack-container">
+      <div class="stack-header">Your complete Wesnoski build</div>
+
+      <div class="stack-row">
+        <div class="stack-check">✓</div>
+        <div class="stack-item">
+          <h4>Bloodwork interpretation against functional ranges</h4>
+          <p>Every marker read against our in-house functional ranges. See what's upstream of how you have been feeling.</p>
+        </div>
+        <div class="stack-value">$1,800 value</div>
       </div>
-      <div class="feature">
-        <div class="feature-icon">P</div>
-        <h4>Personalized protocol</h4>
-        <p>Training, nutrition, supplementation, lifestyle, all tailored to your phase and your case. Not a template, not someone else's plan with your name on it.</p>
+
+      <div class="stack-row">
+        <div class="stack-check">✓</div>
+        <div class="stack-item">
+          <h4>Personalized protocol build</h4>
+          <p>Training, nutrition, supplementation, lifestyle. Tailored to your phase and your case. Not a template.</p>
+        </div>
+        <div class="stack-value">$2,500 value</div>
       </div>
-      <div class="feature">
-        <div class="feature-icon">C</div>
-        <h4>Check-ins in-app</h4>
-        <p>Weekly or bi-weekly structured reviews of your biofeedback. Protocol adjusted as your body shifts. No month-long detours.</p>
+
+      <div class="stack-row">
+        <div class="stack-check">✓</div>
+        <div class="stack-item">
+          <h4>Weekly or bi-weekly structured check-ins</h4>
+          <p>Structured biofeedback reviews. Protocol adjusted as your body shifts. No month-long detours.</p>
+        </div>
+        <div class="stack-value">$3,600 value</div>
       </div>
-      <div class="feature">
-        <div class="feature-icon">D</div>
-        <h4>Direct access</h4>
-        <p>Between calls, in the coaching app. When something shifts on a Tuesday, you bring it to me Tuesday. No two-week silence.</p>
+
+      <div class="stack-row">
+        <div class="stack-check">✓</div>
+        <div class="stack-item">
+          <h4>Direct in-app access to Farren</h4>
+          <p>Between calls, in the coaching app. When something shifts on a Tuesday, bring it to me Tuesday.</p>
+        </div>
+        <div class="stack-value">$600 value</div>
       </div>
-      <div class="feature">
-        <div class="feature-icon">L</div>
-        <h4>Live office hours</h4>
-        <p>Twice a month. Real-time troubleshooting alongside the rest of the coaching team. More angles on your case than any one call delivers.</p>
+
+      <div class="stack-row">
+        <div class="stack-check">✓</div>
+        <div class="stack-item">
+          <h4>Twice-monthly live office hours</h4>
+          <p>Real-time troubleshooting with the coaching team. More angles on your case than any one call delivers.</p>
+        </div>
+        <div class="stack-value">$1,000 value</div>
       </div>
-      <div class="feature">
-        <div class="feature-icon">C</div>
-        <h4>Community</h4>
-        <p>An active group of men and women doing the same work, walking each other through the rebuild. You are not doing this alone.</p>
+
+      <div class="stack-row">
+        <div class="stack-check">✓</div>
+        <div class="stack-item">
+          <h4>Private community access</h4>
+          <p>Active group of men and women doing the same work. You are not doing this alone.</p>
+        </div>
+        <div class="stack-value">$500 value</div>
+      </div>
+
+      <div class="stack-total">
+        <div class="stack-total-label">Total value</div>
+        <div class="stack-total-value">$10,000</div>
+      </div>
+
+      <div class="stack-price">
+        <div class="stack-price-label">Ready to see if it's a fit?</div>
+        <div class="stack-price-value" style="font-size: 30px; margin-bottom: 20px;">Investment is case-by-case</div>
+        <a href="https://info.wesnoskicoaching.com/application" class="btn-primary btn-large" style="background: white; color: var(--terra-deep); margin-bottom: 16px;">Apply for the Rebuild</a>
+        <div class="stack-price-note">Flexible payment plans across every tier. Tier and program length covered on the discovery call.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ==== TESTIMONIALS ==== -->
-<section class="testimonials" id="testimonials">
+<!-- GUARANTEE -->
+<section class="guarantee-section">
   <div class="container">
-    <div class="section-label" style="text-align:center; display:block;">Real stories</div>
-    <h2 class="h2" style="text-align:center;">When the system underneath<br>finally <em>works.</em></h2>
-    <p class="lede">These are clients who came in feeling dismissed and rebuilt the system from the data underneath.</p>
-    <div class="testi-grid">
-
-      <div class="testi">
-        <div class="case-tag">Perimenopause · Performance Rebuild</div>
-        <blockquote>Week 10 of my rebuild and I couldn't be happier with where I'm at. HRV avg 70-80, up from 20-30s six weeks ago. RHR 45, steady down from 62 four weeks ago. Sleep solid 8 hours, not dealing with restlessness anymore. Mood at a 10. Muscles are waking up!</blockquote>
-        <div class="name">MELISSA J.</div>
-        <div class="stats">
-          <div class="stat">HRV 20s → 80</div>
-          <div class="stat">RHR 62 → 45</div>
-          <div class="stat">8hr sleep</div>
-        </div>
-      </div>
-
-      <div class="testi">
-        <div class="case-tag">Cycle Return · Sleep Restoration</div>
-        <blockquote>I came in four months with no period. CD3 today, second normal 30-day cycle in a row. No PMS. No mood swings. Nothing. Sleep has been amazing. No more restlessness. I'm sleeping soundly and deeply. It's been a very long time since I've felt this restored.</blockquote>
-        <div class="name">FEMALE CLIENT, 40s</div>
-        <div class="stats">
-          <div class="stat">Cycle back</div>
-          <div class="stat">Deep sleep</div>
-          <div class="stat">Drive returning</div>
-        </div>
-      </div>
-
-      <!-- P0.2 · COLITIS CARD · UPDATED LABEL (gated on physician verify) -->
-      <div class="testi">
-        <div class="case-tag">Colitis · Gut Blitz Recovery · Care coordinated alongside his GI team</div>
-        <blockquote>I came in with 10 bowel movements daily. Hospitalized. Colitis. Now I'm at almost zero bloating, bowel movements averaging 1.5 a day. Biggest win is feeling my digestive motor doing what it's supposed to do. My body is starting to absorb nutrients again.</blockquote>
-        <div class="name">GUT BLITZ CLIENT</div>
-        <div class="stats">
-          <div class="stat">10 BMs → 1.5/day</div>
-          <div class="stat">Hospital-free</div>
-          <div class="stat">Absorption back</div>
-        </div>
-      </div>
-
-      <div class="testi">
-        <div class="case-tag">Countless Doctors · No Answers</div>
-        <blockquote>Three days into the GI protocol and I'm not feeling crap after I eat. Huge relief. The thing I thought was impossible that now feels normal is eating without worrying about feeling like garbage. No more bloating. No more loose stools. No more being scared to eat.</blockquote>
-        <div class="name">CLIENT, 30s</div>
-        <div class="stats">
-          <div class="stat">Bloating gone</div>
-          <div class="stat">BMs normal</div>
-          <div class="stat">Food peace</div>
-        </div>
-      </div>
-
-      <!-- P0.2 · PPI CARD · UPDATED LABEL (gated on physician verify) -->
-      <div class="testi">
-        <div class="case-tag">Reflux Recovery · Omeprazole tapered with his physician's oversight</div>
-        <blockquote>This is day 5 without my prescription omeprazole. Been on it for years. The last few days have been the best I've felt GI-wise. Sunday had 1 BM. Monday had 2. No bloating. Today I was up at 1 AM for work and felt zero fatigue. Didn't feel tired once I got up.</blockquote>
-        <div class="name">CLIENT, 50s</div>
-        <div class="stats">
-          <div class="stat">Off years of PPI</div>
-          <div class="stat">No bloating</div>
-          <div class="stat">Zero fatigue</div>
-        </div>
-      </div>
-
-      <!-- P0.2 · STATIN CARD · UPDATED LABEL (gated on physician verify) -->
-      <div class="testi">
-        <div class="case-tag">Cardiovascular Rebuild · Statin discontinued by his physician after reviewing his updated panel</div>
-        <blockquote>Hey bro, I'm off the statins. It's all because you fixed everything from the inside out. I feel way better being off the med. Your system fucking works. I'm stoked. Will do a 6-month run off followed with bloodwork to see how things are being managed.</blockquote>
-        <div class="name">NAS O.</div>
-        <div class="stats">
-          <div class="stat">2.5 yrs on → off</div>
-          <div class="stat">9 weeks in</div>
-          <div class="stat">Inside-out fix</div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- P0.3 · STORIES DISCLAIMER -->
-    <p class="stories-disclaimer">Results shared are individual client experiences and are not typical or guaranteed. All changes to prescription medication described above were made by clients' own physicians. Coaching is educational in nature and is not medical advice, diagnosis, or treatment.</p>
-  </div>
-</section>
-
-<!-- ==== PROCESS ==== -->
-<section class="process backdrop-slot">
-    <div class="backdrop-overlay"></div>
-  <div class="container inner">
-    <div class="section-label" style="text-align:center; display:block;">How we work</div>
-    <h2 class="h2" style="text-align:center;">Three steps.<br><em>One rebuild.</em></h2>
-    <p class="lede">No quick fixes. No surface fluff. Built on data, run with discipline, held over time.</p>
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">i.</div>
-        <h3>The Audit</h3>
-        <p>We start with your bloodwork, your history, your symptoms, and your real life. Functional ranges, not standard ranges. Where you actually are.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">ii.</div>
-        <h3>The Plan</h3>
-        <p>You get a structured protocol built around your phase. Training, nutrition, supplementation, lifestyle, and the sequence to move through them.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">iii.</div>
-        <h3>The Work</h3>
-        <p>We meet weekly or bi-weekly. Your protocol adjusts as your biofeedback shifts. You are walked through the rebuild, not left with the plan.</p>
-      </div>
+    <p class="eyebrow" style="text-align: center;">The guarantee</p>
+    <h2 style="text-align: center;">Show up for the work. <em>Full refund if it doesn't move.</em></h2>
+    <div class="guarantee-card">
+      <div class="guarantee-badge">Section 7.3 · Written into every contract</div>
+      <p class="guarantee-headline">Complete 8 consecutive weeks at 100% compliance. If the protocol hasn't moved the marker we're working on, full refund of your coaching investment.</p>
+      <p class="guarantee-body">Compliance means 100% protocol execution, zero missed check-ins, and full engagement with the weekly feedback loops. Stay in the work, and I stay accountable to the outcome.</p>
     </div>
   </div>
 </section>
 
-<!-- ==== P1.1 · FAQ · BUBBLE ACCORDION ==== -->
+<!-- COMPARISON TABLE -->
+<section class="comparison">
+  <div class="container">
+    <p class="eyebrow">Why this is different</p>
+    <h2>Wesnoski Coaching versus the alternatives.</h2>
+    <p class="lead">Most people considering this are choosing between three things. Here's the honest side-by-side.</p>
+    <div class="compare-table">
+      <table>
+        <thead>
+          <tr>
+            <th>What you get</th>
+            <th class="wesnoski-col">Wesnoski</th>
+            <th>Standard MD Visit</th>
+            <th>Group Coaching App</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="feature">Full functional bloodwork panel interpretation</td>
+            <td class="check">✓</td>
+            <td class="x">Standard ranges only</td>
+            <td class="x">Not included</td>
+          </tr>
+          <tr>
+            <td class="feature">1-on-1 with the founder-coach</td>
+            <td class="check">✓</td>
+            <td class="x">15-min visit if lucky</td>
+            <td class="x">Group only</td>
+          </tr>
+          <tr>
+            <td class="feature">Protocol adjusted weekly or biweekly</td>
+            <td class="check">✓</td>
+            <td class="x">Every 6 months</td>
+            <td class="x">Static plans</td>
+          </tr>
+          <tr>
+            <td class="feature">Stays in the case for 3-12 months</td>
+            <td class="check">✓</td>
+            <td class="x">Per-visit basis</td>
+            <td class="x">Self-serve</td>
+          </tr>
+          <tr>
+            <td class="feature">Works alongside your physician</td>
+            <td class="check">✓</td>
+            <td class="x">N/A</td>
+            <td class="x">No collab</td>
+          </tr>
+          <tr>
+            <td class="feature">Contract-backed refund guarantee</td>
+            <td class="check">✓</td>
+            <td class="x">None</td>
+            <td class="x">None</td>
+          </tr>
+          <tr class="price-row">
+            <td class="feature">The result</td>
+            <td class="check" style="color: var(--dark);">Full rebuild in 3-12 months</td>
+            <td class="x" style="color: var(--dark);">Symptom triage, indefinitely</td>
+            <td class="x" style="color: var(--dark);">Generic plans, no adjustment</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ (5 questions, 3 sentences max) -->
 <section class="faq" id="faq">
   <div class="container">
-    <div class="section-label" style="text-align:center; display:block;">Questions before you apply</div>
-    <h2 class="h2" style="text-align:center;">Real questions. Straight <em>answers.</em></h2>
-
-    <div class="faq-wrap">
-
-      <details class="faq-bubble">
-        <summary>What does coaching cost? <span class="faq-toggle">+</span></summary>
-        <div class="faq-answer">
-          <p>This is a serious 1-on-1 engagement, not an app subscription. Expect a four-figure commitment over the course of our work together. Exact investment depends on your case and program length, and we cover it transparently on the call. If budget is the primary constraint right now, the free content library is the right place to start.</p>
-        </div>
+    <p class="eyebrow">Questions before you apply</p>
+    <h2>Straight answers.</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-question">What does coaching cost?</summary>
+        <div class="faq-answer">This is a serious 1-on-1 engagement, not an app subscription. Investment is case-by-case and depends on the tier of access and program length that fits your situation. Exact numbers are covered transparently on the discovery call.</div>
       </details>
-
-      <details class="faq-bubble">
-        <summary>Are you a doctor? <span class="faq-toggle">+</span></summary>
-        <div class="faq-answer">
-          <p>No. And I'll never position myself as one. I'm a certified health coach. My practice spans functional bloodwork interpretation, hormone recalibration, gut rebuilds, metabolic work, and day-to-day protocol design across the MARCH method. I don't diagnose or prescribe, and any medication decision belongs to you and your physician.</p>
-          <p>What I bring is the layer most medical visits don't have time for: reading your full panel against functional ranges, connecting the pattern to how you actually feel, and building the protocol that fits.</p>
-        </div>
+      <details class="faq-item">
+        <summary class="faq-question">Are you a doctor?</summary>
+        <div class="faq-answer">No. I'm a certified health coach and I never position myself as a physician. I don't diagnose or prescribe. Any medication decision belongs to you and your physician.</div>
       </details>
-
-      <details class="faq-bubble">
-        <summary>My doctor already said my labs are normal. How is this different? <span class="faq-toggle">+</span></summary>
-        <div class="faq-answer">
-          <p>Standard reference ranges are built from population averages, including sick populations. Functional ranges ask a different question: not "are you within two standard deviations of everyone else," but "is this marker where a thriving body runs." A TSH of 4.2 is "normal" and can still explain your fatigue, hair loss, and cold hands. That gap is the entire practice.</p>
-        </div>
+      <details class="faq-item">
+        <summary class="faq-question">My doctor said my labs are normal. How is this different?</summary>
+        <div class="faq-answer">Standard reference ranges are built from population averages, including sick populations. Functional ranges ask a different question: is this marker where a thriving body runs. A TSH of 4.2 is "normal" and can still explain your fatigue, hair loss, and cold hands.</div>
       </details>
-
-      <details class="faq-bubble">
-        <summary>Do I need to already have bloodwork? <span class="faq-toggle">+</span></summary>
-        <div class="faq-answer">
-          <p>No. If you have recent labs, we start there. If you don't, we have testing partners across North America and the UK who can run the exact panel your case needs. Either way, your first draw actually answers the right questions instead of the standard minimum.</p>
-        </div>
+      <details class="faq-item">
+        <summary class="faq-question">What if it doesn't work?</summary>
+        <div class="faq-answer">Section 7.3 of every contract is a conditional performance guarantee. Complete 8 consecutive weeks at 100% compliance and if the marker we're working on hasn't moved, full refund of your coaching investment. Proof of compliance provided on request.</div>
       </details>
-
-      <details class="faq-bubble">
-        <summary>How long until I feel different? <span class="faq-toggle">+</span></summary>
-        <div class="faq-answer">
-          <p>Most clients report meaningful shifts in energy, digestion, or sleep within the first 4 to 8 weeks, because we fix the floor first. Full hormonal recalibration takes longer. That's biology, not marketing. Anyone promising a 2-week hormone fix is selling you the thing that got you here.</p>
-        </div>
+      <details class="faq-item">
+        <summary class="faq-question">What happens after I apply?</summary>
+        <div class="faq-answer">I read every application personally. If it looks like a fit, you'll get a booking link within 48 hours for a real conversation with our Client Success Director. If it's not a fit, we'll tell you that too, and point you toward what will help.</div>
       </details>
-
-      <details class="faq-bubble">
-        <summary>What happens after I apply? <span class="faq-toggle">+</span></summary>
-        <div class="faq-answer">
-          <p>I read every application personally. If it looks like a fit, you'll get a booking link within 48 hours for a real conversation with our Client Success Director. That call is where we confirm the case is one we can serve and where we walk through the program together. No pressure pitch. If it's not a fit, we'll tell you that too, and point you toward what will actually help.</p>
-        </div>
-      </details>
-
     </div>
   </div>
 </section>
 
-<!-- ==== FINAL CTA ==== -->
-<section class="final backdrop-slot" id="apply">
-    <div class="backdrop-overlay"></div>
-  <div class="container inner narrow">
-    <div class="section-label">Get started</div>
-    <h2 class="h2">A year from now<br>you will be glad<br><em>you started today.</em></h2>
-    <p>Apply to work with me. No commitment. The first call is a chance for you to be heard, for us to see if this is the right fit, and to map what comes next.</p>
-    <a href="https://info.wesnoskicoaching.com/application" class="btn large">Apply To Work With Farren</a>
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="container">
+    <div class="scarcity"><span class="scarcity-dot"></span>12 new clients per quarter. Applications reviewed weekly.</div>
+    <p class="eyebrow">Get started</p>
+    <h2>A year from now you will be glad <em>you started today.</em></h2>
+    <p class="lead">No commitment. The first call is a chance for you to be heard and for us to see if this is the right fit.</p>
+    <a href="https://info.wesnoskicoaching.com/application" class="btn-primary btn-large">Apply for the Rebuild</a>
   </div>
 </section>
 
-<!-- ==== FOOTER ==== -->
-<footer class="footer">
-  <div class="container">
+<footer>
+  <div class="footer-inner">
     <div class="footer-grid">
-      <div class="footer-col">
-        <div class="wordmark">wesnoski coaching</div>
-        <p class="footer-tag">1-on-1 functional health coaching for hormones, gut, energy, and the body that finally feels like yours. Built on the MARCH Method.</p>
+      <div>
+        <div style="font-family: Georgia, serif; font-size: 20px; margin-bottom: 16px; color: white;">wesnoski coaching</div>
+        <p class="brand-blurb">1-on-1 functional health coaching for hormones, gut, energy, and the body that finally feels like yours. Built on the MARCH Method.</p>
       </div>
-      <div class="footer-col">
+      <div>
         <h5>Practice</h5>
         <a href="#method">The Method</a>
         <a href="#about">About Farren</a>
-        <a href="#testimonials">Client Stories</a>
+        <a href="#stories">Client Stories</a>
         <a href="#faq">FAQ</a>
         <a href="https://info.wesnoskicoaching.com/application">Apply</a>
       </div>
-      <div class="footer-col">
+      <div>
         <h5>Learn</h5>
         <a href="https://www.youtube.com/@wesnoski.coaching">YouTube</a>
         <a href="https://whop.com/wesnoski-coaching-9">Community</a>
         <a href="https://wesnoskicoaching.github.io/links/">All links</a>
       </div>
-      <div class="footer-col">
+      <div>
         <h5>Contact</h5>
         <a href="mailto:farren@wesnoskicoaching.com">farren@wesnoskicoaching.com</a>
         <a href="https://share.google/i8pB1SQj0vwmXqdMk">Langley, BC</a>
       </div>
     </div>
-
-    <!-- P0.4 · FOOTER LEGAL DISCLAIMER -->
-    <p class="footer-disclaimer">Wesnoski Coaching provides health and performance coaching for educational purposes. Services are not medical advice, diagnosis, or treatment and are not a substitute for care from a licensed physician. Client results shared on this site are individual experiences and are not typical or guaranteed. Never start, stop, or change prescription medication without your physician.</p>
-
-    <div class="footer-bottom">
-      <!-- P0.4 · ENTITY CORRECTION: Ltd → Inc. -->
+    <div class="footer-disclaimer">
+      Wesnoski Coaching provides health and performance coaching for educational purposes. Services are not medical advice, diagnosis, or treatment and are not a substitute for care from a licensed physician. Client results shared on this site are individual experiences and are not typical or guaranteed. Never start, stop, or change prescription medication without your physician.
+    </div>
+    <div class="footer-copy">
       <div>© 2026 Wesnoski Coaching Inc. All Rights Reserved.</div>
-      <div>
-        <a href="/terms.html">Terms</a> &middot;
-        <a href="/privacy.html">Privacy</a>
-      </div>
+      <div><a href="https://www.wesnoskicoaching.com/terms.html" style="display: inline; padding: 0;">Terms</a> · <a href="https://www.wesnoskicoaching.com/privacy.html" style="display: inline; padding: 0;">Privacy</a></div>
     </div>
   </div>
 </footer>
