@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>The MARCH Assessment · Wesnoski Coaching</title>
+<meta name="description" content="A two-minute assessment to see which floor your rebuild most likely starts on. Educational, not a diagnosis.">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="assets/logo-180.png">
+<meta property="og:title" content="The MARCH Assessment · Wesnoski Coaching">
+<meta property="og:image" content="https://www.wesnoskicoaching.com/assets/og-card.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/logo-192.png" alt="Wesnoski Coaching"><span>wesnoski coaching</span></a>
+    <div class="nav-links">
+      <a href="index.html#method">The Method</a>
+      <a href="coaches.html">The Team</a>
+      <a href="reviews.html">Stories</a>
+      <a href="index.html#assessment">Free Assessment</a>
+      <a href="index.html#faq">FAQ</a>
+      <a class="btn" href="https://info.wesnoskicoaching.com/application">Apply for the Rebuild</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-hero dark">
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--gold-soft)">Free · two minutes</div>
+    <h1>The MARCH <em>Assessment.</em></h1>
+    <p class="lede">Most people chase hormones and thyroid first. We start at the floor and work up. Check every statement that sounds like you, and we'll show you where your rebuild most likely begins.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <form class="quiz" id="quiz">
+      <label class="q-item"><input type="checkbox" data-p="M"><span>I wake up tired even after a full night's sleep.</span></label>
+      <label class="q-item"><input type="checkbox" data-p="M"><span>My energy crashes in the afternoon and I lean on caffeine or sugar.</span></label>
+      <label class="q-item"><input type="checkbox" data-p="A"><span>I feel bloated, gassy, or heavy after meals.</span></label>
+      <label class="q-item"><input type="checkbox" data-p="A"><span>My digestion is unreliable: reflux, constipation, or loose stools.</span></label>
+      <label class="q-item"><input type="checkbox" data-p="R"><span>I feel wired but tired, and I struggle to switch off at night.</span></label>
+      <label class="q-item"><input type="checkbox" data-p="R"><span>Stress flattens me and I recover from it slowly.</span></label>
+      <label class="q-item"><input type="checkbox" data-p="C"><span>Cold hands and feet, thinning hair, low libido, or cycle changes.</span></label>
+      <label class="q-item"><input type="checkbox" data-p="C"><span>I've been told my thyroid or hormones are "normal" but I don't feel normal.</span></label>
+      <label class="q-item"><input type="checkbox" data-p="H"><span>I train but struggle to build or hold muscle.</span></label>
+      <label class="q-item"><input type="checkbox" data-p="H"><span>My body composition won't budge no matter what I do.</span></label>
+      <div class="quiz-actions"><button type="button" class="btn large" id="seeReading">See my reading</button></div>
+    </form>
+
+    <div class="quiz-result" id="result" hidden>
+      <div class="qr-phase"><span class="qr-letter" id="qrLetter">M</span></div>
+      <div class="eyebrow" id="qrPhase">Your likely starting floor</div>
+      <h3 id="qrTitle">Mitochondria</h3>
+      <p class="qr-msg" id="qrMsg"></p>
+      <a class="btn large" href="https://info.wesnoskicoaching.com/application">Bring this to your assessment</a>
+      <p class="qr-note">This assessment is educational and is not a medical diagnosis or treatment. It reflects patterns, not a clinical finding. Any symptom or medication question belongs with your physician. We read your full picture, against functional ranges, on your call.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div><a class="brand" href="index.html"><img src="assets/logo-192.png" alt=""><span>wesnoski coaching</span></a><p class="fp">1-on-1 functional health coaching for hormones, gut, energy, and the body that finally feels like yours.</p></div>
+      <div><h4>Practice</h4><a href="index.html#method">The Method</a><a href="coaches.html">The Team</a><a href="reviews.html">Stories</a><a href="index.html#faq">FAQ</a></div>
+      <div><h4>Assess</h4><a href="assessment.html">MARCH Assessment</a><a href="calculator.html">TG:HDL Calculator</a><a href="https://info.wesnoskicoaching.com/application">Apply</a></div>
+      <div><h4>Contact</h4><a href="#">farren@wesnoskicoaching.com</a><a href="#">Langley, BC</a></div>
+    </div>
+    <p class="legal">Wesnoski Coaching provides health and performance coaching for educational purposes. Services are not medical advice, diagnosis, or treatment. Client results are individual experiences and are not typical or guaranteed. © 2026 Wesnoski Coaching Inc. All Rights Reserved.</p>
+    <div class="foot-legal-links"><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a><a href="disclaimer.html">Medical Disclaimer</a></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var phases={
+    M:{t:"Mitochondria",m:"Your rebuild most likely starts at the floor: cellular energy. Blood sugar, circadian rhythm, and mineral status come first. If the cells can't make power, nothing downstream holds. This is where we'd begin."},
+    A:{t:"Absorption & Detox",m:"Your rebuild most likely starts with absorption. Stomach acid, bile flow, and digestion, so your body actually uses what you take in and clears what it doesn't. Supplements only work once this does."},
+    R:{t:"Resilience",m:"Your rebuild most likely starts with resilience. Cortisol rhythm and nervous-system load. We pull you out of survival mode first, because that's what frees the bandwidth to rebuild."},
+    C:{t:"Cycle & Signal",m:"Your answers point toward hormones and thyroid. Here's the difference: we confirm the floor underneath holds first, then work the signal, so the gains don't come undone in a few weeks."},
+    H:{t:"Healthspan & Strength",m:"Your answers point toward strength and body composition. Once the system underneath is actually working, this is the phase where it compounds into lean tissue and longevity."}
+  };
+  var order=["M","A","R","C","H"];
+  document.querySelectorAll('.q-item').forEach(function(l){
+    l.addEventListener('click',function(){ setTimeout(function(){ l.classList.toggle('on', l.querySelector('input').checked); },0); });
+  });
+  document.getElementById('seeReading').addEventListener('click',function(){
+    var counts={M:0,A:0,R:0,C:0,H:0}, any=false;
+    document.querySelectorAll('.q-item input').forEach(function(i){ if(i.checked){counts[i.getAttribute('data-p')]++; any=true;} });
+    var res=document.getElementById('result');
+    var floor;
+    if(!any){ floor='M'; }
+    else { var max=Math.max(counts.M,counts.A,counts.R,counts.C,counts.H);
+      floor=order.find(function(p){return counts[p]===max;}); }
+    document.getElementById('qrLetter').textContent=floor;
+    document.getElementById('qrTitle').textContent=phases[floor].t;
+    document.getElementById('qrMsg').textContent=(any?'':'Nothing flagged strongly, so we start at the true floor by default. ')+phases[floor].m;
+    res.hidden=false; res.scrollIntoView({behavior:'smooth',block:'center'});
+  });
+})();
+</script>
+</body>
+</html>

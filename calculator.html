@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>TG:HDL Calculator · Wesnoski Coaching</title>
+<meta name="description" content="Calculate your triglyceride-to-HDL ratio, an early read on insulin resistance. Educational, not a diagnosis.">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="assets/logo-180.png">
+<meta property="og:title" content="TG:HDL Calculator · Wesnoski Coaching">
+<meta property="og:image" content="https://www.wesnoskicoaching.com/assets/og-card.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/logo-192.png" alt="Wesnoski Coaching"><span>wesnoski coaching</span></a>
+    <div class="nav-links">
+      <a href="index.html#method">The Method</a>
+      <a href="coaches.html">The Team</a>
+      <a href="reviews.html">Stories</a>
+      <a href="index.html#assessment">Free Assessment</a>
+      <a href="index.html#faq">FAQ</a>
+      <a class="btn" href="https://info.wesnoskicoaching.com/application">Apply for the Rebuild</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-hero dark">
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--gold-soft)">Free · one number</div>
+    <h1>The TG:HDL <em>Calculator.</em></h1>
+    <p class="lede">Your triglyceride-to-HDL ratio is one of the clearest early reads on insulin resistance and metabolic health, and it's often hiding in bloodwork you already have. Enter your two numbers to see where you land.</p>
+  </div>
+</div>
+
+<section class="bg-terra">
+  <div class="wrap">
+    <div class="calc">
+      <div class="calc-units">
+        <button class="unit is-active" data-unit="mg">mg/dL <span>US</span></button>
+        <button class="unit" data-unit="mmol">mmol/L <span>Canada / UK</span></button>
+      </div>
+      <div class="calc-fields">
+        <label>Triglycerides<input id="tg" type="number" inputmode="decimal" placeholder="e.g. 110"></label>
+        <label>HDL cholesterol<input id="hdl" type="number" inputmode="decimal" placeholder="e.g. 55"></label>
+      </div>
+      <button class="btn large calc-go" id="calcBtn">Calculate my ratio</button>
+      <div class="calc-result" id="calcResult" hidden>
+        <div class="cr-ratio"><span id="crNum">–</span><span class="cr-of">TG : HDL</span></div>
+        <div class="cr-band" id="crBand">–</div>
+        <p class="cr-msg" id="crMsg"></p>
+        <a class="btn large" href="https://info.wesnoskicoaching.com/application">Bring this to your assessment</a>
+        <p class="cr-note">This is an educational screen, not a diagnosis. A ratio is a signal, not a clinical finding, and any result should be read alongside your full panel and your physician's input. Bring your number to your assessment and we'll read it against the rest of your bloodwork.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div><a class="brand" href="index.html"><img src="assets/logo-192.png" alt=""><span>wesnoski coaching</span></a><p class="fp">1-on-1 functional health coaching for hormones, gut, energy, and the body that finally feels like yours.</p></div>
+      <div><h4>Practice</h4><a href="index.html#method">The Method</a><a href="coaches.html">The Team</a><a href="reviews.html">Stories</a><a href="index.html#faq">FAQ</a></div>
+      <div><h4>Assess</h4><a href="assessment.html">MARCH Assessment</a><a href="calculator.html">TG:HDL Calculator</a><a href="https://info.wesnoskicoaching.com/application">Apply</a></div>
+      <div><h4>Contact</h4><a href="#">farren@wesnoskicoaching.com</a><a href="#">Langley, BC</a></div>
+    </div>
+    <p class="legal">Wesnoski Coaching provides health and performance coaching for educational purposes. Services are not medical advice, diagnosis, or treatment. Client results are individual experiences and are not typical or guaranteed. © 2026 Wesnoski Coaching Inc. All Rights Reserved.</p>
+    <div class="foot-legal-links"><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a><a href="disclaimer.html">Medical Disclaimer</a></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var unit='mg';
+  document.querySelectorAll('.unit').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('.unit').forEach(function(u){u.classList.remove('is-active')});
+      this.classList.add('is-active'); unit=this.getAttribute('data-unit');
+    });
+  });
+  document.getElementById('calcBtn').addEventListener('click',function(){
+    var tg=parseFloat(document.getElementById('tg').value);
+    var hdl=parseFloat(document.getElementById('hdl').value);
+    var res=document.getElementById('calcResult');
+    if(!(tg>0)||!(hdl>0)){ res.hidden=false; document.getElementById('crNum').textContent='—';
+      document.getElementById('crBand').textContent='Enter both values'; document.getElementById('crBand').className='cr-band';
+      document.getElementById('crMsg').textContent='Add your triglycerides and HDL to see your ratio.'; return; }
+    var ratio=tg/hdl;
+    var opt = unit==='mg' ? 2.0 : 0.87;
+    var mod = unit==='mg' ? 3.0 : 1.33;
+    var band, cls, msg;
+    if(ratio < opt){ band='Optimal'; cls='ok';
+      msg='Your ratio sits in the optimal range, a sign of healthy insulin sensitivity. Worth confirming against your full panel, and holding it there.'; }
+    else if(ratio < mod){ band='Moderate'; cls='mid';
+      msg='Your ratio is drifting. Often an early signal of insulin resistance building before glucose looks abnormal. This is exactly the kind of upstream marker we work on.'; }
+    else { band='High'; cls='hi';
+      msg='Your ratio is elevated, a strong early marker of insulin resistance. It is a question worth bringing to a proper assessment, read alongside the rest of your bloodwork.'; }
+    document.getElementById('crNum').textContent=ratio.toFixed(1);
+    var bandEl=document.getElementById('crBand'); bandEl.textContent=band; bandEl.className='cr-band '+cls;
+    document.getElementById('crMsg').textContent=msg;
+    res.hidden=false; res.scrollIntoView({behavior:'smooth',block:'center'});
+  });
+})();
+</script>
+</body>
+</html>
