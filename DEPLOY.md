@@ -1,5 +1,17 @@
 # Website update, 2026-08-29
 
+> **Re-upload, 2026-08-29 (fix).** The first upload shipped a broken hero on all six
+> guides. The magnet used `class="hero"` and the site stylesheet sets
+> `.hero{display:flex;min-height:90vh}`, so the badge, headline and deck laid out
+> side by side in strips instead of stacked. Renamed to `.mhero` and `.mcta`.
+> `.btn` still collides on purpose, that is what makes the Apply button look native.
+> Re-upload the six guide pages. `resources.html` and `sitemap.xml` are unchanged
+> but re-uploading them is harmless.
+>
+> **Also delete `DEPLOY.md` from the repo.** It went up with the first batch and is
+> now public at wesnoskicoaching.com/DEPLOY.md. It is internal notes, not secrets,
+> but it does not belong on the live site.
+
 **Repo:** `WesnoskiCoaching/main-site`  
 **Upload page:** https://github.com/WesnoskiCoaching/main-site/upload/main
 
