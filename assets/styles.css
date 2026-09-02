@@ -338,3 +338,25 @@ footer a:hover{color:#fff}
   .ticker .num{font-size:38px}
   .calc{padding:24px 18px}
 }
+
+/* ---- cookie consent banner (UK/EEA) ---- */
+.cc{position:fixed;left:0;right:0;bottom:0;z-index:200;background:var(--cream);
+  border-top:1px solid var(--border-strong);box-shadow:0 -12px 34px rgba(74,46,31,.16);
+  transform:translateY(100%);transition:transform .32s cubic-bezier(.2,.7,.2,1)}
+.cc.on{transform:translateY(0)}
+.cc-in{max-width:1120px;margin:0 auto;padding:20px 24px;display:flex;align-items:center;
+  gap:26px;text-align:left}
+.cc-t{font-size:14px;line-height:1.6;color:var(--text-soft);margin:0;flex:1}
+.cc-t a{color:var(--terracotta);text-decoration:none;border-bottom:1px solid rgba(201,123,92,.4)}
+.cc-t a:hover{color:var(--copper)}
+.cc-b{display:flex;gap:10px;flex:0 0 auto}
+.cc-b .btn{padding:12px 26px;font-size:14px}
+.cc-b .btn.ghost{background:transparent;border:1px solid var(--border-strong);color:var(--text-soft)}
+.cc-b .btn.ghost:hover{background:rgba(74,46,31,.06);color:var(--text)}
+.cc .btn:focus-visible{outline:2px solid var(--terracotta);outline-offset:2px}
+@media(max-width:760px){
+  .cc-in{flex-direction:column;align-items:stretch;gap:16px;padding:18px 22px}
+  .cc-b{flex-direction:row}
+  .cc-b .btn{flex:1;text-align:center}
+}
+@media(prefers-reduced-motion:reduce){.cc{transition:none}}
