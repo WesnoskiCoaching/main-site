@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>The App &middot; Your plan, labs and check-ins in one place | Wesnoski Coaching</title>
+<meta name="description" content="Every plan, lab panel, check-in and message in one place. The Wesnoski Coaching app runs on the same client file your coach works from.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Wesnoski Coaching App">
+<meta property="og:description" content="Every plan, lab panel, check-in and message in one place, running on the same file your coach works from.">
+<meta property="og:image" content="https://www.wesnoskicoaching.com/assets/og-card.png">
+<meta property="og:url" content="https://www.wesnoskicoaching.com/app.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://www.wesnoskicoaching.com/app.html">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="assets/logo-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/logo-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1ZF5HKTEET"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-1ZF5HKTEET');
+</script>
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2035505933883732');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2035505933883732&ev=PageView&noscript=1"
+/></noscript>
+<script>
+function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"833bd817e4a8a2272ec1f019f1ea2df9"})});
+</script>
+<style>
+/* ---------- APP PAGE, scoped ---------- */
+/* App UI tokens mirror the live client portal white-label config. */
+.appui{
+  --a-accent:#C2724E; --a-accent-h:#A85E3D;
+  --a-bg:#FAF6F1; --a-surface:#FFFFFF; --a-elev:#FBF7F2;
+  --a-border:#ECE2D6; --a-head:#2A1F18; --a-body:#5A4A3D; --a-muted:#948574;
+  --a-side:#272620;
+  text-align:left; font-family:var(--sans); line-height:1.45;
+}
+
+/* hero */
+.app-hero{background:var(--grad-dark);color:#fff;padding:104px 0 96px;overflow:hidden}
+.app-hero .split{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;text-align:left}
+.app-hero h1{font-size:clamp(36px,4.6vw,58px);color:#fff;margin-top:14px}
+.app-hero h1 em{font-style:italic;color:var(--gold-soft)}
+.app-hero p.lede{margin:20px 0 0;color:rgba(245,232,218,.78);max-width:none}
+.app-hero .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
+.app-hero .microline{margin-top:22px;font-size:13px;color:rgba(245,232,218,.5)}
+.app-hero .microline a{color:var(--gold-soft);text-decoration:none;border-bottom:1px solid rgba(228,201,137,.35)}
+.app-hero .microline a:hover{color:#fff}
+.hero-phones{display:flex;justify-content:center;align-items:flex-end;gap:0;position:relative}
+.hero-phones .dev{flex:0 0 auto}
+.hero-phones .dev.back{transform:scale(.86) translateX(38%) rotate(6deg);opacity:.62;filter:saturate(.85)}
+@media(max-width:900px){
+  .app-hero{padding:80px 0 72px}
+  .app-hero .split{grid-template-columns:1fr;gap:48px;text-align:center}
+  .app-hero p.lede{margin-left:auto;margin-right:auto;max-width:560px}
+  .app-hero .hero-cta{justify-content:center}
+  .hero-phones .dev.back{display:none}
+}
+
+/* device frame */
+.dev{width:268px;background:#0c0c0e;border-radius:38px;padding:9px;
+  box-shadow:0 26px 60px rgba(0,0,0,.42);position:relative}
+.dev::before{content:"";position:absolute;top:19px;left:50%;transform:translateX(-50%);
+  width:78px;height:22px;border-radius:100px;background:#0c0c0e;z-index:3}
+.dev .scr{background:var(--a-bg);border-radius:30px;overflow:hidden;position:relative}
+@media(max-width:420px){.dev{width:250px}}
+
+/* app chrome */
+.a-status{display:flex;justify-content:space-between;align-items:center;
+  padding:11px 20px 4px;font-size:11px;font-weight:600;color:var(--a-head)}
+.a-status .sig{display:flex;gap:4px;align-items:center}
+.a-status .bar{width:3px;background:var(--a-head);border-radius:1px}
+.a-status .batt{width:19px;height:10px;border:1.2px solid var(--a-head);border-radius:3px;position:relative;opacity:.85}
+.a-status .batt::after{content:"";position:absolute;inset:1.5px;right:5px;background:var(--a-head);border-radius:1px}
+
+.a-top{display:flex;align-items:center;justify-content:space-between;padding:12px 18px 10px}
+.a-brand{display:flex;align-items:center;gap:8px}
+.a-brand img{width:24px;height:24px;border-radius:7px;display:block}
+.a-brand span{font-size:12px;font-weight:600;color:var(--a-head);letter-spacing:-.01em}
+.a-avatar{width:26px;height:26px;border-radius:50%;background:linear-gradient(145deg,#C2724E,#A85E3D);
+  color:#fff;font-size:10px;font-weight:600;display:flex;align-items:center;justify-content:center}
+
+.a-body{padding:4px 18px 16px}
+.a-hello{font-size:19px;font-weight:600;color:var(--a-head);letter-spacing:-.02em;line-height:1.2}
+.a-sub{font-size:11.5px;color:var(--a-muted);margin-top:3px}
+
+.a-card{background:var(--a-surface);border:1px solid var(--a-border);border-radius:14px;
+  padding:13px 14px;margin-top:12px}
+.a-card.tint{background:var(--a-elev)}
+.a-ctag{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--a-accent)}
+.a-ctitle{font-size:14px;font-weight:600;color:var(--a-head);margin-top:5px;letter-spacing:-.01em}
+.a-cmeta{font-size:10.5px;color:var(--a-muted);margin-top:2px}
+.a-list{margin-top:10px;border-top:1px solid var(--a-border);padding-top:9px}
+.a-row{display:flex;justify-content:space-between;align-items:center;gap:9px;padding:5px 0;font-size:11.5px;color:var(--a-body)}
+.a-row .rx{color:var(--a-muted);font-variant-numeric:tabular-nums;font-size:10.5px}
+.a-row .tick{width:13px;height:13px;border-radius:4px;border:1.4px solid var(--a-border);flex:0 0 auto}
+.a-row .tick.on{background:var(--a-accent);border-color:var(--a-accent);position:relative}
+.a-row .tick.on::after{content:"";position:absolute;left:4px;top:1.5px;width:3.5px;height:7px;
+  border:solid #fff;border-width:0 1.6px 1.6px 0;transform:rotate(42deg)}
+.a-row .nm{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+.a-ring{display:flex;align-items:center;gap:12px}
+.a-ring svg{flex:0 0 auto}
+.a-ringnum{font-size:22px;font-weight:600;color:var(--a-head);letter-spacing:-.02em}
+.a-ringlbl{font-size:10px;color:var(--a-muted);margin-top:1px;line-height:1.35}
+
+.a-btn{display:block;background:var(--a-accent);color:#fff;text-align:center;
+  font-size:12px;font-weight:600;padding:10px;border-radius:100px;margin-top:11px}
+
+.a-nav{display:flex;justify-content:space-around;align-items:center;background:#fff;
+  border-top:1px solid var(--a-border);padding:9px 4px 15px}
+.a-nav div{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:8.5px;
+  font-weight:500;color:var(--a-muted);letter-spacing:.01em}
+.a-nav div.on{color:var(--a-accent)}
+.a-nav .ic{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.7;
+  stroke-linecap:round;stroke-linejoin:round}
+
+/* labs rows */
+.a-lab{display:flex;align-items:center;gap:9px;padding:6px 0;font-size:11px;color:var(--a-body)}
+.a-lab .lname{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.a-lab .lval{font-variant-numeric:tabular-nums;font-weight:600;color:var(--a-head);font-size:11px}
+.a-lab .pip{width:7px;height:7px;border-radius:50%;flex:0 0 auto}
+.pip.ok{background:#6E8F6B}.pip.watch{background:#C9A84C}.pip.low{background:#C2724E}
+
+/* bar chart */
+.a-bars{display:flex;align-items:flex-end;gap:6px;height:52px;margin-top:12px}
+.a-bars i{flex:1;background:var(--a-border);border-radius:3px 3px 0 0;display:block}
+.a-bars i.hi{background:var(--a-accent)}
+.a-blabels{display:flex;gap:6px;margin-top:5px}
+.a-blabels span{flex:1;text-align:center;font-size:8.5px;color:var(--a-muted)}
+
+/* scale note */
+.mock-note{font-size:11px;color:var(--muted);text-align:center;margin-top:26px;letter-spacing:.01em}
+.app-hero .mock-note{color:rgba(245,232,218,.4)}
+
+/* three-up screens */
+.screen-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px;margin-top:52px;
+  justify-items:center;align-items:stretch}
+.screen-row .dev{height:100%}
+.screen-row .scr{height:572px;display:flex;flex-direction:column}
+.screen-row .a-body{flex:1 1 auto}
+.screen-row .a-nav{margin-top:auto}
+.screen-row>div{display:flex;flex-direction:column;align-items:center;height:100%}
+.screen-row .cap{text-align:center;margin-top:20px;max-width:280px}
+.screen-row .cap h3{font-size:20px;color:var(--warm-brown);margin-bottom:6px}
+.screen-row .cap p{font-size:13.5px;color:var(--text-soft);line-height:1.55}
+@media(max-width:920px){.screen-row{grid-template-columns:1fr;gap:56px}}
+
+/* desktop frame */
+.mac{max-width:820px;margin:52px auto 0;background:#0c0c0e;border-radius:14px;padding:9px 9px 0;
+  box-shadow:0 30px 70px rgba(74,46,31,.30)}
+.mac .bar{display:flex;gap:5px;padding:0 0 8px 4px}
+.mac .bar i{width:8px;height:8px;border-radius:50%;background:#3a3a3a;display:block}
+.mac .win{display:grid;grid-template-columns:150px 1fr;background:var(--a-bg);
+  border-radius:8px 8px 0 0;overflow:hidden;min-height:340px}
+.mac .side{background:var(--a-side);padding:16px 12px}
+.mac .side .sb{display:flex;align-items:center;gap:8px;font-size:11px;color:rgba(255,255,255,.55);
+  padding:7px 9px;border-radius:8px;margin-bottom:2px}
+.mac .side .sb.on{background:rgba(194,114,78,.22);color:#fff}
+.mac .side .sdot{width:5px;height:5px;border-radius:50%;background:currentColor;opacity:.7;flex:0 0 auto}
+.mac .side .slogo{display:flex;align-items:center;gap:8px;padding:2px 6px 16px}
+.mac .side .slogo img{width:22px;height:22px;border-radius:6px}
+.mac .side .slogo span{font-size:11px;font-weight:600;color:#fff}
+.mac .main{padding:20px 22px}
+.mac .mh{font-size:16px;font-weight:600;color:var(--a-head);letter-spacing:-.01em}
+.mac .ms{font-size:11px;color:var(--a-muted);margin-top:2px}
+.mac .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:16px}
+.mac .kpi{background:#fff;border:1px solid var(--a-border);border-radius:10px;padding:11px 12px}
+.mac .kpi b{display:block;font-size:19px;font-weight:600;color:var(--a-head);letter-spacing:-.02em}
+.mac .kpi span{font-size:9.5px;color:var(--a-muted);letter-spacing:.02em}
+.mac .tbl{background:#fff;border:1px solid var(--a-border);border-radius:10px;margin-top:14px;overflow:hidden}
+.mac .tr{display:grid;grid-template-columns:1.5fr 1fr 1fr .8fr;gap:8px;padding:9px 13px;
+  font-size:10.5px;color:var(--a-body);border-top:1px solid var(--a-border);align-items:center}
+.mac .tr:first-child{border-top:0;background:var(--a-elev);font-weight:600;color:var(--a-muted);
+  font-size:9px;letter-spacing:.08em;text-transform:uppercase}
+.mac .grade{display:inline-block;font-size:9.5px;font-weight:700;padding:2px 7px;border-radius:100px;color:#fff}
+.grade.a{background:#6E8F6B}.grade.b{background:#C9A84C}.grade.c{background:#C2724E}
+@media(max-width:760px){.mac .win{grid-template-columns:1fr}.mac .side{display:none}
+  .mac .kpis{grid-template-columns:repeat(2,1fr)}
+  .mac .tr{grid-template-columns:1.4fr 1fr .7fr}.mac .tr .hidem{display:none}}
+
+/* store badges */
+.store-row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:34px}
+.badge{display:inline-flex;align-items:center;gap:11px;background:#141212;color:#fff;
+  border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:11px 20px;
+  text-decoration:none;min-width:200px;transition:transform .18s,border-color .18s,opacity .18s}
+.badge:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.4)}
+.badge svg{width:24px;height:24px;fill:#fff;flex:0 0 auto}
+.badge .bt{text-align:left;line-height:1.2}
+.badge .bt small{display:block;font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;opacity:.62}
+.badge .bt strong{display:block;font-size:15px;font-weight:600;letter-spacing:-.01em;margin-top:1px}
+.badge[aria-disabled="true"]{opacity:.5;cursor:default;pointer-events:none}
+.badge-note{font-size:12px;color:var(--muted);margin-top:18px;letter-spacing:.02em}
+.bg-dark .badge-note{color:rgba(245,232,218,.5)}
+
+/* inclusions */
+.inc-grid2{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:46px;text-align:left}
+@media(max-width:860px){.inc-grid2{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.inc-grid2{grid-template-columns:1fr}}
+.inc2{background:var(--card-bg);border:1px solid var(--border);border-radius:16px;padding:24px}
+.inc2 .letter{width:40px;height:40px;border-radius:11px;background:var(--grad-terra);color:#fff;
+  font-family:var(--display);font-size:19px;font-weight:600;display:flex;align-items:center;
+  justify-content:center;margin-bottom:14px}
+.inc2 h3{font-size:19px;color:var(--warm-brown);margin-bottom:6px}
+.inc2 p{font-size:14px;color:var(--text-soft);line-height:1.6}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/logo-192.png" alt="Wesnoski Coaching"><span>wesnoski coaching</span></a>
+    <div class="nav-links">
+      <a href="index.html#method">The Method</a>
+      <a href="coaches.html">The Team</a>
+      <a href="reviews.html">Stories</a>
+      <a href="resources.html">Free Guides</a>
+      <a href="app.html">The App</a>
+      <a href="index.html#assessment">Free Assessment</a>
+      <a href="index.html#faq">FAQ</a>
+      <a class="btn" href="https://info.wesnoskicoaching.com/application">Apply for the Rebuild</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="app-hero">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <div class="eyebrow" style="color:var(--gold-soft)">The Wesnoski Coaching app</div>
+        <h1>Your whole rebuild, <em>in your pocket.</em></h1>
+        <p class="lede">Plans, labs, check-ins and messages in one place. The app runs on the same client file your coach works from, so what you see on your phone and what we see on the case are the same record.</p>
+        <div class="hero-cta">
+          <a class="btn large" href="https://info.wesnoskicoaching.com/application" data-ev="app_apply_click">Apply for the Rebuild</a>
+          <a class="btn large ghost" href="#inside">See what's inside</a>
+        </div>
+        <p class="microline">Already a client? <a href="https://app.wesnoskicoaching.com/login" data-ev="app_login_click">Sign in here</a></p>
+      </div>
+      <div class="appui hero-phones">
+        <div class="dev back" aria-hidden="true">
+          <div class="scr">
+            <div class="a-status"><span>9:41</span><span class="sig">
+              <span class="bar" style="height:5px"></span><span class="bar" style="height:7px"></span><span class="bar" style="height:9px"></span><span class="batt"></span>
+            </span></div>
+            <div class="a-top">
+              <span class="a-brand"><img src="assets/logo-192.png" alt=""><span>Check-Ins</span></span>
+              <span class="a-avatar">A</span>
+            </div>
+            <div class="a-body">
+              <div class="a-hello">Week 6 review</div>
+              <div class="a-sub">Graded and returned by your coach</div>
+              <div class="a-card">
+                <div class="a-ctag">Sleep</div>
+                <div class="a-bars">
+                  <i style="height:52%"></i><i style="height:64%"></i><i style="height:48%"></i><i style="height:71%"></i><i class="hi" style="height:86%"></i><i class="hi" style="height:92%"></i><i class="hi" style="height:88%"></i>
+                </div>
+                <div class="a-blabels"><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span></div>
+              </div>
+              <div class="a-card tint">
+                <div class="a-ctag">Coach note</div>
+                <div class="a-cmeta" style="margin-top:6px;color:var(--a-body);font-size:11px;line-height:1.5">Deep sleep is up since we moved magnesium to 90 minutes pre-bed. Hold the change through week 8.</div>
+              </div>
+            </div>
+            <div class="a-nav">
+              <div><svg class="ic" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>Home</div>
+              <div><svg class="ic" viewBox="0 0 24 24"><path d="M6.5 7v10M17.5 7v10M3 9.5v5M21 9.5v5M6.5 12h11"/></svg>Training</div>
+              <div class="on"><svg class="ic" viewBox="0 0 24 24"><path d="M9 11l2.5 2.5L16 9"/><rect x="4" y="4" width="16" height="16" rx="3"/></svg>Check-Ins</div>
+              <div><svg class="ic" viewBox="0 0 24 24"><path d="M4 18l5-6 4 3.5L20 7"/></svg>Progress</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dev">
+          <div class="scr">
+            <div class="a-status"><span>9:41</span><span class="sig">
+              <span class="bar" style="height:5px"></span><span class="bar" style="height:7px"></span><span class="bar" style="height:9px"></span><span class="batt"></span>
+            </span></div>
+            <div class="a-top">
+              <span class="a-brand"><img src="assets/logo-192.png" alt=""><span>Wesnoski Coaching</span></span>
+              <span class="a-avatar">A</span>
+            </div>
+            <div class="a-body">
+              <div class="a-hello">Good morning, Alex</div>
+              <div class="a-sub">Mitochondria phase &middot; Week 6 of 12</div>
+
+              <div class="a-card">
+                <div class="a-ctag">Today &middot; Training</div>
+                <div class="a-ctitle">Lower A</div>
+                <div class="a-cmeta">5 movements &middot; about 52 minutes</div>
+                <div class="a-list">
+                  <div class="a-row"><span class="tick on"></span><span class="nm">Trap bar deadlift</span><span class="rx">4 &times; 5</span></div>
+                  <div class="a-row"><span class="tick on"></span><span class="nm">Split squat</span><span class="rx">3 &times; 8</span></div>
+                  <div class="a-row"><span class="tick"></span><span class="nm">Hip thrust</span><span class="rx">3 &times; 10</span></div>
+                  <div class="a-row"><span class="tick"></span><span class="nm">Calf raise</span><span class="rx">3 &times; 12</span></div>
+                </div>
+              </div>
+
+              <div class="a-card tint">
+                <div class="a-ring">
+                  <svg width="52" height="52" viewBox="0 0 52 52">
+                    <circle cx="26" cy="26" r="21" fill="none" stroke="#ECE2D6" stroke-width="6"/>
+                    <circle cx="26" cy="26" r="21" fill="none" stroke="#C2724E" stroke-width="6"
+                      stroke-linecap="round" stroke-dasharray="132 132" stroke-dashoffset="18"
+                      transform="rotate(-90 26 26)"/>
+                  </svg>
+                  <div>
+                    <div class="a-ringnum">86%</div>
+                    <div class="a-ringlbl">Compliance, last 7 days<br>Protocol, training, check&#8209;in</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="a-card">
+                <div class="a-ctag">Due tomorrow</div>
+                <div class="a-ctitle">Week 6 check-in</div>
+                <div class="a-cmeta">Sleep, energy, digestion, weight trend</div>
+                <span class="a-btn">Start check-in</span>
+              </div>
+            </div>
+            <div class="a-nav">
+              <div class="on"><svg class="ic" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>Home</div>
+              <div><svg class="ic" viewBox="0 0 24 24"><path d="M6.5 7v10M17.5 7v10M3 9.5v5M21 9.5v5M6.5 12h11"/></svg>Training</div>
+              <div><svg class="ic" viewBox="0 0 24 24"><path d="M12 21s-7-4.4-7-9.6A4.2 4.2 0 0 1 12 8a4.2 4.2 0 0 1 7 3.4C19 16.6 12 21 12 21z"/></svg>Nutrition</div>
+              <div><svg class="ic" viewBox="0 0 24 24"><path d="M4 18l5-6 4 3.5L20 7"/></svg>Progress</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="mock-note">App screens shown with sample data.</p>
+  </div>
+</header>
+
+<!-- ============ WHAT LANDS ON YOUR PHONE ============ -->
+<section class="bg-warm" id="inside">
+  <div class="wrap">
+    <div class="eyebrow">What lands on your phone</div>
+    <h2>Three screens carry <em>most of the work.</em></h2>
+    <p class="lede">Nothing to configure and nothing to chase. The plan, the panel and the review arrive where you already look.</p>
+
+    <div class="appui screen-row">
+
+      <div>
+        <div class="dev">
+          <div class="scr">
+            <div class="a-status"><span>9:41</span><span class="sig">
+              <span class="bar" style="height:5px"></span><span class="bar" style="height:7px"></span><span class="bar" style="height:9px"></span><span class="batt"></span>
+            </span></div>
+            <div class="a-top"><span class="a-brand"><img src="assets/logo-192.png" alt=""><span>Nutrition</span></span><span class="a-avatar">A</span></div>
+            <div class="a-body">
+              <div class="a-hello">Today's plan</div>
+              <div class="a-sub">Targets set from your last panel</div>
+              <div class="a-card">
+                <div class="a-ctag">Macro targets</div>
+                <div class="a-list" style="border-top:0;padding-top:6px">
+                  <div class="a-row"><span class="nm">Protein</span><span class="rx">168 g</span></div>
+                  <div class="a-row"><span class="nm">Carbohydrate</span><span class="rx">210 g</span></div>
+                  <div class="a-row"><span class="nm">Fat</span><span class="rx">72 g</span></div>
+                </div>
+              </div>
+              <div class="a-card">
+                <div class="a-ctag">Supplements</div>
+                <div class="a-list" style="border-top:0;padding-top:6px">
+                  <div class="a-row"><span class="tick on"></span><span class="nm">Creatine</span><span class="rx">AM</span></div>
+                  <div class="a-row"><span class="tick on"></span><span class="nm">Vitamin D3 + K2</span><span class="rx">With fat</span></div>
+                  <div class="a-row"><span class="tick"></span><span class="nm">Magnesium glycinate</span><span class="rx">Pre-bed</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="a-nav">
+              <div><svg class="ic" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>Home</div>
+              <div><svg class="ic" viewBox="0 0 24 24"><path d="M6.5 7v10M17.5 7v10M3 9.5v5M21 9.5v5M6.5 12h11"/></svg>Training</div>
+              <div class="on"><svg class="ic" viewBox="0 0 24 24"><path d="M12 21s-7-4.4-7-9.6A4.2 4.2 0 0 1 12 8a4.2 4.2 0 0 1 7 3.4C19 16.6 12 21 12 21z"/></svg>Nutrition</div>
+              <div><svg class="ic" viewBox="0 0 24 24"><path d="M4 18l5-6 4 3.5L20 7"/></svg>Progress</div>
+            </div>
+          </div>
+        </div>
+        <div class="cap">
+          <h3>The day, in order</h3>
+          <p>Training, macros and supplement timing for today. Timing is part of the prescription, so it ships with the dose.</p>
+        </div>
+      </div>
+
+      <div>
+        <div class="dev">
+          <div class="scr">
+            <div class="a-status"><span>9:41</span><span class="sig">
+              <span class="bar" style="height:5px"></span><span class="bar" style="height:7px"></span><span class="bar" style="height:9px"></span><span class="batt"></span>
+            </span></div>
+            <div class="a-top"><span class="a-brand"><img src="assets/logo-192.png" alt=""><span>Labs</span></span><span class="a-avatar">A</span></div>
+            <div class="a-body">
+              <div class="a-hello">Your panel</div>
+              <div class="a-sub">Scored against functional ranges</div>
+              <div class="a-card">
+                <div class="a-ctag">Drawn 14 Aug</div>
+                <div class="a-list" style="border-top:0;padding-top:6px">
+                  <div class="a-lab"><span class="pip low"></span><span class="lname">Ferritin</span><span class="lval">21 ng/mL</span></div>
+                  <div class="a-lab"><span class="pip watch"></span><span class="lname">Fasting insulin</span><span class="lval">9.4 &micro;IU/mL</span></div>
+                  <div class="a-lab"><span class="pip ok"></span><span class="lname">TSH</span><span class="lval">1.8 mIU/L</span></div>
+                  <div class="a-lab"><span class="pip watch"></span><span class="lname">Vitamin D</span><span class="lval">38 ng/mL</span></div>
+                  <div class="a-lab"><span class="pip ok"></span><span class="lname">TG:HDL</span><span class="lval">1.4</span></div>
+                </div>
+              </div>
+              <div class="a-card tint">
+                <div class="a-ctag">Retest</div>
+                <div class="a-ctitle" style="font-size:13px">12 weeks &middot; 6 Nov</div>
+                <div class="a-cmeta">Ferritin, insulin, vitamin D</div>
+              </div>
+            </div>
+            <div class="a-nav">
+              <div><svg class="ic" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>Home</div>
+              <div><svg class="ic" viewBox="0 0 24 24"><path d="M6.5 7v10M17.5 7v10M3 9.5v5M21 9.5v5M6.5 12h11"/></svg>Training</div>
+              <div><svg class="ic" viewBox="0 0 24 24"><path d="M12 21s-7-4.4-7-9.6A4.2 4.2 0 0 1 12 8a4.2 4.2 0 0 1 7 3.4C19 16.6 12 21 12 21z"/></svg>Nutrition</div>
+              <div class="on"><svg class="ic" viewBox="0 0 24 24"><path d="M4 18l5-6 4 3.5L20 7"/></svg>Progress</div>
+            </div>
+          </div>
+        </div>
+        <div class="cap">
+          <h3>Labs you can read</h3>
+          <p>Every marker scored against functional ranges rather than the lab's reference range, with the retest window already booked.</p>
+        </div>
+      </div>
+
+      <div>
+        <div class="dev">
+          <div class="scr">
+            <div class="a-status"><span>9:41</span><span class="sig">
+              <span class="bar" style="height:5px"></span><span class="bar" style="height:7px"></span><span class="bar" style="height:9px"></span><span class="batt"></span>
+            </span></div>
+            <div class="a-top"><span class="a-brand"><img src="assets/logo-192.png" alt=""><span>Messages</span></span><span class="a-avatar">A</span></div>
+            <div class="a-body">
+              <div class="a-hello">Your coach</div>
+              <div class="a-sub">Farren &middot; replies inside 24 hours</div>
+              <div class="a-card" style="border-radius:14px 14px 14px 4px">
+                <div class="a-cmeta" style="color:var(--a-body);font-size:11.5px;line-height:1.55">Ferritin came back at 21. We are starting iron every other day, not daily. Hepcidin blunts absorption for about 24 hours after a dose, so alternate days move the number faster.</div>
+                <div class="a-cmeta" style="margin-top:7px">Farren &middot; 8:12 AM</div>
+              </div>
+              <div class="a-card tint" style="margin-left:34px;border-radius:14px 14px 4px 14px">
+                <div class="a-cmeta" style="color:var(--a-body);font-size:11.5px;line-height:1.55">Take it with the vitamin C at breakfast?</div>
+                <div class="a-cmeta" style="margin-top:7px">You &middot; 8:20 AM</div>
+              </div>
+              <div class="a-card" style="border-radius:14px 14px 14px 4px">
+                <div class="a-cmeta" style="color:var(--a-body);font-size:11.5px;line-height:1.55">Yes. Away from coffee and dairy by two hours either side.</div>
+                <div class="a-cmeta" style="margin-top:7px">Farren &middot; 8:26 AM</div>
+              </div>
+            </div>
+            <div class="a-nav">
+              <div><svg class="ic" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>Home</div>
+              <div><svg class="ic" viewBox="0 0 24 24"><path d="M6.5 7v10M17.5 7v10M3 9.5v5M21 9.5v5M6.5 12h11"/></svg>Training</div>
+              <div><svg class="ic" viewBox="0 0 24 24"><path d="M9 11l2.5 2.5L16 9"/><rect x="4" y="4" width="16" height="16" rx="3"/></svg>Check-Ins</div>
+              <div class="on"><svg class="ic" viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4z"/></svg>Messages</div>
+            </div>
+          </div>
+        </div>
+        <div class="cap">
+          <h3>A direct line</h3>
+          <p>Questions between calls go to your coach, not a support desk. Photos, files and lab PDFs attach to your case as you send them.</p>
+        </div>
+      </div>
+
+    </div>
+    <p class="mock-note">App screens shown with sample data.</p>
+  </div>
+</section>
+
+<!-- ============ WHAT'S IN IT ============ -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Everything in one file</div>
+    <h2>One place, so nothing gets <em>lost between sessions.</em></h2>
+    <p class="lede">Coaching usually leaks. The plan sits in a PDF, the labs sit in an email, and the question you had on Tuesday is gone by Friday. This closes that gap.</p>
+
+    <div class="inc-grid2">
+      <div class="inc2"><div class="letter">Tr</div><h3>Training</h3>
+        <p>Your program with sets, loads and video demos. Log the session as you lift and the next block builds from what you actually did.</p></div>
+      <div class="inc2"><div class="letter">Nu</div><h3>Nutrition</h3>
+        <p>Targets and meal structure that move with your phase, not a fixed template. Swap foods without breaking the numbers.</p></div>
+      <div class="inc2"><div class="letter">Rx</div><h3>Supplements</h3>
+        <p>What to take, how much, and when. Timing carries most of the effect on absorption, so it ships as part of the prescription.</p></div>
+      <div class="inc2"><div class="letter">La</div><h3>Labs</h3>
+        <p>Panels scored against functional ranges. Every marker tracked across draws so you see direction, not a single snapshot.</p></div>
+      <div class="inc2"><div class="letter">Ck</div><h3>Check-ins</h3>
+        <p>Weekly data in, a graded review back. Sleep, energy, digestion, training load and weight trend, read together rather than one at a time.</p></div>
+      <div class="inc2"><div class="letter">Pr</div><h3>Progress</h3>
+        <p>Compliance, strength, body composition and the markers that moved. The record your coach reads before every adjustment.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COACH SIDE ============ -->
+<section class="bg-dark">
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--gold-soft)">Behind your screen</div>
+    <h2>Your phone is one view of a <em>much larger record.</em></h2>
+    <p class="lede">Every log you enter lands on your case file. Compliance, trend and lab history sit in front of your coach before a single change gets made, which is why adjustments arrive with a reason attached.</p>
+
+    <div class="appui mac">
+      <div class="bar"><i></i><i></i><i></i></div>
+      <div class="win">
+        <div class="side">
+          <div class="slogo"><img src="assets/logo-192.png" alt=""><span>Wesnoski Coaching</span></div>
+          <div class="sb on"><span class="sdot"></span>Dashboard</div>
+          <div class="sb"><span class="sdot"></span>Clients</div>
+          <div class="sb"><span class="sdot"></span>Check-Ins</div>
+          <div class="sb"><span class="sdot"></span>Labs</div>
+          <div class="sb"><span class="sdot"></span>Programs</div>
+          <div class="sb"><span class="sdot"></span>Nutrition</div>
+          <div class="sb"><span class="sdot"></span>Messages</div>
+        </div>
+        <div class="main">
+          <div class="mh">Practice dashboard</div>
+          <div class="ms">Check-ins awaiting review, compliance and retest windows</div>
+          <div class="kpis">
+            <div class="kpi"><b>7</b><span>AWAITING REVIEW</span></div>
+            <div class="kpi"><b>91%</b><span>ROSTER COMPLIANCE</span></div>
+            <div class="kpi"><b>4</b><span>RETESTS DUE</span></div>
+            <div class="kpi"><b>12</b><span>PANELS SCORED</span></div>
+          </div>
+          <div class="tbl">
+            <div class="tr"><span>Client</span><span>Phase</span><span class="hidem">Week</span><span>Grade</span></div>
+            <div class="tr"><span>Alex R.</span><span>Mitochondria</span><span class="hidem">6 of 12</span><span><i class="grade a">A</i></span></div>
+            <div class="tr"><span>Jordan T.</span><span>Absorption</span><span class="hidem">3 of 12</span><span><i class="grade b">B</i></span></div>
+            <div class="tr"><span>Sam K.</span><span>Resilience</span><span class="hidem">9 of 12</span><span><i class="grade a">A</i></span></div>
+            <div class="tr"><span>Riley M.</span><span>Cycle</span><span class="hidem">2 of 12</span><span><i class="grade c">C</i></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="mock-note">Coach dashboard shown with sample data.</p>
+  </div>
+</section>
+
+<!-- ============ GET IT ============ -->
+<section class="bg-terra" id="download">
+  <div class="wrap">
+    <div class="eyebrow" style="color:rgba(255,255,255,.75)">Get the app</div>
+    <h2 style="color:#fff">Download it, then <em style="color:var(--gold-soft)">sign in with your coaching account.</em></h2>
+    <p class="lede">The app is included with 1-on-1 coaching. There is no separate subscription and nothing to buy inside it. Your account is created when your rebuild starts.</p>
+
+    <div class="store-row">
+      <a class="badge" href="#" aria-disabled="true" data-store="ios" data-ev="app_store_click">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2.2 1.8-3.3 1.9-3.4-1-1.5-2.6-1.7-3.2-1.7-1.4-.1-2.7.8-3.3.8-.7 0-1.7-.8-2.8-.8-1.5 0-2.8.8-3.5 2.1-1.5 2.6-.4 6.4 1.1 8.5.7 1 1.6 2.2 2.7 2.1 1.1 0 1.5-.7 2.8-.7s1.7.7 2.8.7c1.2 0 1.9-1 2.6-2.1.8-1.2 1.2-2.4 1.2-2.5-.1 0-2.3-.9-2.3-3zM14.3 5.9c.6-.7 1-1.7.9-2.7-.9 0-2 .6-2.6 1.3-.6.6-1.1 1.7-.9 2.6 1 .1 2-.5 2.6-1.2z"/></svg>
+        <span class="bt"><small>Coming this week</small><strong>App Store</strong></span>
+      </a>
+      <a class="badge" href="#" aria-disabled="true" data-store="android" data-ev="app_store_click">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 2.3c-.3.3-.5.8-.5 1.4v16.6c0 .6.2 1.1.5 1.4l.1.1 9.3-9.3v-.2L3.6 2.3zM16.3 15.1l-3.1-3.1v-.2l3.1-3.1.1.1 3.7 2.1c1.1.6 1.1 1.6 0 2.2l-3.7 2.1-.1-.1zM15.9 15.5l-3.2-3.2-9.1 9.1c.4.4 1 .4 1.7 0l10.6-5.9M15.9 8.5 5.3 2.6c-.7-.4-1.3-.3-1.7 0l9.1 9.1 3.2-3.2z"/></svg>
+        <span class="bt"><small>Coming this week</small><strong>Google Play</strong></span>
+      </a>
+    </div>
+
+    <p class="badge-note" style="color:rgba(255,255,255,.7)">Search <strong style="font-weight:600">Wesnoski Coaching</strong> once the listings are live. Already a client and want it now?
+      <a href="https://app.wesnoskicoaching.com/login" style="color:#fff;text-decoration:underline" data-ev="app_login_click">Sign in from your browser</a>.</p>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="bg-warm" id="apply">
+  <div class="wrap">
+    <div class="eyebrow">Start</div>
+    <h2>The app is the delivery. <em>The coaching is the work.</em></h2>
+    <p class="lede">Applications are read by a person. If your case is not a fit for what we do, we will tell you and point you somewhere better.</p>
+    <div style="margin-top:34px">
+      <a class="btn large" href="https://info.wesnoskicoaching.com/application" data-ev="app_apply_click">Apply for the Rebuild</a>
+    </div>
+    <p class="mock-note" style="margin-top:22px">Prefer to read first? <a href="resources.html" style="color:var(--terracotta);text-decoration:none;border-bottom:1px solid rgba(201,123,92,.4)">Start with the free guides</a>.</p>
+  </div>
+</section>
+
+<footer><div class="wrap"><div class="cols">
+<div><a class="brand" href="index.html"><img src="assets/logo-192.png" alt=""><span>wesnoski coaching</span></a>
+<p class="fp">1-on-1 functional health coaching for hormones, gut, energy, and the body that finally feels like yours. Built on the MARCH Method.</p></div>
+<div><h4>Practice</h4><a href="index.html#method">The Method</a><a href="coaches.html">The Team</a><a href="reviews.html">Stories</a><a href="index.html#faq">FAQ</a></div>
+<div><h4>Assess</h4><a href="resources.html">Free Guides</a><a href="app.html">The App</a><a href="assessment.html">MARCH Assessment</a><a href="calculator.html">TG:HDL Calculator</a><a href="https://info.wesnoskicoaching.com/application">Apply</a></div>
+<div><h4>Contact</h4><a href="#">farren@wesnoskicoaching.com</a><a href="#">Langley, BC</a></div>
+</div>
+<p class="legal">Wesnoski Coaching provides health and performance coaching for educational purposes. Services are not medical advice, diagnosis, or treatment and are not a substitute for care from a licensed physician. Client results shared on this site are individual experiences and are not typical or guaranteed. Never start, stop, or change prescription medication without your physician. &copy; 2026 Wesnoski Coaching Inc. All Rights Reserved.</p>
+<div class="foot-legal-links"><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a><a href="disclaimer.html">Medical Disclaimer</a></div>
+</div></footer>
+
+<script>
+/* App page events, mirrors the guide_apply_click pattern */
+document.addEventListener('click',function(e){
+  var el=e.target.closest('[data-ev]'); if(!el) return;
+  var name=el.getAttribute('data-ev');
+  var params={page:'app'};
+  if(el.dataset.store) params.store=el.dataset.store;
+  if(typeof gtag==='function') gtag('event',name,params);
+  if(typeof fbq==='function') fbq('trackCustom',name,params);
+},false);
+</script>
+<script src="assets/nav.js" defer></script>
+</body>
+</html>
