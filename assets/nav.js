@@ -55,3 +55,14 @@
     document.addEventListener('DOMContentLoaded', init);
   } else { init(); }
 })();
+
+/* Content gate and lead capture. Loaded once here so every page that
+   already loads nav.js is covered, including pages added later.
+   All per-page behaviour lives in the PAGES table inside wc-gate.js. */
+(function () {
+  if (document.querySelector('script[src*="wc-gate.js"]')) return;
+  var s = document.createElement('script');
+  s.src = '/wc-gate.js';
+  s.defer = true;
+  (document.body || document.head).appendChild(s);
+})();
