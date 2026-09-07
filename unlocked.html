@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Unlocking · Wesnoski Coaching</title>
+<style>
+  html,body{height:100%;margin:0}
+  body{display:flex;align-items:center;justify-content:center;
+       background:#F5E8DA;color:#3D2817;
+       font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:300}
+  .box{text-align:center;padding:32px}
+  h1{font-family:"Cormorant Garamond",Georgia,serif;font-weight:400;
+     font-size:34px;line-height:1.2;margin:0 0 10px;color:#1C1109}
+  p{margin:0 0 18px;font-size:15px;color:#6B4F3E}
+  a{color:#B8643F}
+  .dot{display:inline-block;width:7px;height:7px;margin:0 3px;border-radius:50%;
+       background:#C97B5C;animation:b 1.1s infinite ease-in-out}
+  .dot:nth-child(2){animation-delay:.15s}
+  .dot:nth-child(3){animation-delay:.3s}
+  @keyframes b{0%,80%,100%{opacity:.25}40%{opacity:1}}
+  @media (prefers-reduced-motion:reduce){.dot{animation:none;opacity:.6}}
+</style>
+</head>
+<body>
+  <div class="box">
+    <h1>You're in.</h1>
+    <p>Taking you back to where you were.</p>
+    <p><span class="dot"></span><span class="dot"></span><span class="dot"></span></p>
+    <p id="fallback" hidden>
+      If nothing happens, <a href="/resources.html">open the guides</a>.
+    </p>
+  </div>
+
+<script>
+(function () {
+  var UNLOCK_KEY = 'wc_unlocked';
+  var RETURN_KEY = 'wc_return';
+  var dest = '/resources.html';
+
+  try { localStorage.setItem(UNLOCK_KEY, '1'); } catch (e) {}
+
+  try {
+    var back = localStorage.getItem(RETURN_KEY);
+    // only ever return to a same-origin path on this site
+    if (back && back.charAt(0) === '/' && back.charAt(1) !== '/') dest = back;
+    localStorage.removeItem(RETURN_KEY);
+  } catch (e) {}
+
+  var url = dest + (dest.indexOf('?') > -1 ? '&' : '?') + 'unlocked=1';
+
+  // The form may redirect only its own iframe. Same origin, so we can
+  // reach past it and navigate the real page the reader is looking at.
+  function go() {
+    try {
+      if (window.top && window.top !== window.self) { window.top.location.replace(url); return; }
+    } catch (e) { /* framed cross-origin, fall through */ }
+    location.replace(url);
+  }
+  setTimeout(go, 350);
+  setTimeout(function () {
+    var f = document.getElementById('fallback');
+    if (f) { f.hidden = false; f.querySelector('a').setAttribute('href', url); }
+  }, 2500);
+})();
+</script>
+</body>
+</html>
