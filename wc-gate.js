@@ -41,7 +41,15 @@
     'resources':            { mode: 'exit', guide: 'resources' },
     'reviews':              { mode: 'exit', guide: 'reviews' },
     'coaches':              { mode: 'exit', guide: 'coaches' },
-    'app':                  { mode: 'exit', guide: 'app' }
+    'app':                  { mode: 'exit', guide: 'app' },
+
+    /* team pages. coach carries the attribution into coach_source. */
+    'jimmy':                { mode: 'exit',  guide: 'jimmy', coach: 'jimmy' },
+    'r3-system':            { mode: 'guide', guide: 'r3',    coach: 'jimmy', free: 2 },
+    'farren':               { mode: 'exit',  guide: 'farren', coach: 'farren' },
+    'chan':                 { mode: 'exit',  guide: 'chan',   coach: 'chan' },
+    'healing-protocol':     { mode: 'guide', guide: 'healing', coach: 'jimmy', free: 2 },
+    'recomp-framework':     { mode: 'guide', guide: 'recomp',  coach: 'jimmy', free: 2 }
   };
 
   var NO_GATE = { privacy: 1, terms: 1, disclaimer: 1, unlocked: 1 };
@@ -56,7 +64,7 @@
   var cfg = {
     mode:  d.mode  || page.mode,
     guide: d.guide || page.guide,
-    coach: d.coach || 'house',
+    coach: d.coach || page.coach || 'house',
     free:  parseInt(d.free || page.free || '2', 10),
     exit:  d.exit !== 'off'          // exit intent on every page unless turned off
   };

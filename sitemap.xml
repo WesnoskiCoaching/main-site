@@ -96,4 +96,10 @@
 <changefreq>yearly</changefreq>
 <priority>0.3</priority>
 </url>
+  <url><loc>https://www.wesnoskicoaching.com/farren.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.wesnoskicoaching.com/jimmy.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.wesnoskicoaching.com/chan.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.wesnoskicoaching.com/r3-system.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.wesnoskicoaching.com/healing-protocol.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.wesnoskicoaching.com/recomp-framework.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>
