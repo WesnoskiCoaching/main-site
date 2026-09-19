@@ -1,81 +1,68 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
 <title>TG:HDL Calculator · Wesnoski Coaching</title>
-<meta name="description" content="Calculate your triglyceride-to-HDL ratio, an early read on insulin resistance. Educational, not a diagnosis.">
-<link rel="icon" href="assets/favicon.ico" sizes="any">
-<link rel="apple-touch-icon" href="assets/logo-180.png">
-<meta property="og:title" content="TG:HDL Calculator · Wesnoski Coaching">
-<meta property="og:image" content="https://www.wesnoskicoaching.com/assets/og-card.png">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/styles.css">
+<meta content="Calculate your triglyceride-to-HDL ratio, an early read on insulin resistance. Educational, not a diagnosis." name="description"/>
+<link href="assets/favicon.ico" rel="icon" sizes="any"/>
+<link href="assets/logo-180.png" rel="apple-touch-icon"/>
+<meta content="TG:HDL Calculator · Wesnoski Coaching" property="og:title"/>
+<meta content="https://www.wesnoskicoaching.com/assets/og-card.png" property="og:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&amp;family=Instrument+Serif:ital@0;1&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="assets/styles.css" rel="stylesheet"/>
 <script src="assets/consent.js"></script>
-</head>
-<body>
-
-<nav class="nav">
-  <div class="wrap">
-    <a class="brand" href="index.html"><img src="assets/logo-192.png" alt="Wesnoski Coaching"><span>wesnoski coaching</span></a>
-    <div class="nav-links">
-      <a href="index.html#method">The Method</a>
-      <a href="coaches.html">The Team</a>
-      <a href="reviews.html">Stories</a>
-      <a href="resources.html">Free Guides</a>
-      <a href="app.html">The App</a>
-      <a href="index.html#assessment">Free Assessment</a>
-      <a href="index.html#faq">FAQ</a>
-      <a class="btn" href="https://info.wesnoskicoaching.com/application">Apply for the Rebuild</a>
-    </div>
-  </div>
-</nav>
-
-<div class="page-hero dark">
-  <div class="wrap">
-    <div class="eyebrow" style="color:var(--gold-soft)">Free · one number</div>
-    <h1>The TG:HDL <em>Calculator.</em></h1>
-    <p class="lede">Your triglyceride-to-HDL ratio is one of the clearest early reads on insulin resistance and metabolic health, and it's often hiding in bloodwork you already have. Enter your two numbers to see where you land.</p>
-  </div>
+<link href="assets/v2.css" rel="stylesheet"/><link href="https://www.wesnoskicoaching.com/calculator.html" rel="canonical"/></head>
+<body class="v2 page-calculator"><a class="skip-link" href="#main-content">Skip to content</a>
+<nav aria-label="Main navigation" class="nav">
+<div class="wrap">
+<a aria-label="Wesnoski Coaching" class="brand brand-wordmark" href="index.html"><img alt="" class="brand-icon" height="180" src="assets/logo-180.png" width="180"/><span class="wordmark-crop"><img alt="Wesnoski Coaching" height="500" src="assets/wesnoski-wordmark.png" width="500"/></span></a>
+<div class="nav-links"><a href="index.html#method">The Method</a><a href="coaches.html">The Team</a><a href="reviews.html">Stories</a><a href="resources.html">Free Guides</a><a href="app.html">The App</a><a class="btn nav-apply" href="https://info.wesnoskicoaching.com/application">Apply for the Rebuild</a></div>
 </div>
-
+</nav><main id="main-content" tabindex="-1">
+<div class="page-hero dark">
+<div class="wrap">
+<div class="eyebrow" style="color:var(--gold-soft)">Free · one number</div>
+<h1>The TG:HDL <em>Calculator.</em></h1>
+<p class="lede">Your triglyceride-to-HDL ratio is one of the clearest early reads on insulin resistance and metabolic health, and it's often hiding in bloodwork you already have. Enter your two numbers to see where you land.</p>
+</div>
+</div>
 <section class="bg-terra">
-  <div class="wrap">
-    <div class="calc">
-      <div class="calc-units">
-        <button class="unit is-active" data-unit="mg">mg/dL <span>US</span></button>
-        <button class="unit" data-unit="mmol">mmol/L <span>Canada / UK</span></button>
-      </div>
-      <div class="calc-fields">
-        <label>Triglycerides<input id="tg" type="number" inputmode="decimal" placeholder="e.g. 110"></label>
-        <label>HDL cholesterol<input id="hdl" type="number" inputmode="decimal" placeholder="e.g. 55"></label>
-      </div>
-      <button class="btn large calc-go" id="calcBtn">Calculate my ratio</button>
-      <div class="calc-result" id="calcResult" hidden>
-        <div class="cr-ratio"><span id="crNum">–</span><span class="cr-of">TG : HDL</span></div>
-        <div class="cr-band" id="crBand">–</div>
-        <p class="cr-msg" id="crMsg"></p>
-        <a class="btn large" href="https://info.wesnoskicoaching.com/application">Bring this to your assessment</a>
-        <p class="cr-note">This is an educational screen, not a diagnosis. A ratio is a signal, not a clinical finding, and any result should be read alongside your full panel and your physician's input. Bring your number to your assessment and we'll read it against the rest of your bloodwork.</p>
-      </div>
-    </div>
-  </div>
+<div class="wrap">
+<div class="calc">
+<div class="calc-units">
+<button class="unit is-active" data-unit="mg">mg/dL <span>US</span></button>
+<button class="unit" data-unit="mmol">mmol/L <span>Canada / UK</span></button>
+</div>
+<div class="calc-fields">
+<label>Triglycerides<input id="tg" inputmode="decimal" placeholder="e.g. 110" type="number"/></label>
+<label>HDL cholesterol<input id="hdl" inputmode="decimal" placeholder="e.g. 55" type="number"/></label>
+</div>
+<button class="btn large calc-go" id="calcBtn">Calculate my ratio</button>
+<div aria-live="polite" class="calc-result" hidden="" id="calcResult">
+<div class="cr-ratio"><span id="crNum">–</span><span class="cr-of">TG : HDL</span></div>
+<div class="cr-band" id="crBand">–</div>
+<p class="cr-msg" id="crMsg"></p>
+<a class="btn large" href="https://info.wesnoskicoaching.com/application">Bring this to your assessment</a>
+<p class="cr-note">This is an educational screen, not a diagnosis. A ratio is a signal, not a clinical finding, and any result should be read alongside your full panel and your physician's input. Bring your number to your assessment and we'll read it against the rest of your bloodwork.</p>
+</div>
+</div>
+</div>
 </section>
-
-<footer>
-  <div class="wrap">
-    <div class="cols">
-      <div><a class="brand" href="index.html"><img src="assets/logo-192.png" alt=""><span>wesnoski coaching</span></a><p class="fp">1-on-1 functional health coaching for hormones, gut, energy, and the body that finally feels like yours.</p></div>
-      <div><h4>Practice</h4><a href="index.html#method">The Method</a><a href="coaches.html">The Team</a><a href="reviews.html">Stories</a><a href="index.html#faq">FAQ</a></div>
-      <div><h4>Assess</h4><a href="assessment.html">MARCH Assessment</a><a href="calculator.html">TG:HDL Calculator</a><a href="https://info.wesnoskicoaching.com/application">Apply</a></div>
-      <div><h4>Contact</h4><a href="#">farren@wesnoskicoaching.com</a><a href="#">Langley, BC</a></div>
-    </div>
-    <p class="legal">Wesnoski Coaching provides health and performance coaching for educational purposes. Services are not medical advice, diagnosis, or treatment. Client results are individual experiences and are not typical or guaranteed. © 2026 Wesnoski Coaching Inc. All Rights Reserved.</p>
-    <div class="foot-legal-links"><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a><a href="disclaimer.html">Medical Disclaimer</a></div>
-  </div>
+</main><footer>
+<div class="wrap">
+<div class="cols">
+<div><a aria-label="Wesnoski Coaching" class="brand brand-wordmark" href="index.html"><img alt="" class="brand-icon" height="180" src="assets/logo-180.png" width="180"/><span class="wordmark-crop"><img alt="Wesnoski Coaching" height="500" src="assets/wesnoski-wordmark.png" width="500"/></span></a><p class="fp">1-on-1 functional health coaching for hormones, gut, energy, and the body that finally feels like yours.</p></div>
+<div><h4>Practice</h4><a href="index.html#method">The Method</a><a href="coaches.html">The Team</a><a href="reviews.html">Stories</a><a href="index.html#faq">FAQ</a></div>
+<div><h4>Assess</h4><a href="assessment.html">MARCH Assessment</a><a href="calculator.html">TG:HDL Calculator</a><a href="https://info.wesnoskicoaching.com/application">Apply</a></div>
+<div><h4>Contact</h4><a href="mailto:farren@wesnoskicoaching.com">farren@wesnoskicoaching.com</a><span class="location">Langley, BC</span></div>
+</div>
+<p class="legal">Wesnoski Coaching provides health and performance coaching for educational purposes. Services are not medical advice, diagnosis, or treatment. Client results are individual experiences and are not typical or guaranteed. © 2026 Wesnoski Coaching Inc. All Rights Reserved.</p>
+<div class="foot-legal-links"><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a><a href="disclaimer.html">Medical Disclaimer</a></div>
+</div>
 </footer>
-
 <script>
 (function(){
   var unit='mg';
@@ -109,6 +96,6 @@
   });
 })();
 </script>
-<script src="assets/nav.js" defer></script>
-</body>
+<script defer="" src="assets/nav.js"></script>
+<script defer="" src="assets/v2.js"></script></body>
 </html>
