@@ -33,6 +33,7 @@
     'estrogen-clearance':   { mode: 'guide', guide: 'e2',           free: 3 },
     'cholesterol-playbook': { mode: 'guide', guide: 'cholesterol',  free: 3 },
     'birth-control':        { mode: 'guide', guide: 'birthcontrol', free: 3 },
+    'gut-health':           { mode: 'guide', guide: 'gut',          free: 3 },
     'depleted':             { mode: 'guide', guide: 'depleted',     free: 3 },
     'assessment':           { mode: 'assessment', guide: 'assessment' },
     'calculator':           { mode: 'calculator', guide: 'tghdl' },
@@ -47,6 +48,8 @@
     'jimmy':                { mode: 'exit',  guide: 'jimmy', coach: 'jimmy' },
     'r3-system':            { mode: 'guide', guide: 'r3',    coach: 'jimmy', free: 2 },
     'farren':               { mode: 'exit',  guide: 'farren', coach: 'farren' },
+    'chan-accutane':        { mode: 'guide', guide: 'accutane', coach: 'chan', free: 2 },
+    'chan-iron-reset':      { mode: 'guide', guide: 'iron-reset', coach: 'chan', free: 2 },
     'chan':                 { mode: 'exit',  guide: 'chan',   coach: 'chan' },
     'healing-protocol':     { mode: 'guide', guide: 'healing', coach: 'jimmy', free: 2 },
     'recomp-framework':     { mode: 'guide', guide: 'recomp',  coach: 'jimmy', free: 2 }
@@ -158,7 +161,7 @@
     exit: {
       eyebrow: 'Before you go',
       head: 'Read your own bloodwork.',
-      body: 'Six guides on the markers that actually move. Ferritin, fasting insulin, estrogen clearance, TG to HDL. Free, no diagnosis, no pitch.'
+      body: 'Seven guides on bloodwork, digestion, medication and cycle health. Practical questions, evidence and clear limits. Free educational resources.'
     }
   };
 
