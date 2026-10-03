@@ -1,33 +1,59 @@
-/* Wesnoski Coaching — analytics consent gate.
-   Outside the UK/EEA: trackers load immediately, as before.
-   Inside the UK/EEA: nothing loads until the visitor opts in.
-   Region is inferred from the browser timezone. No IP lookup, no third-party call.
-   Fails closed: if region cannot be determined, the visitor is treated as gated. */
+/* Optional analytics and chat require explicit acceptance for every visitor. */
 (function () {
   var GA_ID   = 'G-1ZF5HKTEET';
   var FB_ID   = '2035505933883732';
   var MC_HASH = '833bd817e4a8a2272ec1f019f1ea2df9';
-  var KEY     = 'wc_consent_v1';
+  var KEY     = 'wc_consent_v2';
   var loaded  = false;
 
-  /* ---------- region ---------- */
-  var EXTRA = ['Atlantic/Reykjavik','Atlantic/Canary','Atlantic/Madeira','Atlantic/Azores',
-               'Atlantic/Faroe','Africa/Ceuta','Asia/Nicosia','Asia/Famagusta',
-               'Arctic/Longyearbyen','Indian/Mayotte','America/Cayenne',
-               'Indian/Reunion','America/Martinique','America/Guadeloupe'];
-  function gated() {
-    try {
-      var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
-      if (!tz) return true;
-      if (tz.indexOf('Europe/') === 0) return true;
-      return EXTRA.indexOf(tz) > -1;
-    } catch (e) { return true; }
-  }
+  /* A new consent version includes optional chat. Old declines remain valid. */
+  var deniedURL = new URL(location.href).searchParams.get('wc-consent') === 'declined';
+  var choice = read();
+  var accepted = !deniedURL && choice === 'accepted';
+  window.wcConsent = { allowsTracking: function () { return accepted; } };
 
-  /* ---------- storage ---------- */
-  function read()  { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
-  function write(v){ try { localStorage.setItem(KEY, v); }    catch (e) {} }
-  function clear() { try { localStorage.removeItem(KEY); }    catch (e) {} }
+  function read() {
+    try {
+      // A storage failure must never turn a stale acceptance into permission.
+      localStorage.setItem('wc_consent_probe', '1');
+      localStorage.removeItem('wc_consent_probe');
+      return localStorage.getItem(KEY) ||
+        (localStorage.getItem('wc_consent_v1') === 'declined' ? 'declined' : null);
+    } catch (e) { return null; }
+  }
+  function write(v) {
+    try {
+      localStorage.setItem(KEY, v);
+      return localStorage.getItem(KEY) === v;
+    } catch (e) { return false; }
+  }
+  function withdraw() {
+    accepted = false;
+    var saved = write('declined');
+    if (loaded) {
+      window['ga-disable-' + GA_ID] = true;
+      if (window.gtag) window.gtag('consent', 'update', {
+        analytics_storage: 'denied', ad_storage: 'denied',
+        ad_user_data: 'denied', ad_personalization: 'denied'
+      });
+      if (window.fbq) window.fbq('consent', 'revoke');
+      window.gtag = window.fbq = window._fbq = function () {};
+      if (window.beTracker) window.beTracker.t = function () {};
+    }
+    dropCookies();
+    if (loaded) {
+      // Executed vendor code cannot be unloaded. Leave this document immediately.
+      // The URL denial survives reload even if storage writes failed.
+      var url = new URL(location.href);
+      url.searchParams.set('wc-consent', 'declined');
+      location.replace(url.href);
+    } else if (saved && deniedURL) {
+      var url = new URL(location.href);
+      url.searchParams.delete('wc-consent');
+      history.replaceState(null, '', url.href);
+      deniedURL = false;
+    }
+  }
 
   /* best effort: drop the analytics cookies already set on this domain */
   function dropCookies() {
@@ -79,15 +105,23 @@
     s.type = 'text/javascript';
     s.src = 'https://tracker.metricool.com/resources/be.js';
     s.onload = s.onreadystatechange = function () {
-      if (window.beTracker) beTracker.t({ hash: MC_HASH });
+      if (accepted && window.beTracker) beTracker.t({ hash: MC_HASH });
     };
     head.appendChild(s);
   }
 
   function loadAll() {
-    if (loaded) return;
+    if (!accepted || loaded) return;
     loaded = true;
     loadGA(); loadMeta(); loadMetricool();
+    ready(function () {
+      if (!accepted) return;
+      var s = document.createElement('script');
+      s.src = 'https://widgets.leadconnectorhq.com/loader.js';
+      s.setAttribute('data-resources-url', 'https://widgets.leadconnectorhq.com/chat-widget/loader.js');
+      s.setAttribute('data-widget-id', '6ab5268bfad6c0284b5f1907');
+      document.head.appendChild(s);
+    });
   }
 
   /* ---------- banner ---------- */
@@ -100,7 +134,7 @@
     wrap.innerHTML =
       '<div class="cc-in">' +
         '<p class="cc-t">We use cookies to measure how this site is used and to show our content ' +
-        'on other platforms. Nothing loads until you choose. Read our ' +
+        'on other platforms. Accept also enables live chat through GoHighLevel/LeadConnector. Optional analytics and chat stay off until you accept. Read our ' +
         '<a href="privacy.html">Privacy Policy</a>.</p>' +
         '<div class="cc-b">' +
           '<button type="button" class="btn cc-yes">Accept</button>' +
@@ -111,10 +145,17 @@
     requestAnimationFrame(function () { wrap.classList.add('on'); });
 
     wrap.querySelector('.cc-yes').addEventListener('click', function () {
-      write('accepted'); loadAll(); wrap.remove(); footerLink();
+      write('accepted'); accepted = true;
+      if (deniedURL) {
+        var url = new URL(location.href);
+        url.searchParams.delete('wc-consent');
+        history.replaceState(null, '', url.href);
+        deniedURL = false;
+      }
+      loadAll(); wrap.remove(); footerLink();
     });
     wrap.querySelector('.cc-no').addEventListener('click', function () {
-      write('declined'); dropCookies(); wrap.remove(); footerLink();
+      withdraw(); wrap.remove(); footerLink();
     });
     wrap.querySelector('.cc-yes').focus();
   }
@@ -129,7 +170,6 @@
     a.textContent = 'Cookie Choices';
     a.addEventListener('click', function (e) {
       e.preventDefault();
-      clear();
       if (!document.querySelector('.cc')) banner();
     });
     box.appendChild(a);
@@ -141,14 +181,8 @@
   }
 
   /* ---------- decide ---------- */
-  var choice = read();
-
-  /* an explicit opt-out is honoured in every region */
+  if (deniedURL) { write('declined'); ready(footerLink); return; }
   if (choice === 'declined') { ready(footerLink); return; }
-
-  /* outside the UK/EEA nothing is gated, but the control is still offered */
-  if (!gated()) { loadAll(); ready(footerLink); return; }
-
-  if (choice === 'accepted') { loadAll(); ready(footerLink); return; }
-  ready(banner);
+  if (accepted) { loadAll(); ready(footerLink); return; }
+  ready(function () { banner(); footerLink(); });
 })();
