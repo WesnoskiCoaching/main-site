@@ -299,6 +299,7 @@
 <script>
 /* App page events, mirrors the guide_apply_click pattern */
 document.addEventListener('click',function(e){
+  if (!window.wcConsent || !window.wcConsent.allowsTracking()) return;
   var el=e.target.closest('[data-ev]'); if(!el) return;
   var name=el.getAttribute('data-ev');
   var params={page:'app'};
@@ -308,6 +309,6 @@ document.addEventListener('click',function(e){
 },false);
 </script>
 <script defer="" src="assets/nav.js"></script>
-<script defer="" src="assets/v2.js"></script><script defer src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6ab5268bfad6c0284b5f1907"></script>
+<script defer="" src="assets/v2.js"></script>
 </body>
 </html>
