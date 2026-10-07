@@ -46,6 +46,9 @@
 
     /* team pages. coach carries the attribution into coach_source. */
     'jimmy':                { mode: 'exit',  guide: 'jimmy', coach: 'jimmy' },
+    'jimmy-bloodwork': { mode: 'guide', guide: 'jimmy-bloodwork', coach: 'jimmy', free: 1 },
+    'jimmy-gi-map': { mode: 'guide', guide: 'jimmy-gi-map', coach: 'jimmy', free: 1 },
+    'jimmy-trt-readiness': { mode: 'guide', guide: 'jimmy-trt-readiness', coach: 'jimmy', free: 1 },
     'r3-system':            { mode: 'guide', guide: 'r3',    coach: 'jimmy', free: 2 },
     'farren':               { mode: 'exit',  guide: 'farren', coach: 'farren' },
     'chan-accutane':        { mode: 'guide', guide: 'accutane', coach: 'chan', free: 2 },
