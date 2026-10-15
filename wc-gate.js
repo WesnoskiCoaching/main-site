@@ -51,9 +51,6 @@
     'jimmy-trt-readiness': { mode: 'guide', guide: 'jimmy-trt-readiness', coach: 'jimmy', free: 1 },
     'r3-system':            { mode: 'guide', guide: 'r3',    coach: 'jimmy', free: 2 },
     'farren':               { mode: 'exit',  guide: 'farren', coach: 'farren' },
-    'chan-accutane':        { mode: 'guide', guide: 'accutane', coach: 'chan', free: 2 },
-    'chan-iron-reset':      { mode: 'guide', guide: 'iron-reset', coach: 'chan', free: 2 },
-    'chan':                 { mode: 'exit',  guide: 'chan',   coach: 'chan' },
     'healing-protocol':     { mode: 'guide', guide: 'healing', coach: 'jimmy', free: 2 },
     'recomp-framework':     { mode: 'guide', guide: 'recomp',  coach: 'jimmy', free: 2 }
   };
