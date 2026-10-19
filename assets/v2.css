@@ -196,3 +196,9 @@ body.v2{--surface-ivory:#faf5ed;--surface-dark:#29211b;--grad-warm:var(--surface
 .v2 .nav .brand-wordmark .wordmark-crop{width:115px;height:37px;flex-basis:115px;opacity:.7}
 .v2 .nav a.brand-wordmark .wordmark-crop img{width:202px;height:202px;left:-42px;top:-81px;filter:sepia(1) saturate(.65);opacity:.8}
 @media(max-width:420px){.v2 .nav .brand-wordmark .wordmark-crop{width:100px;height:33px;flex-basis:100px}.v2 .nav a.brand-wordmark .wordmark-crop img{width:176px;height:176px;left:-37px;top:-70px}}
+
+/* Supplied transparent Wesnoski wordmark, tinted to match each surface. */
+.brand .brand-logo{display:block;flex:none;width:174px;height:59px;background:currentColor;-webkit-mask:url("wesnoski-wordmark.png") center/contain no-repeat;mask:url("wesnoski-wordmark.png") center/contain no-repeat;}
+.brand{color:#604638}
+footer .brand,.footer .brand{color:#faf6ee}
+@media(max-width:600px){.brand .brand-logo{width:142px;height:48px}}
