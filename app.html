@@ -19,7 +19,7 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&amp;family=Instrument+Serif:ital@0;1&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="assets/styles.css" rel="stylesheet"/>
+<link href="assets/base.css?v=20261112" rel="stylesheet"/>
 <style>
 /* ---------- APP PAGE, scoped ---------- */
 /* App UI tokens mirror the live client portal white-label config. */
@@ -200,7 +200,7 @@
 .inc2 p{font-size:14px;color:var(--text-soft);line-height:1.6}
 </style>
 <script src="assets/consent.js"></script>
-<link href="assets/v2.css" rel="stylesheet"/></head>
+<link href="assets/site.css?v=20261112" rel="stylesheet"/></head>
 <body class="v2 page-app"><a class="skip-link" href="#main-content">Skip to content</a>
 <nav aria-label="Main navigation" class="nav">
 <div class="wrap">
@@ -228,12 +228,15 @@
 </div>
 </header>
 <!-- ============ WHAT LANDS ON YOUR PHONE ============ -->
-<section class="bg-warm" id="inside">
+<section class="app-showcase" id="inside">
 <div class="wrap">
-<div class="eyebrow">What lands on your phone</div>
+<div class="sc-head"><div class="eyebrow">What lands on your phone</div>
 <h2>A plan you can <em>actually live with.</em></h2>
-<p class="lede">From the first meal to the final set. Your coaching becomes clear, practical actions you can follow throughout the day.</p>
-<div class="real-feature-grid"><article class="real-feature"><div class="eyebrow">01 / TRAIN</div><h3>Every set, accounted for.</h3><p>Log reps and loads, add notes, and attach a form video from your workout.</p><div class="screen-pedestal"><img alt="Every set, accounted for." height="744" loading="lazy" src="assets/app/training.png" width="390"/></div></article><article class="real-feature"><div class="eyebrow">02 / NOURISH</div><h3>Know what comes next.</h3><p>Your meal plan brings foods, portions and daily instructions together in one place.</p><div class="screen-pedestal"><img alt="Know what comes next." height="744" loading="lazy" src="assets/app/nutrition.png" width="390"/></div></article><article class="real-feature"><div class="eyebrow">03 / REBUILD</div><h3>The small things matter.</h3><p>Practical daily tasks keep the lifestyle side of your protocol close at hand.</p><div class="screen-pedestal"><img alt="The small things matter." height="744" loading="lazy" src="assets/app/habits.png" width="390"/></div></article></div>
+<p class="lede">From the first meal to the final set. Your coaching becomes clear, practical actions you can follow throughout the day.</p></div>
+<div class="sc-frame">
+<div class="sc-stage"><div class="sc-glow"></div><div class="sc-phone"><img alt="Workout logging screen" class="sc-screen is-on" data-k="0" height="744" loading="lazy" src="assets/app/training.png" width="390"/><img alt="Meal plan screen" class="sc-screen" data-k="1" height="744" loading="lazy" src="assets/app/nutrition.png" width="390"/><img alt="Daily tasks screen" class="sc-screen" data-k="2" height="744" loading="lazy" src="assets/app/habits.png" width="390"/><img alt="In-app masterclasses and interactive tools" class="sc-screen" data-k="3" height="744" loading="lazy" src="assets/app/library.png" width="390"/></div><div class="sc-tag">Actual screen<br/><strong>Wesnoski Coaching app</strong></div></div>
+<div class="sc-list"><div class="sc-item is-on"><h3><button aria-controls="sc-p0" aria-expanded="true" class="sc-tab" data-k="0" id="sc-t0" type="button"><span class="sc-n">01</span><span class="sc-name">Train</span><span class="sc-title">Every set, accounted for.</span></button></h3><div aria-labelledby="sc-t0" class="sc-panel" id="sc-p0" role="region"><p>Log reps and loads, add notes, and attach a form video from your workout.</p></div></div><div class="sc-item"><h3><button aria-controls="sc-p1" aria-expanded="false" class="sc-tab" data-k="1" id="sc-t1" type="button"><span class="sc-n">02</span><span class="sc-name">Nourish</span><span class="sc-title">Know what comes next.</span></button></h3><div aria-labelledby="sc-t1" class="sc-panel" id="sc-p1" role="region"><p>Your meal plan brings foods, portions and daily instructions together in one place.</p></div></div><div class="sc-item"><h3><button aria-controls="sc-p2" aria-expanded="false" class="sc-tab" data-k="2" id="sc-t2" type="button"><span class="sc-n">03</span><span class="sc-name">Rebuild</span><span class="sc-title">The small things matter.</span></button></h3><div aria-labelledby="sc-t2" class="sc-panel" id="sc-p2" role="region"><p>Practical daily tasks keep the lifestyle side of your protocol close at hand.</p></div></div><div class="sc-item"><h3><button aria-controls="sc-p3" aria-expanded="false" class="sc-tab" data-k="3" id="sc-t3" type="button"><span class="sc-n">04</span><span class="sc-name">Learn</span><span class="sc-title">Understand the why behind the work.</span></button></h3><div aria-labelledby="sc-t3" class="sc-panel" id="sc-p3" role="region"><p>Masterclasses, educational videos and interactive tools give you a place to keep learning alongside your coaching.</p></div></div></div>
+</div>
 </div>
 </section>
 <!-- ============ WHAT'S IN IT ============ -->
@@ -259,7 +262,7 @@
 </div>
 </section>
 <!-- ============ COACH SIDE ============ -->
-<section class="app-connected bg-dark"><div class="wrap connected-grid"><div class="connected-copy"><div class="eyebrow">CONNECTED TO YOUR COACH</div><h2>The work happens daily.<br/><em>So does the connection.</em></h2><p class="lede">Check-ins, daily logs and direct messages keep your coach close to what is changing. Your plan stays connected to the person following it.</p><div class="connection-detail"><span>01</span><div><h3>Tell us how you’re doing.</h3><p>Record sleep, HRV, resting heart rate and other daily markers.</p></div></div><div class="connection-detail"><span>02</span><div><h3>Keep the conversation going.</h3><p>Ask questions between check-ins through your direct coach conversation.</p></div></div></div><div class="connected-screens"><img alt="Daily biometrics check-in form" height="744" loading="lazy" src="assets/app/check-ins-clean.png" width="390"/><img alt="Direct messages with your coach" height="744" loading="lazy" src="assets/app/messages.png" width="390"/></div></div></section><section class="app-library"><div class="wrap library-grid"><div class="library-screen"><img alt="In-app masterclasses and interactive tools" height="744" loading="lazy" src="assets/app/library.png" width="390"/></div><div><div class="eyebrow">MORE THAN A PLAN</div><h2>Understand the <em>why behind the work.</em></h2><p class="lede">Masterclasses, educational videos and interactive tools give you a place to keep learning alongside your coaching.</p><div class="library-topics"><span>Masterclasses</span><span>Functional health education</span><span>Interactive tools</span></div></div></div></section>
+<section class="app-connected bg-dark"><div class="wrap connected-grid"><div class="connected-copy"><div class="eyebrow">CONNECTED TO YOUR COACH</div><h2>The work happens daily.<br/><em>So does the connection.</em></h2><p class="lede">Check-ins, daily logs and direct messages keep your coach close to what is changing. Your plan stays connected to the person following it.</p><div class="connection-detail"><span>01</span><div><h3>Tell us how you’re doing.</h3><p>Record sleep, HRV, resting heart rate and other daily markers.</p></div></div><div class="connection-detail"><span>02</span><div><h3>Keep the conversation going.</h3><p>Ask questions between check-ins through your direct coach conversation.</p></div></div></div><div class="connected-screens"><img alt="Daily biometrics check-in form" height="744" loading="lazy" src="assets/app/check-ins-clean.png" width="390"/><img alt="Direct messages with your coach" height="744" loading="lazy" src="assets/app/messages.png" width="390"/><div class="connected-note">Direct line<br/><strong>Your coach, between check-ins.</strong></div></div></div></section>
 <!-- ============ GET IT ============ -->
 <section class="bg-terra" id="download">
 <div class="wrap">
@@ -309,6 +312,6 @@ document.addEventListener('click',function(e){
 },false);
 </script>
 <script defer="" src="assets/nav.js"></script>
-<script defer="" src="assets/v2.js"></script>
+<script defer src="assets/site.js?v=20261112"></script>
 </body>
 </html>
