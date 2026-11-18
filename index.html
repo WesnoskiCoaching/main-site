@@ -450,8 +450,8 @@ html:not(.bg-off) .v2 main>section.read-section{padding-top:44px!important}
 </style>
 <style>.ms-play .i-pause{display:none}.ms-voice.playing .i-play{display:none}.ms-voice.playing .i-pause{display:block}.ms-voice.playing .ms-play svg{margin-left:0}.ms-voice.playing{border-color:#e8b79c80}</style>
 <style>.ms-meta b{font-weight:700;color:#fbf6eed9}.ms-meta{font-size:10.5px}</style>
-<link rel="stylesheet" href="ui/fx.css?v=1794962812"/>
-<link rel="stylesheet" href="ui/btn-home.css?v=1794962812"/>
+<link rel="stylesheet" href="ui/fx.css?v=1794963505"/>
+<link rel="stylesheet" href="ui/btn-home.css?v=1794963505"/>
 <style>.ms-row{display:flex;align-items:flex-end;gap:9px;width:100%}.ms-row .ms-voice{flex:0 1 340px;min-width:0;width:auto}.ms-av{flex:none;width:36px;height:36px;border-radius:50%;object-fit:cover;border:1.5px solid #e8b79c80;box-sizing:border-box}i.ms-av{display:grid;place-items:center;background:linear-gradient(135deg,#e8956b,#7f4129);font:700 11px Manrope,sans-serif;font-style:normal;color:#fff}.st-who img{flex:none;width:46px;height:46px;border-radius:50%;object-fit:cover}.ms-thread .ms-video{margin-left:45px}</style>
 <style>
 /* PREVIEW: isometric layer stacks for the MARCH Method and The full build */
@@ -1087,7 +1087,7 @@ a.gl-x span{color:#e8b79c;font-weight:600}
   function loop(t) { if (!visible) { running = false; return; } draw(t); requestAnimationFrame(loop); }
   function start() { if (!still && !running) { running = true; requestAnimationFrame(loop); } }
   function resize() {
-    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var dpr = Math.min(window.devicePixelRatio || 1, (window.matchMedia && matchMedia('(pointer:coarse)').matches) ? 1.25 : 2);
     canvas.width = box.clientWidth * dpr; canvas.height = box.clientHeight * dpr;
     gl.viewport(0, 0, canvas.width, canvas.height);
     if (still) draw(8000);
@@ -1270,7 +1270,7 @@ a.gl-x span{color:#e8b79c;font-weight:600}
   }
   var active = 0, glow = cards.map(function () { return 0; }), mouse = null, dpr = 1, sx = 1, sy = 1, lines = [], pins = [];
   function size() {
-    var r = canvas.getBoundingClientRect(); dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var r = canvas.getBoundingClientRect(); dpr = Math.min(window.devicePixelRatio || 1, (window.matchMedia && matchMedia('(pointer:coarse)').matches) ? 1.25 : 2);
     canvas.width = r.width * dpr; canvas.height = r.height * dpr; sx = r.width / BW; sy = r.height / BH;
     var s = stage.getBoundingClientRect(); svg.innerHTML = ''; lines = []; pins = [];
     cards.forEach(function (c) {
@@ -1403,7 +1403,7 @@ a.gl-x span{color:#e8b79c;font-weight:600}
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) close(); });
 })();
 </script>
-<script src="ui/fx.js?v=1794962812"></script>
+<script src="ui/fx.js?v=1794963505"></script>
 <script>
 /* Isometric layer stacks. One component, used for the MARCH phases and for The full build. */
 (function () {
@@ -1559,7 +1559,7 @@ a.gl-x span{color:#e8b79c;font-weight:600}
     var y2 = y * Math.cos(tilt) - z * Math.sin(tilt), z2 = y * Math.sin(tilt) + z * Math.cos(tilt);
     return [cx + x * r, cx - y2 * r, z2];
   }
-  function resize() { var w = gl.clientWidth; dpr = Math.min(window.devicePixelRatio || 1, 2); size = w; cv.width = cv.height = Math.round(w * dpr); }
+  function resize() { var w = gl.clientWidth; dpr = Math.min(window.devicePixelRatio || 1, (window.matchMedia && matchMedia('(pointer:coarse)').matches) ? 1.25 : 2); size = w; cv.width = cv.height = Math.round(w * dpr); }
   function focus(i) { hot = i; target = -SITES[i].lon * D; tags.forEach(function (t, k) { t.classList.toggle('hot', k === i); }); cards.forEach(function (c, k) { c.classList.toggle('hot', k === i); }); start(); }
   function draw(t) {
     var dt = Math.min(0.05, (t - lastT) / 1000 || 0.016); lastT = t;

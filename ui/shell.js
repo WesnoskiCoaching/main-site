@@ -119,7 +119,7 @@
     gl.uniform3fv(U('u_bg'), new Float32Array(rgb(P.BG))); gl.uniform3fv(U('u_colors'), new Float32Array([].concat.apply([], P.COLORS.map(rgb))));
     var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     function draw(t) { gl.uniform2f(uRes, canvas.width, canvas.height); gl.uniform1f(uTime, t * 0.001 * SPEED); gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4); }
-    function resize() { var d = Math.min(window.devicePixelRatio || 1, 2); canvas.width = box.clientWidth * d; canvas.height = box.clientHeight * d; gl.viewport(0, 0, canvas.width, canvas.height); if (still) draw(8000); }
+    function resize() { var d = Math.min(window.devicePixelRatio || 1, (window.matchMedia && matchMedia('(pointer:coarse)').matches) ? 1.25 : 2); canvas.width = box.clientWidth * d; canvas.height = box.clientHeight * d; gl.viewport(0, 0, canvas.width, canvas.height); if (still) draw(8000); }
     window.addEventListener('resize', resize); resize();
     if (!still) requestAnimationFrame(function loop(t) { if (!document.hidden) draw(t); requestAnimationFrame(loop); });
   }

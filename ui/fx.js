@@ -51,7 +51,7 @@
     var ctx = cv.getContext('2d'), dpr = 1, GL = 'ｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄ0123456789MARCH+<>/=', BREAK = 300, STEP = 13;
     var dark = /bg-orig/.test(document.documentElement.className), HEAD = dark ? '255,240,228' : '153,82,57', BODY = dark ? '232,149,107' : '165,90,63';
     var target = null, mouse = { x: 0, y: 0 }, strand = [], shards = [], running = false, last = 0;
-    function size() { dpr = Math.min(window.devicePixelRatio || 1, 2); cv.width = innerWidth * dpr; cv.height = innerHeight * dpr; }
+    function size() { dpr = Math.min(window.devicePixelRatio || 1, (window.matchMedia && matchMedia('(pointer:coarse)').matches) ? 1.25 : 2); cv.width = innerWidth * dpr; cv.height = innerHeight * dpr; }
     function glyph() { return GL.charAt(Math.random() * GL.length | 0); }
     function anchor() {                                    /* point on the button's edge nearest the cursor */
       var r = target.getBoundingClientRect();

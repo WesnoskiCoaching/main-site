@@ -192,3 +192,17 @@ html.snap-on .snap-sec{scroll-snap-align:start;scroll-snap-stop:always;scroll-ma
 /* 2026-11-17: the native scroll catch is off everywhere. It crashed the page on iPhones. Mouse and trackpad keep the scripted stop. */
 html.snap-on{scroll-snap-type:none!important}
 .snap-sec,.snap-a{scroll-snap-align:none!important;scroll-snap-stop:normal!important}
+
+/* 2026-11-17 memory diet. Safari on iPhone was killing the page for using too much graphics memory.
+   1) faded elements no longer each hold their own graphics layer (this applied to hundreds of elements, on every device) */
+[data-fx]{will-change:auto!important}
+/* 2) phones and tablets: no live background blur, no always-running edge and sheen animations, steady accent colour, flat cards */
+@media (pointer:coarse){
+  *,*::before,*::after{-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+  *::before,*::after{animation:none!important}
+  html.ac-cycle{animation:none!important}
+  h1,h2,h3,h1 em,h2 em,h3 em{animation:none!important}
+  .holo{will-change:auto!important;transform:none!important}
+  .holo>*{transform:none!important}
+  .nm,.nm-menu,.cc,.gxp,.applybar{background-color:rgba(8,6,5,.94)}
+}
