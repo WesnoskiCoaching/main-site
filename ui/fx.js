@@ -44,7 +44,7 @@
 (function () {
   function ready(f) { if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', f); else f(); }
   ready(function () {
-    var btns = [].slice.call(document.querySelectorAll('a[href*="wesnoskicoaching.com/application"]'));
+    var btns = [].slice.call(document.querySelectorAll('a[href="apply.html"], a[href*="wesnoskicoaching.com/application"]'));
     btns.forEach(function (b) { b.classList.add('gx-apply'); });
     if (!btns.length || window.matchMedia('(prefers-reduced-motion: reduce)').matches || !window.matchMedia('(hover: hover)').matches) return;
     var cv = document.createElement('canvas'); cv.className = 'gx-tether'; cv.setAttribute('aria-hidden', 'true'); document.body.appendChild(cv);

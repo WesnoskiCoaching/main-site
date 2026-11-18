@@ -68,9 +68,9 @@
    corner to the chat bubble once the chat has loaded. */
 (function () {
   if (!document.querySelector('nav.nav')) return;
-  if (/\/(privacy|terms|disclaimer|booked|thanks|unlocked)(\.html)?$/.test(location.pathname)) return;
-  var jimmy = document.querySelector('main a[href*="jimmy-application"]');
-  var house = document.querySelector('nav.nav a[href*="/application"]');
+  if (/\/(privacy|terms|disclaimer|booked|thanks|unlocked|apply|book|jimmy-apply)(\.html)?$/.test(location.pathname)) return;
+  var jimmy = document.querySelector('main a[href*="jimmy-apply"]');
+  var house = document.querySelector('nav.nav a[href="apply.html"], nav.nav a[href*="/application"]');
   var src = jimmy || house; if (!src) return;
   var bar = document.createElement('div'); bar.className = 'applybar';
   var note = document.createElement('span'); note.textContent = jimmy ? 'Work with Jimmy' : '1-on-1 functional health coaching';
