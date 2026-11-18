@@ -1,0 +1,3 @@
+html.bg-orig :is(main,footer) .btn:not(.gx-apply){background:linear-gradient(180deg,#ffffff24,#ffffff0a)!important;border:1px solid #ffffff47!important;border-radius:999px!important;box-shadow:inset 0 1px 0 #ffffff59,0 10px 22px -12px #000!important;color:#fbf6ee!important;text-shadow:none!important}
+html.bg-orig :is(main,footer) .btn:not(.gx-apply):hover{background:#e8b79c!important;border-color:#e8b79c!important;color:#0b0807!important}
+html.bg-orig .applybar{background:#0b0807e6!important;border-color:#ffffff24!important;color:#fbf6ee!important}

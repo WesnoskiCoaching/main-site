@@ -1,0 +1,4 @@
+# Local-only. Never deploy. Added 2026-09-13.
+_archive/
+_build/
+.DS_Store

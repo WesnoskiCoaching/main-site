@@ -35,6 +35,7 @@
     'birth-control':        { mode: 'guide', guide: 'birthcontrol', free: 3 },
     'gut-health':           { mode: 'guide', guide: 'gut',          free: 3 },
     'depleted':             { mode: 'guide', guide: 'depleted',     free: 3 },
+    'progesterone-playbook': { mode: 'guide', guide: 'progesterone', free: 2 },
     'assessment':           { mode: 'assessment', guide: 'assessment' },
     'calculator':           { mode: 'calculator', guide: 'tghdl' },
     'index':                { mode: 'exit', guide: 'home' },
