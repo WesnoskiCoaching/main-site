@@ -450,8 +450,8 @@ html:not(.bg-off) .v2 main>section.read-section{padding-top:44px!important}
 </style>
 <style>.ms-play .i-pause{display:none}.ms-voice.playing .i-play{display:none}.ms-voice.playing .i-pause{display:block}.ms-voice.playing .ms-play svg{margin-left:0}.ms-voice.playing{border-color:#e8b79c80}</style>
 <style>.ms-meta b{font-weight:700;color:#fbf6eed9}.ms-meta{font-size:10.5px}</style>
-<link rel="stylesheet" href="ui/fx.css?v=1794962291"/>
-<link rel="stylesheet" href="ui/btn-home.css?v=1794962291"/>
+<link rel="stylesheet" href="ui/fx.css?v=1794962812"/>
+<link rel="stylesheet" href="ui/btn-home.css?v=1794962812"/>
 <style>.ms-row{display:flex;align-items:flex-end;gap:9px;width:100%}.ms-row .ms-voice{flex:0 1 340px;min-width:0;width:auto}.ms-av{flex:none;width:36px;height:36px;border-radius:50%;object-fit:cover;border:1.5px solid #e8b79c80;box-sizing:border-box}i.ms-av{display:grid;place-items:center;background:linear-gradient(135deg,#e8956b,#7f4129);font:700 11px Manrope,sans-serif;font-style:normal;color:#fff}.st-who img{flex:none;width:46px;height:46px;border-radius:50%;object-fit:cover}.ms-thread .ms-video{margin-left:45px}</style>
 <style>
 /* PREVIEW: isometric layer stacks for the MARCH Method and The full build */
@@ -1403,7 +1403,7 @@ a.gl-x span{color:#e8b79c;font-weight:600}
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) close(); });
 })();
 </script>
-<script src="ui/fx.js?v=1794962291"></script>
+<script src="ui/fx.js?v=1794962812"></script>
 <script>
 /* Isometric layer stacks. One component, used for the MARCH phases and for The full build. */
 (function () {
@@ -1775,12 +1775,19 @@ a.gl-x span{color:#e8b79c;font-weight:600}
     var inside = intro.parentNode === march;
     if (!inside && ok.matches) { march.insertBefore(intro, march.firstChild); march.classList.add('has-intro'); inside = true; }
     if (inside && (!ok.matches || march.offsetHeight >= window.innerHeight - 112)) { home.insertBefore(intro, march); march.classList.remove('has-intro'); }
-    window.dispatchEvent(new Event('resize'));
+    var now = intro.parentNode === march;
+    if (now !== was) { was = now; window.dispatchEvent(new Event('resize')); }
     busy = false;
   }
+  var was = false, lastW = window.innerWidth, lastOk = ok.matches;
   place();
   window.addEventListener('load', place);
-  window.addEventListener('resize', function () { if (!busy) place(); });
+  window.addEventListener('resize', function () {
+    if (busy) return;
+    if (!ok.matches && !lastOk && intro.parentNode !== march) return;      /* phones and short screens: nothing to do */
+    if (window.innerWidth === lastW && ok.matches === lastOk && Math.abs(window.innerHeight - (place.h || 0)) < 60) return;
+    lastW = window.innerWidth; lastOk = ok.matches; place.h = window.innerHeight; place();
+  });
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(place);
 })();
 </script>

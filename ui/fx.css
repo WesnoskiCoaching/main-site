@@ -188,3 +188,7 @@ html.snap-on .snap-sec{scroll-snap-align:start;scroll-snap-stop:always;scroll-ma
 
 /* mouse and trackpad get the scripted bump stop; touch screens keep the light native catch */
 @media(hover:hover) and (pointer:fine){html.snap-on{scroll-snap-type:none!important}}
+
+/* 2026-11-17: the native scroll catch is off everywhere. It crashed the page on iPhones. Mouse and trackpad keep the scripted stop. */
+html.snap-on{scroll-snap-type:none!important}
+.snap-sec,.snap-a{scroll-snap-align:none!important;scroll-snap-stop:normal!important}
