@@ -42,7 +42,7 @@ html.bg-bold .hero-copy h1 em{color:#fbf6ee}
 html.bg-bold .eyebrow-line{background:#17120f}
 html.bg-bold .hero-cta .btn{background:linear-gradient(135deg,#3a2a21,#17120f);border-color:#17120f;color:#fbf6ee;box-shadow:0 8px 22px #1b0f0850,inset 0 1px 0 #ffffff26}
 html.bg-bold .hero-footnote .status-dot{background:#fbf6ee}
-html.bg-orig .hero-bg{background:#120a07}
+html.bg-orig .hero-bg{background:#1b1411}
 html.bg-orig .hero-copy h1,html.bg-orig .hero-copy .eyebrow,html.bg-orig .hero-deck,html.bg-orig .hero-description,html.bg-orig .hero-footnote{color:#fbf6ee}
 html.bg-orig .hero-copy h1 em{color:#e8b79c}
 html.bg-orig .eyebrow-line{background:#e8b79c}
@@ -382,7 +382,7 @@ html.bg-orig body.v2{background:#0b0807}
 html.bg-orig .v2 main>*,html.bg-orig .v2 footer,html.bg-orig .v2 main>section>div.bg-dark{background:none!important;border-top-color:transparent!important;border-bottom-color:transparent!important;box-shadow:none}
 html.bg-orig .v2 .v2-hero{overflow:visible}
 html.bg-orig .v2 main,html.bg-orig .v2 footer{--text:#fbf6ee;--text-soft:#fbf6eec7;--subtext:#fbf6eea6;--muted:#fbf6eea6;--warm-brown:#fbf6ee;--border:#ffffff24;--border-strong:#ffffff3d;--copper:#e8b79c;--terracotta:#e8b79c;color:#fbf6ee}
-html.bg-orig .page-bg::after{content:"";position:absolute;inset:0;background:#0b0807;opacity:.3}
+html.bg-orig .page-bg::after{content:"";position:absolute;inset:0;background:#17110e;opacity:.2}
 html.bg-orig #testing .phase,html.bg-orig .partner-card,html.bg-orig .assess-card{background:#0b0807a6!important;border:1px solid #ffffff24!important;box-shadow:none!important;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:#fbf6ee}
 html.bg-orig .team-person-label{background:#0b0807d9!important;color:#fbf6ee}
 html.bg-orig .v2 footer,html.bg-orig .v2 footer p,html.bg-orig .v2 footer a,html.bg-orig .v2 footer li,html.bg-orig .v2 footer span:not(.brand-logo){color:#fbf6eeb8}
@@ -450,8 +450,8 @@ html:not(.bg-off) .v2 main>section.read-section{padding-top:44px!important}
 </style>
 <style>.ms-play .i-pause{display:none}.ms-voice.playing .i-play{display:none}.ms-voice.playing .i-pause{display:block}.ms-voice.playing .ms-play svg{margin-left:0}.ms-voice.playing{border-color:#e8b79c80}</style>
 <style>.ms-meta b{font-weight:700;color:#fbf6eed9}.ms-meta{font-size:10.5px}</style>
-<link rel="stylesheet" href="ui/fx.css?v=1795013725"/>
-<link rel="stylesheet" href="ui/btn-home.css?v=1795013725"/>
+<link rel="stylesheet" href="ui/fx.css?v=1795026832"/>
+<link rel="stylesheet" href="ui/btn-home.css?v=1795026832"/>
 <style>.ms-row{display:flex;align-items:flex-end;gap:9px;width:100%}.ms-row .ms-voice{flex:0 1 340px;min-width:0;width:auto}.ms-av{flex:none;width:36px;height:36px;border-radius:50%;object-fit:cover;border:1.5px solid #e8b79c80;box-sizing:border-box}i.ms-av{display:grid;place-items:center;background:linear-gradient(135deg,#e8956b,#7f4129);font:700 11px Manrope,sans-serif;font-style:normal;color:#fff}.st-who img{flex:none;width:46px;height:46px;border-radius:50%;object-fit:cover}.ms-thread .ms-video{margin-left:45px}</style>
 <style>
 /* PREVIEW: isometric layer stacks for the MARCH Method and The full build */
@@ -1017,7 +1017,7 @@ a.gl-x span{color:#e8b79c;font-weight:600}
 </div>
 </footer>
 <script defer src="wc-gate.js" data-exit="off"></script><script defer="" src="assets/nav.js"></script>
-<script defer src="assets/site.js?v=1795014155"></script>
+<script defer src="assets/site.js?v=1795026832"></script>
 <nav class="pv-switch" aria-label="Preview: accent colour"><a href="#" data-ac="cycle">All, shifting</a><a href="#" data-ac="none">Terracotta only</a><a href="#" data-ac="teal">A · Teal</a><a href="#" data-ac="sage">B · Sage</a><a href="#" data-ac="blue">C · Dusk blue</a></nav><script>(function(){var r=document.documentElement,links=[].slice.call(document.querySelectorAll(".pv-switch a[data-ac]"));function cur(){var m=/ac-(cycle|teal|sage|blue|none)/.exec(r.className);return m?m[1]:"cycle"}function paint(){var c=cur();links.forEach(function(a){a.className=a.getAttribute("data-ac")===c?"on":""})}links.forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();var v=a.getAttribute("data-ac");r.className=r.className.replace(/\bac-(cycle|teal|sage|blue|none)\b/g,"").trim()+" ac-"+v;try{localStorage.setItem("pv_ac",v)}catch(x){}paint()})});document.addEventListener("DOMContentLoaded",paint);setTimeout(paint,300)})();</script>
 <script>
 (function () {
@@ -1028,7 +1028,7 @@ a.gl-x span{color:#e8b79c;font-weight:600}
   var gl = canvas.getContext('webgl');
   if (!gl) return;
   var P = mode === 'orig'
-    ? { BG: '#000000', COLORS: ['#e8b79c', '#c27c5a', '#995239', '#000000'], VIG: 0.2, GLOW: 0.3, GRAIN: 0.3 }
+    ? { BG: '#1b1411', COLORS: ['#e8b79c', '#c27c5a', '#995239', '#1b1411'], VIG: 0.36, GLOW: 0.3, GRAIN: 0.3 }
     : mode === 'soft'
     ? { BG: '#f6eee2', COLORS: ['#fdf9f2', '#f3e2cf', '#eccfb8', '#e6c2a6'], VIG: 0.96, GLOW: 0.0, GRAIN: 0.18 }
     : { BG: '#a96a4b', COLORS: ['#ddb096', '#c27c5a', '#a05738', '#7f4129'], VIG: 0.6, GLOW: 0.12, GRAIN: 0.3 };
@@ -1226,93 +1226,193 @@ a.gl-x span{color:#e8b79c;font-weight:600}
 })();
 </script>
 <script>
-/* Particle body: a dotted anatomical figure. Each system lights its own organs. */
+/* Particle body: a 3D figure built from muscle volumes and drawn as fibre dots. Each system lights its own organs. */
 (function () {
   var stage = document.querySelector('.bd-stage'); if (!stage) return;
   var canvas = document.getElementById('bd-canvas'), ctx = canvas.getContext('2d'), svg = stage.querySelector('.bd-lines');
-  var cards = [].slice.call(stage.querySelectorAll('.bd-card')), BW = 240, BH = 545;
-  var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function mirror(d) { return d.replace(/(-?\d+(?:\.\d+)?),(-?\d+(?:\.\d+)?)/g, function (m, x, y) { return (BW - x) + ',' + y; }); }
-  var ARM = 'M168,104 C182,104 190,116 190,134 C192,160 190,185 192,205 C196,230 200,258 201,282 C204,296 206,312 200,322 C194,326 188,318 187,304 C186,296 186,290 186,282 C182,255 176,228 174,205 C172,185 168,165 165,146 Z';
-  var LEG = 'M162,276 C168,310 164,360 157,400 C162,425 160,470 151,510 C152,520 160,530 158,536 L134,538 C132,528 138,520 138,510 C132,470 132,430 134,400 C130,360 126,330 121,300 Z';
-  var TORSO = 'M108,86 C104,96 84,100 70,106 C66,120 72,140 76,150 C80,180 86,205 87,225 C86,245 80,262 78,280 L120,302 L162,280 C160,262 154,245 153,225 C154,205 160,180 164,150 C168,140 174,120 170,106 C156,100 136,96 132,86 Z';
-  var body = new Path2D();
-  body.addPath(new Path2D(TORSO)); body.addPath(new Path2D(ARM)); body.addPath(new Path2D(mirror(ARM))); body.addPath(new Path2D(LEG)); body.addPath(new Path2D(mirror(LEG)));
-  body.addPath(new Path2D('M109,66 L131,66 L132,90 L108,90 Z'));
-  var head = new Path2D(); head.ellipse(120, 40, 25, 33, 0, 0, 6.2832); body.addPath(head);
-  function E(x, y, rx, ry, rot) { var p = new Path2D(); p.ellipse(x, y, rx, ry, rot || 0, 0, 6.2832); return p; }
-  function join() { var p = new Path2D(); for (var i = 0; i < arguments.length; i++) p.addPath(arguments[i]); return p; }
-  var NERVE = 'M120,58 L120,292 M120,104 C140,104 164,106 178,122 C186,150 186,190 190,215 C194,250 196,280 196,300 M120,292 C134,296 146,306 148,330 C150,370 146,400 146,430 C146,470 146,500 146,522 M120,150 L150,146 M120,185 L152,182 M120,220 L150,222';
-  var nerves = new Path2D(NERVE + ' ' + mirror(NERVE));
-  /* organ shapes per system: fill = dots that light, line = outline that glows */
-  var ORG = {
-    ns:  { fill: E(120, 31, 20, 19), line: join(E(120, 31, 20, 19), nerves), stroke: nerves },
-    hor: { fill: join(E(113, 85, 5, 7), E(127, 85, 5, 7), E(101, 199, 7, 4), E(139, 199, 7, 4), E(120, 290, 9, 6)) },
-    mit: { all: true },
-    org: { fill: join(new Path2D('M82,170 C92,160 118,162 128,170 C126,184 110,192 96,192 C86,190 80,182 82,170 Z'), E(99, 214, 6, 10), E(141, 214, 6, 10)) },
-    met: { fill: join(E(132, 203, 17, 5.5, -0.15), new Path2D('M82,170 C92,160 118,162 128,170 C126,184 110,192 96,192 C86,190 80,182 82,170 Z')) },
-    gut: { fill: join(new Path2D('M96,226 C96,216 144,216 144,226 L146,268 C146,282 94,282 94,268 Z'), E(134, 186, 11, 8, 0.3)) }
-  };
-  var probe = document.createElement('canvas').getContext('2d'), dots = [], seed = 11, keys = cards.map(function (c) { return c.dataset.k; });
+  var cards = [].slice.call(stage.querySelectorAll('.bd-card')), BW = 240, BH = 545, S = 2.95, CX = 120, FY = 540, MID = 280;
+  var mq = function (q) { return window.matchMedia && matchMedia(q).matches; };
+  var still = mq('(prefers-reduced-motion: reduce)'), coarse = mq('(pointer:coarse)');
+  var keys = cards.map(function (c) { return c.dataset.k; }), seed = 11;
   function rnd() { seed = (seed * 16807) % 2147483647; return seed / 2147483647; }
-  probe.lineWidth = 7;
-  for (var y = 4; y < BH - 2; y += 4.1) for (var x = 30; x < BW - 30; x += 4.1) {
-    var px = x + (rnd() - 0.5) * 2.4, py = y + (rnd() - 0.5) * 2.4;
-    if (!probe.isPointInPath(body, px, py)) continue;
-    var d = { x: px, y: py, r: 0.55 + rnd() * 0.6, p: rnd() * 6.28, w: [] };
-    keys.forEach(function (k, i) {
-      var o = ORG[k], w = 0;
-      if (o.all) w = rnd() < 0.3 ? 1 : 0.1;
-      else { if (probe.isPointInPath(o.fill, px, py)) w = 1; if (o.stroke && probe.isPointInStroke(o.stroke, px, py)) w = Math.max(w, 0.85); }
-      d.w[i] = w;
+
+  /* ---- the figure, in centimetres: x across, y up from the floor, z toward the viewer ---- */
+  /* capsules: ax,ay,az, bx,by,bz, rA,rB, bulge, depth, bulge skew, mirrored */
+  var CAPS = [
+    [0, 148, -0.5, 0, 160, 1, 5.4, 5, 0, 0.95, 1, 0],              /* neck */
+    [2.5, 153.5, -1.5, 16, 146.5, -1, 3.4, 3.4, 0.5, 0.9, 1, 1],   /* trapezius */
+    [0, 147.5, 0, 0, 120, 0.5, 12.6, 13.4, 3.5, 0.7, 0.8, 0],      /* ribcage */
+    [0, 123, 0.5, 0, 103, 0.5, 13.3, 13.6, -0.9, 0.66, 1, 0],      /* waist */
+    [0, 105.5, 0, 0, 88, 0, 13.8, 15.4, 0.6, 0.68, 1, 0],          /* pelvis */
+    [19.8, 142, 0, 24, 114, 0.5, 4.5, 3.8, 0.4, 1, 0.8, 1],        /* upper arm */
+    [24, 114, 0.5, 29.5, 89, 3, 4, 2.6, 0.6, 0.9, 0.55, 1],        /* forearm */
+    [29.5, 90, 3, 32, 74, 4.5, 2.5, 2.2, 1.3, 0.42, 1, 1],         /* hand */
+    [8.8, 92, 0, 9.6, 51, 0.5, 8.5, 5.2, 0.6, 1, 0.8, 1],          /* thigh */
+    [9.6, 52, 0.5, 10.2, 6.5, -1, 5, 3, 1, 0.98, 0.6, 1],          /* lower leg */
+    [10.3, 4, -4, 11.6, 2.8, 12, 3.4, 2.7, 0.3, 0.8, 1, 1]         /* foot */
+  ];
+  /* ellipsoids: cx,cy,cz, rx,ry,rz, mirrored, pole axis (0 x, 1 y) */
+  var ELLS = [
+    [0, 168.8, 0, 7.6, 9.2, 9.2, 0, 1],        /* cranium */
+    [0, 162, 1.9, 6.2, 6.8, 7, 0, 1],          /* face and jaw */
+    [19.3, 142.6, 0, 5.3, 6.9, 5.7, 1, 1],     /* deltoid */
+    [7.6, 137.5, 7.4, 7.6, 5.6, 3.7, 1, 0],    /* pectoral */
+    [13, 128, -3, 4.6, 11, 5, 1, 1],           /* lat */
+    [3.3, 129, 9.7, 3.1, 3.6, 1.8, 1, 1],      /* abdominals, four rows */
+    [3.3, 121.3, 8.7, 3.1, 3.6, 1.8, 1, 1],
+    [3.3, 113.5, 8.3, 3.1, 3.6, 1.8, 1, 1],
+    [3, 105.5, 8.5, 2.9, 3.8, 1.8, 1, 1],
+    [22, 129, 2.5, 3.1, 7.2, 3.1, 1, 1],       /* biceps */
+    [22.8, 127, -2.7, 3.2, 8.2, 3.1, 1, 1],    /* triceps */
+    [7, 93, -6.5, 7.6, 7.6, 5.8, 1, 1],        /* glute */
+    [8.9, 74, 5.3, 3.9, 15, 3.9, 1, 1],        /* quad, centre */
+    [12.7, 72, 2.8, 4.3, 14, 4.9, 1, 1],       /* quad, outer */
+    [6.1, 60, 4, 3, 6.2, 3.5, 1, 1],           /* quad, inner */
+    [9.6, 51, 1.6, 4.5, 4.2, 4.5, 1, 1],       /* knee */
+    [8.1, 40, -3, 3, 7.6, 3.2, 1, 1],          /* calf, inner */
+    [11.8, 41, -3, 3, 8.2, 3.2, 1, 1],         /* calf, outer */
+    [32, 74, 4.5, 2.1, 2.4, 1, 1, 1],          /* fingertips */
+    [10.3, 4.6, -4, 3.4, 4.4, 3.4, 1, 1],      /* heel */
+    [11.6, 2.8, 12, 2.7, 2.1, 2.6, 1, 1]       /* toes */
+  ];
+  function unit(v) { var l = Math.sqrt(v[0] * v[0] + v[1] * v[1] + v[2] * v[2]) || 1; return [v[0] / l, v[1] / l, v[2] / l]; }
+  function cross(a, b) { return [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]]; }
+  var vols = [];
+  CAPS.forEach(function (c) {
+    (c[11] ? [1, -1] : [1]).forEach(function (m) {
+      var a = [c[0] * m, c[1], c[2]], b = [c[3] * m, c[4], c[5]], d = [b[0] - a[0], b[1] - a[1], b[2] - a[2]];
+      var L = Math.sqrt(d[0] * d[0] + d[1] * d[1] + d[2] * d[2]), h = unit(d), u = unit(cross(h, Math.abs(h[2]) > 0.8 ? [0, 1, 0] : [0, 0, 1])), v = cross(h, u);
+      vols.push({ cap: 1, a: a, h: h, L: L, u: u, v: v, rA: c[6], rB: c[7], bg: c[8], dz: c[9], sk: c[10] });
     });
-    dots.push(d);
+  });
+  ELLS.forEach(function (e) { (e[6] ? [1, -1] : [1]).forEach(function (m) { vols.push({ c: [e[0] * m, e[1], e[2]], r: [e[3], e[4], e[5]], pole: e[7] }); }); });
+  function rad(o, t) { return o.rA + (o.rB - o.rA) * t + o.bg * Math.sin(Math.PI * Math.pow(t, o.sk)); }
+  function inside(o, x, y, z) {
+    if (!o.cap) { var ex = (x - o.c[0]) / o.r[0], ey = (y - o.c[1]) / o.r[1], ez = (z - o.c[2]) / o.r[2]; return ex * ex + ey * ey + ez * ez < 1; }
+    var wx = x - o.a[0], wy = y - o.a[1], wz = z - o.a[2], t = (wx * o.h[0] + wy * o.h[1] + wz * o.h[2]) / o.L; if (t < 0 || t > 1) return false; var tc = t, r = rad(o, tc);
+    var qx = wx - o.h[0] * tc * o.L, qy = wy - o.h[1] * tc * o.L, qz = wz - o.h[2] * tc * o.L;
+    var pu = (qx * o.u[0] + qy * o.u[1] + qz * o.u[2]) / r, pv = (qx * o.v[0] + qy * o.v[1] + qz * o.v[2]) / (r * o.dz);
+    return pu * pu + pv * pv < 1;
   }
-  var active = 0, glow = cards.map(function () { return 0; }), mouse = null, dpr = 1, sx = 1, sy = 1, lines = [], pins = [];
+  var P = [];   /* x,y,z, normal x,y,z, radius, phase, mitochondria weight */
+  function put(o, x, y, z, nx, ny, nz) {
+    for (var i = 0; i < vols.length; i++) if (vols[i] !== o && inside(vols[i], x, y, z)) return;
+    P.push(x, y, z, nx, ny, nz, 0.5 + rnd() * 0.55, rnd() * 6.28, rnd() < 0.3 ? 1 : 0.1);
+  }
+  var GAP = coarse ? 2.7 : 2.3, STEP = coarse ? 1.35 : 1.1;
+  vols.forEach(function (o) {
+    var k, i, K, n, f0, f, t, r, c, s, nn;
+    if (o.cap) {
+      K = Math.max(6, Math.round(Math.PI * (o.rA + o.rB + o.bg) * (1 + o.dz) / 2 / GAP)); n = Math.max(3, Math.round(o.L / STEP));
+      for (k = 0; k < K; k++) { f0 = 6.2832 * k / K + rnd() * 0.12;
+        for (i = 0; i < n; i++) { t = (i + rnd() * 0.7) / n; f = f0 + (rnd() - 0.5) * 0.07; r = rad(o, t); c = Math.cos(f); s = Math.sin(f);
+          nn = unit([o.u[0] * c * o.dz + o.v[0] * s, o.u[1] * c * o.dz + o.v[1] * s, o.u[2] * c * o.dz + o.v[2] * s]);
+          put(o, o.a[0] + o.h[0] * t * o.L + (o.u[0] * c + o.v[0] * s * o.dz) * r, o.a[1] + o.h[1] * t * o.L + (o.u[1] * c + o.v[1] * s * o.dz) * r, o.a[2] + o.h[2] * t * o.L + (o.u[2] * c + o.v[2] * s * o.dz) * r, nn[0], nn[1], nn[2]); } }
+    } else {
+      var pr = o.pole ? o.r[1] : o.r[0], eq = o.pole ? Math.max(o.r[0], o.r[2]) : Math.max(o.r[1], o.r[2]);
+      K = Math.max(6, Math.round(6.2832 * eq / GAP)); n = Math.max(4, Math.round(Math.PI * pr / STEP));
+      for (k = 0; k < K; k++) { f0 = 6.2832 * k / K + rnd() * 0.12;
+        for (i = 0; i < n; i++) { t = Math.PI * (i + rnd() * 0.7) / n; if (rnd() > Math.sin(t) + 0.15) continue; f = f0 + (rnd() - 0.5) * 0.07;
+          var e = o.pole ? [Math.sin(t) * Math.cos(f), Math.cos(t), Math.sin(t) * Math.sin(f)] : [Math.cos(t), Math.sin(t) * Math.cos(f), Math.sin(t) * Math.sin(f)];
+          nn = unit([e[0] / o.r[0], e[1] / o.r[1], e[2] / o.r[2]]);
+          put(o, o.c[0] + e[0] * o.r[0], o.c[1] + e[1] * o.r[1], o.c[2] + e[2] * o.r[2], nn[0], nn[1], nn[2]); } }
+    }
+  });
+  var N = P.length / 9, B = new Float32Array(P); P = null;
+
+  /* ---- organs per system: ellipsoids cx,cy,cz, rx,ry,rz. Screen left is the body's right side. ---- */
+  var LIVER = [-6, 122, 3.5, 8, 5, 5];
+  var ORG = {
+    ns:  { e: [[0, 169.5, 0, 6.2, 6, 7.4]], at: [0, 170, 0] },
+    hor: { e: [[1.9, 152, 4.2, 1.6, 2.4, 1.4], [-1.9, 152, 4.2, 1.6, 2.4, 1.4], [0, 166, 0, 1.6, 1.6, 1.6], [6, 118.5, -4, 2.3, 1.4, 1.6], [-6, 118.5, -4, 2.3, 1.4, 1.6], [0, 91, 2, 4.2, 2.6, 2.6]], at: [0, 152, 5] },
+    mit: { all: true, e: [], at: [3, 137, 9] },
+    org: { e: [LIVER, [6.5, 113, -4.5, 2.7, 4.6, 2.6], [-6.5, 113, -4.5, 2.7, 4.6, 2.6]], at: [-7, 122, 6] },
+    met: { e: [[2.5, 116, 2, 7, 2.1, 2.2], LIVER], at: [3, 116, 4] },
+    gut: { e: [[0, 103, 3, 10, 8, 5], [5.5, 122, 4, 4.6, 4, 3.6]], at: [0, 102, 7] }
+  };
+  var NERVE = [[[0, 164, -2], [0, 150, -4], [0, 120, -6], [0, 96, -5.5]]];
+  [1, -1].forEach(function (m) {
+    NERVE.push([[0, 147, -4], [17 * m, 146, -2], [22 * m, 128, 0], [24.5 * m, 114, 0.5], [30 * m, 89, 3], [32 * m, 76, 4]]);
+    NERVE.push([[0, 97, -5], [8.8 * m, 90, -2], [9.3 * m, 70, 0], [9.6 * m, 51, 0.5], [10.2 * m, 12, -1]]);
+    [140, 131, 122, 113].forEach(function (y) { NERVE.push([[0, y, -5], [11 * m, y - 2, -1], [12.5 * m, y - 4, 5]]); });
+  });
+  var O = [];   /* x,y,z, radius, phase, system index */
+  keys.forEach(function (k, ki) {
+    var o = ORG[k]; if (!o) return;
+    o.e.forEach(function (e) {
+      var n = Math.max(12, Math.min(coarse ? 120 : 200, Math.round(4.19 * e[3] * e[4] * e[5] / 6)));
+      for (var i = 0; i < n; i++) { var x, y, z; do { x = rnd() * 2 - 1; y = rnd() * 2 - 1; z = rnd() * 2 - 1; } while (x * x + y * y + z * z > 1);
+        O.push(e[0] + x * e[3], e[1] + y * e[4], e[2] + z * e[5], 0.55 + rnd() * 0.6, rnd() * 6.28, ki); }
+    });
+    if (k === 'ns') NERVE.forEach(function (ln) { for (var j = 1; j < ln.length; j++) { var a = ln[j - 1], b = ln[j], len = Math.sqrt(Math.pow(b[0] - a[0], 2) + Math.pow(b[1] - a[1], 2) + Math.pow(b[2] - a[2], 2)), n = Math.ceil(len / 1.5);
+      for (var i = 0; i < n; i++) { var t = i / n; O.push(a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t, a[2] + (b[2] - a[2]) * t, 0.5 + rnd() * 0.3, rnd() * 6.28, ki); } } });
+  });
+  var M = O.length / 6, G = new Float32Array(O); O = null;
+
+  var QA = 12, sxA = new Float32Array(N), syA = new Float32Array(N), srA = new Float32Array(N), sbA = new Uint8Array(N);
+  var active = 0, glow = cards.map(function () { return 0; }), mouse = null, dpr = 1, sx = 1, sy = 1, lines = [], pins = [], ends = [], offX = 0, offY = 0, ang = still ? 0.38 : 0, ca = 1, sa = 0, mitI = keys.indexOf('mit');
+  function proj(x, y, z, out) { var xr = x * ca + z * sa, zr = z * ca - x * sa, p = 1 + zr * 0.0016; out[0] = CX + S * xr * p; out[1] = MID + (FY - S * y - MID) * p; out[2] = zr; return out; }
+  var tmp = [0, 0, 0];
   function size() {
-    var r = canvas.getBoundingClientRect(); dpr = Math.min(window.devicePixelRatio || 1, (window.matchMedia && matchMedia('(pointer:coarse)').matches) ? 1.25 : 2);
+    var r = canvas.getBoundingClientRect(); dpr = Math.min(window.devicePixelRatio || 1, coarse ? 1.25 : 2);
     canvas.width = r.width * dpr; canvas.height = r.height * dpr; sx = r.width / BW; sy = r.height / BH;
-    var s = stage.getBoundingClientRect(); svg.innerHTML = ''; lines = []; pins = [];
+    var s = stage.getBoundingClientRect(); svg.innerHTML = ''; lines = []; pins = []; ends = []; offX = r.left - s.left; offY = r.top - s.top;
     cards.forEach(function (c) {
       var cr = c.getBoundingClientRect(), leftSide = c.classList.contains('bd-l');
-      var x1 = (leftSide ? cr.right : cr.left) - s.left, y1 = cr.top + cr.height / 2 - s.top;
-      var x2 = r.left - s.left + c.dataset.x * sx, y2 = r.top - s.top + c.dataset.y * sy;
-      var mx = (x1 + x2) / 2, p = document.createElementNS('http://www.w3.org/2000/svg', 'path'), dd = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-      p.setAttribute('d', 'M' + x1 + ',' + y1 + ' C' + mx + ',' + y1 + ' ' + mx + ',' + y2 + ' ' + x2 + ',' + y2);
-      dd.setAttribute('cx', x2); dd.setAttribute('cy', y2); dd.setAttribute('r', 3);
-      svg.appendChild(p); svg.appendChild(dd); lines.push(p); pins.push(dd);
+      var p = document.createElementNS('http://www.w3.org/2000/svg', 'path'), dd = document.createElementNS('http://www.w3.org/2000/svg', 'circle'); dd.setAttribute('r', 3);
+      svg.appendChild(p); svg.appendChild(dd); lines.push(p); pins.push(dd); ends.push({ x: (leftSide ? cr.right : cr.left) - s.left, y: cr.top + cr.height / 2 - s.top, px: -99, py: -99 });
     });
-    mark();
+    mark(); if (still) draw(0);
   }
   function mark() { cards.forEach(function (c, i) { var on = i === active; c.classList.toggle('on', on); if (lines[i]) { lines[i].classList.toggle('on', on); pins[i].classList.toggle('on', on); } }); }
+  function link() {
+    for (var k = 0; k < cards.length; k++) { var o = ORG[keys[k]], e = ends[k]; if (!o || !e) continue; proj(o.at[0], o.at[1], o.at[2], tmp);
+      var x2 = offX + tmp[0] * sx, y2 = offY + tmp[1] * sy; if (Math.abs(x2 - e.px) + Math.abs(y2 - e.py) < 0.4) continue; e.px = x2; e.py = y2;
+      var mx = (e.x + x2) / 2; lines[k].setAttribute('d', 'M' + e.x + ',' + e.y + ' C' + mx + ',' + e.y + ' ' + mx + ',' + y2 + ' ' + x2.toFixed(1) + ',' + y2.toFixed(1)); pins[k].setAttribute('cx', x2.toFixed(1)); pins[k].setAttribute('cy', y2.toFixed(1)); }
+  }
   function draw(t) {
-    var scan = ((t / 5200) % 1.3) * BH, i, k;
+    var scan = ((t / 5200) % 1.3) * BH, i, j, k, q, b;
+    if (!still) { var want = mouse ? (mouse.x / BW - 0.5) * 1.7 : 0.5 * Math.sin(t / 4200); ang += (want - ang) * 0.05; }
+    ca = Math.cos(ang); sa = Math.sin(ang);
     ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.setTransform(dpr * sx, 0, 0, dpr * sy, 0, 0);
     for (k = 0; k < cards.length; k++) glow[k] += ((k === active ? 1 : 0) - glow[k]) * 0.07;
-    ctx.lineWidth = 0.8; ctx.strokeStyle = 'rgba(232,183,156,0.28)'; ctx.stroke(body);
-    ctx.lineWidth = 0.6; ctx.strokeStyle = 'rgba(232,183,156,0.10)'; ctx.stroke(nerves);
-    for (i = 0; i < dots.length; i++) {
-      var d = dots[i], lit = 0;
-      for (k = 0; k < cards.length; k++) if (glow[k] > 0.01) lit += glow[k] * d.w[k];
-      if (mouse) { var mx = d.x - mouse.x, my = d.y - mouse.y; lit += Math.exp(-(mx * mx + my * my) / 700) * 0.9; }
+    var gm = mitI > -1 ? glow[mitI] : 0;
+    for (i = 0, j = 0; i < N; i++, j += 9) {
+      var x = B[j], z = B[j + 2], xr = x * ca + z * sa, zr = z * ca - x * sa, p = 1 + zr * 0.0016, X = CX + S * xr * p, Y = MID + (FY - S * B[j + 1] - MID) * p;
+      var f = B[j + 5] * ca - B[j + 3] * sa, rim = 1 - Math.abs(f); rim = rim * Math.sqrt(rim);
+      var dif = (B[j + 3] * ca + B[j + 5] * sa) * -0.44 + B[j + 4] * 0.56 + f * 0.7; if (dif < 0) dif = 0;   /* key light from the upper left */
+      b = f >= 0 ? 0.23 + 0.5 * dif + 0.4 * rim : 0.06 + 0.14 * rim;
+      var lit = gm > 0.01 ? gm * B[j + 8] * (B[j + 8] === 1 ? 0.5 + 0.5 * Math.sin(t / 260 + B[j + 7] * 3) : 1) : 0;
+      if (mouse) { var mx = X - mouse.x, my = Y - mouse.y; lit += Math.exp(-(mx * mx + my * my) / 700) * 0.9; }
       if (lit > 1) lit = 1;
-      var sc = Math.exp(-Math.pow((d.y - scan) / 14, 2)) * 0.45, tw = d.w[2] === 1 && glow[2] > 0.01 ? 0.5 + 0.5 * Math.sin(t / 260 + d.p * 3) : 1;
-      var b = Math.min(1, 0.26 + 0.1 * Math.sin(t / 800 + d.p) + sc + lit * 0.8 * tw);
-      ctx.fillStyle = lit > 0.3 ? 'rgba(255,' + Math.round(214 + 41 * lit) + ',' + Math.round(186 + 69 * lit) + ',' + b + ')' : 'rgba(232,183,156,' + b + ')';
-      ctx.beginPath(); ctx.arc(d.x, d.y, d.r * (1 + lit * 0.8), 0, 6.2832); ctx.fill();
+      b += 0.06 * Math.sin(t / 800 + B[j + 7]) + Math.exp(-Math.pow((Y - scan) / 14, 2)) * (f >= 0 ? 0.45 : 0.15) + lit * 0.8;
+      q = b <= 0 ? 0 : b >= 1 ? QA - 1 : Math.floor(b * QA);
+      sxA[i] = X; syA[i] = Y; srA[i] = B[j + 6] * (1 + lit * 0.8) * (1 + zr * 0.01); sbA[i] = q + (lit > 0.3 ? QA : 0);
     }
+    for (q = 1; q < QA * 2; q++) {
+      var first = true;
+      for (i = 0; i < N; i++) { if (sbA[i] !== q) continue; if (first) { ctx.beginPath(); first = false; } ctx.moveTo(sxA[i] + srA[i], syA[i]); ctx.arc(sxA[i], syA[i], srA[i], 0, 6.2832); }
+      if (!first) { ctx.fillStyle = (q >= QA ? 'rgba(255,238,224,' : 'rgba(232,183,156,') + ((q % QA) + 0.5) / QA + ')'; ctx.fill(); }
+    }
+    /* organs: faint at rest, bright for the system in focus */
     for (k = 0; k < cards.length; k++) {
-      if (glow[k] < 0.02) continue; var o = ORG[keys[k]], g = glow[k];
+      var g = glow[k], o = ORG[keys[k]]; if (!o || o.all) continue;
+      ctx.beginPath();
+      for (i = 0, j = 0; i < M; i++, j += 6) { if (G[j + 5] !== k) continue; proj(G[j], G[j + 1], G[j + 2], tmp); var rr = G[j + 3] * (0.75 + g * (0.7 + 0.3 * Math.sin(t / 300 + G[j + 4]))); ctx.moveTo(tmp[0] + rr, tmp[1]); ctx.arc(tmp[0], tmp[1], rr, 0, 6.2832); }
+      ctx.fillStyle = g > 0.3 ? 'rgba(255,' + Math.round(214 + 30 * g) + ',' + Math.round(186 + 50 * g) + ',' + (0.14 + 0.8 * g) + ')' : 'rgba(232,183,156,' + (0.14 + 0.5 * g) + ')'; ctx.fill();
+      if (g < 0.02) continue;
       ctx.shadowColor = 'rgba(232,149,107,' + g + ')'; ctx.shadowBlur = 14 * dpr;
-      if (o.fill) { ctx.fillStyle = 'rgba(232,149,107,' + 0.2 * g + ')'; ctx.fill(o.fill); ctx.lineWidth = 1; ctx.strokeStyle = 'rgba(255,226,206,' + 0.85 * g + ')'; ctx.stroke(o.fill); }
-      if (o.stroke) { ctx.lineWidth = 1.1; ctx.strokeStyle = 'rgba(255,226,206,' + 0.8 * g + ')'; ctx.stroke(o.stroke); }
+      o.e.forEach(function (e) { proj(e[0], e[1], e[2], tmp); var rx = Math.sqrt(Math.pow(e[3] * ca, 2) + Math.pow(e[5] * sa, 2)) * S;
+        ctx.beginPath(); ctx.ellipse(tmp[0], tmp[1], rx, e[4] * S, 0, 0, 6.2832); ctx.fillStyle = 'rgba(232,149,107,' + 0.16 * g + ')'; ctx.fill(); ctx.lineWidth = 0.8; ctx.strokeStyle = 'rgba(255,226,206,' + 0.6 * g + ')'; ctx.stroke(); });
+      if (keys[k] === 'ns') { ctx.beginPath(); NERVE.forEach(function (ln) { ln.forEach(function (pt, n) { proj(pt[0], pt[1], pt[2], tmp); if (n) ctx.lineTo(tmp[0], tmp[1]); else ctx.moveTo(tmp[0], tmp[1]); }); }); ctx.lineWidth = 1; ctx.lineJoin = 'round'; ctx.strokeStyle = 'rgba(255,226,206,' + 0.7 * g + ')'; ctx.stroke(); }
       ctx.shadowBlur = 0;
     }
+    link();
   }
-  var visible = true, running = false, timer;
-  function loop(t) { if (!visible) { running = false; return; } draw(t); requestAnimationFrame(loop); }
-  function start() { if (still) { glow[active] = 1; draw(0); return; } if (!running) { running = true; requestAnimationFrame(loop); } }
+  var visible = true, running = false, timer, odd = false;
+  function loop(t) { if (!visible) { running = false; return; } odd = !odd; if (!coarse || odd) draw(t); requestAnimationFrame(loop); }
+  function start() { if (still) { glow = glow.map(function (_, j) { return j === active ? 1 : 0; }); draw(0); return; } if (!running) { running = true; requestAnimationFrame(loop); } }
   function play() { clearInterval(timer); if (!still) timer = setInterval(function () { active = (active + 1) % cards.length; mark(); }, 2600); }
   cards.forEach(function (c, i) {
     function pick() { active = i; mark(); clearInterval(timer); if (still) { glow = glow.map(function (_, j) { return j === i ? 1 : 0; }); draw(0); } }
@@ -1320,7 +1420,7 @@ a.gl-x span{color:#e8b79c;font-weight:600}
     c.addEventListener('click', function () { pick(); if (window.wcShowSystem) window.wcShowSystem(c.dataset.k); });
     c.addEventListener('pointerleave', play); c.addEventListener('blur', play);
   });
-  canvas.addEventListener('pointermove', function (e) { var r = canvas.getBoundingClientRect(); mouse = { x: (e.clientX - r.left) / r.width * BW, y: (e.clientY - r.top) / r.height * BH }; });
+  canvas.addEventListener('pointermove', function (e) { if (e.pointerType === 'touch') return; var r = canvas.getBoundingClientRect(); mouse = { x: (e.clientX - r.left) / r.width * BW, y: (e.clientY - r.top) / r.height * BH }; });
   canvas.addEventListener('pointerleave', function () { mouse = null; });
   window.addEventListener('resize', size);
   if (window.IntersectionObserver) new IntersectionObserver(function (e) { visible = e[0].isIntersecting; if (visible) { start(); play(); } else clearInterval(timer); }).observe(stage);
@@ -1403,7 +1503,7 @@ a.gl-x span{color:#e8b79c;font-weight:600}
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) close(); });
 })();
 </script>
-<script src="ui/fx.js?v=1795013725"></script>
+<script src="ui/fx.js?v=1795026832"></script>
 <script>
 /* Isometric layer stacks. One component, used for the MARCH phases and for The full build. */
 (function () {

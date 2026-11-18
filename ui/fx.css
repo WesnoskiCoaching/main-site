@@ -206,3 +206,23 @@ html.snap-on{scroll-snap-type:none!important}
   .holo>*{transform:none!important}
   .nm,.nm-menu,.cc,.gxp,.applybar{background-color:rgba(8,6,5,.94)}
 }
+
+/* Email capture: the same card as the cookie and disclaimer dialogs */
+html:root:root .wc-gate.wc-gate{position:relative;margin:0 0 8px!important;padding:34px 34px 28px!important;background:#000!important;color:#fff!important;border:0!important;border-radius:22px!important;box-shadow:0 30px 80px rgba(0,0,0,.65),0 0 40px -12px var(--ac,#e8b79c)!important;isolation:isolate;text-align:left!important}
+html:root:root .wc-gate.wc-gate::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.5px;pointer-events:none;z-index:2;
+  background:conic-gradient(from var(--gxa),rgba(255,255,255,.14) 0deg,rgba(255,255,255,.14) 60deg,var(--ac,#e8b79c) 100deg,#fff 122deg,var(--ac2,#c27c5a) 144deg,rgba(255,255,255,.14) 190deg,rgba(255,255,255,.14) 250deg,var(--ac,#e8b79c) 285deg,#fff 300deg,rgba(255,255,255,.14) 330deg);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);animation:gxspin 6s linear infinite}
+html:root:root .wc-gate.wc-gate>:not(.wc-gate-close){position:relative;z-index:3}
+html:root:root .wc-gate.wc-gate,html:root:root .wc-gate.wc-gate *{text-align:left!important}
+html:root:root .wc-gate.wc-gate .wc-eyebrow{margin:0 0 12px!important;max-width:none!important;font:600 11px/1 Manrope,sans-serif!important;letter-spacing:.18em!important;text-transform:uppercase!important;color:var(--ac,#e8b79c)!important}
+html:root:root .wc-gate.wc-gate h3{margin:0 0 14px!important;font:800 26px/1.15 Manrope,sans-serif!important;letter-spacing:-.03em!important;text-transform:none!important;color:#fff!important}
+html:root:root .wc-gate.wc-gate p:not(.wc-eyebrow){margin:0 0 18px!important;max-width:none!important;font:400 15px/1.65 Manrope,sans-serif!important;color:rgba(255,255,255,.86)!important}
+html:root:root .wc-gate.wc-gate iframe{background:transparent!important;border-radius:14px!important;color-scheme:normal}
+html:root:root .wc-gate.wc-gate .wc-gate-close{z-index:4;top:14px;right:16px;color:rgba(255,255,255,.7)!important;border-radius:999px}
+html:root:root .wc-gate.wc-gate .wc-gate-close:hover{color:#fff!important}
+html:root:root .wc-gate.wc-gate .wc-gate-close:focus-visible{outline:2px solid var(--ac,#e8b79c)!important;outline-offset:2px}
+html:root:root .wc-gate-modal{background:rgba(0,0,0,.62)!important;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+html:root:root .wc-gate-modal .wc-gate.wc-gate{max-width:520px!important;margin:0!important;box-shadow:0 30px 80px rgba(0,0,0,.65),0 0 40px -12px var(--ac,#e8b79c)!important}
+html:root:root .gd-lock:has(.wc-gate){padding:0!important;border:0!important;background:none!important}
+@media (max-width:620px){html:root:root .wc-gate.wc-gate{padding:28px 22px 22px!important}html:root:root .wc-gate.wc-gate h3{font-size:22px!important}}
+@media (prefers-reduced-motion:reduce){html:root:root .wc-gate.wc-gate::before{animation:none}}

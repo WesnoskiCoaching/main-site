@@ -76,7 +76,7 @@
 
   function background(canvas) {
     var box = canvas.parentNode, gl = canvas.getContext('webgl'); if (!gl) return;
-    var P = { BG: '#000000', COLORS: ['#e8b79c', '#c27c5a', '#995239', '#000000'], VIG: 0.2, GLOW: 0.3, GRAIN: 0.3 }, SPEED = 2.0;
+    var P = { BG: '#1b1411', COLORS: ['#e8b79c', '#c27c5a', '#995239', '#1b1411'], VIG: 0.36, GLOW: 0.3, GRAIN: 0.3 }, SPEED = 2.0;
     var VS = 'attribute vec2 position;varying vec2 vUv;void main(){vUv=position*0.5+0.5;gl_Position=vec4(position,0.0,1.0);}';
   var FS = [
   'precision highp float;varying vec2 vUv;',

@@ -86,10 +86,10 @@ html:not(.bg-off) .nm{display:block;position:fixed;top:0;left:0;right:0;height:0
 @media(prefers-reduced-motion:reduce){.nm-menu,.nm-menu.open,.nm-scroll,.nm-menu.open .nm-scroll,.nm-toggle i{transition:none}}
 
 /* SHELL: shared dark look for every page other than the homepage */
-html.bg-orig body{background:#0b0807!important;color:#fbf6ee}
-.page-bg{position:fixed;inset:0;z-index:-1;height:100lvh;background:#120a07;pointer-events:none}
+html.bg-orig body{background:#17110e!important;color:#fbf6ee}
+.page-bg{position:fixed;inset:0;z-index:-1;height:100lvh;background:#1b1411;pointer-events:none}
 .page-bg canvas{position:absolute;inset:0;width:100%;height:100%}
-.page-bg::after{content:"";position:absolute;inset:0;background:#0b0807;opacity:.3}
+.page-bg::after{content:"";position:absolute;inset:0;background:#17110e;opacity:.2}
 html.shell body>nav.nav{display:none!important}
 html.shell .nn-logo,html.shell .nn.nn-light .nn-logo{color:#fbf6ee}
 html.shell main,html.shell footer{--text:#fbf6ee;--text-soft:#fbf6eec7;--subtext:#fbf6eea6;--muted:#fbf6eea6;--warm-brown:#fbf6ee;--border:#ffffff24;--border-strong:#ffffff3d;--copper:#e8b79c;--terracotta:#e8b79c;--card-bg:#0b0807a6;--card-bg-strong:#0b0807cc;color:#fbf6ee}
