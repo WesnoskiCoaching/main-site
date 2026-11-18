@@ -450,8 +450,8 @@ html:not(.bg-off) .v2 main>section.read-section{padding-top:44px!important}
 </style>
 <style>.ms-play .i-pause{display:none}.ms-voice.playing .i-play{display:none}.ms-voice.playing .i-pause{display:block}.ms-voice.playing .ms-play svg{margin-left:0}.ms-voice.playing{border-color:#e8b79c80}</style>
 <style>.ms-meta b{font-weight:700;color:#fbf6eed9}.ms-meta{font-size:10.5px}</style>
-<link rel="stylesheet" href="ui/fx.css?v=1794961298"/>
-<link rel="stylesheet" href="ui/btn-home.css?v=1794961298"/>
+<link rel="stylesheet" href="ui/fx.css?v=1794962291"/>
+<link rel="stylesheet" href="ui/btn-home.css?v=1794962291"/>
 <style>.ms-row{display:flex;align-items:flex-end;gap:9px;width:100%}.ms-row .ms-voice{flex:0 1 340px;min-width:0;width:auto}.ms-av{flex:none;width:36px;height:36px;border-radius:50%;object-fit:cover;border:1.5px solid #e8b79c80;box-sizing:border-box}i.ms-av{display:grid;place-items:center;background:linear-gradient(135deg,#e8956b,#7f4129);font:700 11px Manrope,sans-serif;font-style:normal;color:#fff}.st-who img{flex:none;width:46px;height:46px;border-radius:50%;object-fit:cover}.ms-thread .ms-video{margin-left:45px}</style>
 <style>
 /* PREVIEW: isometric layer stacks for the MARCH Method and The full build */
@@ -1403,7 +1403,7 @@ a.gl-x span{color:#e8b79c;font-weight:600}
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) close(); });
 })();
 </script>
-<script src="ui/fx.js?v=1794961298"></script>
+<script src="ui/fx.js?v=1794962291"></script>
 <script>
 /* Isometric layer stacks. One component, used for the MARCH phases and for The full build. */
 (function () {
@@ -1755,6 +1755,33 @@ a.gl-x span{color:#e8b79c;font-weight:600}
   }
   function req() { if (!tick) { tick = true; requestAnimationFrame(run); } }
   window.addEventListener('scroll', req, { passive: true }); window.addEventListener('resize', req); run();
+})();
+</script>
+<style>
+/* MARCH: the heading rides inside the pinned block so it holds with the stack instead of scrolling away */
+.march.has-intro>.section-intro{grid-column:1/-1;margin:0 0 4px!important;padding:0!important;align-items:end}
+.march.has-intro>.section-intro h2{font-size:clamp(30px,3.1vw,44px)!important;margin-bottom:0!important}
+.march.has-intro>.section-intro .eyebrow{margin-bottom:10px!important}
+.march.has-intro>.section-intro .lede{margin:0!important;font-size:15px!important;line-height:1.6!important}
+.march.has-intro{row-gap:clamp(14px,2.2vh,28px)!important}
+</style>
+<script>
+(function () {
+  var march = document.querySelector('#method .march'), intro = document.querySelector('#method .section-intro');
+  if (!march || !intro || !window.matchMedia) return;
+  var ok = window.matchMedia('(min-width:1001px) and (min-height:760px) and (prefers-reduced-motion:no-preference)'), busy = false, home = intro.parentNode;
+  function place() {
+    if (busy) return; busy = true;
+    var inside = intro.parentNode === march;
+    if (!inside && ok.matches) { march.insertBefore(intro, march.firstChild); march.classList.add('has-intro'); inside = true; }
+    if (inside && (!ok.matches || march.offsetHeight >= window.innerHeight - 112)) { home.insertBefore(intro, march); march.classList.remove('has-intro'); }
+    window.dispatchEvent(new Event('resize'));
+    busy = false;
+  }
+  place();
+  window.addEventListener('load', place);
+  window.addEventListener('resize', function () { if (!busy) place(); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(place);
 })();
 </script>
 </body>

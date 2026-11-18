@@ -177,3 +177,14 @@ footer a.brand img.mark3d{width:54px!important;height:54px!important;border-radi
 /* app page feature cards use the holographic card */
 .inc-grid2 .inc2.holo{min-height:210px}
 .inc-grid2 .inc2.holo .letter{font-size:30px!important;margin-bottom:22px!important;width:auto!important;height:auto!important;display:block!important}
+
+/* scroll bump stops: each card in a stepped section catches the scroll, so it takes a second scroll to move on */
+html.snap-on{scroll-snap-type:y proximity}
+.snap-a{position:absolute;left:0;width:1px;height:1px;pointer-events:none;scroll-snap-align:start;scroll-snap-stop:always}
+.march:not(.is-pinned)~.march-run .snap-a{display:none}
+
+/* a bump stop at the start of every section, on every page */
+html.snap-on .snap-sec{scroll-snap-align:start;scroll-snap-stop:always;scroll-margin-top:84px}
+
+/* mouse and trackpad get the scripted bump stop; touch screens keep the light native catch */
+@media(hover:hover) and (pointer:fine){html.snap-on{scroll-snap-type:none!important}}

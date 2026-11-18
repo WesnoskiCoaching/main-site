@@ -196,3 +196,93 @@
   function go() { [].forEach.call(document.querySelectorAll('footer a.brand img[src*="logo-180"]'), function (i) { i.src = 'ui/mark-3d-copper.svg'; i.classList.add('mark3d'); }); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', go); else go();
 })();
+
+/* Scroll bump stops for the stepped sections (MARCH phases on the homepage, app screens on the app page). */
+(function () {
+  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var sets = [];
+  function anchors(host, n) { var out = []; for (var k = 0; k < n; k++) { var a = document.createElement('div'); a.className = 'snap-a'; a.setAttribute('aria-hidden', 'true'); host.appendChild(a); out.push(a); } return out; }
+  function build() {
+    var march = document.querySelector('.march'), run = document.querySelector('.march-run');
+    if (march && run && !run.dataset.snap) {
+      run.dataset.snap = '1'; run.style.position = 'relative';
+      var n = march.querySelectorAll('input[type="radio"]').length, as = anchors(run, n);
+      sets.push(function () { as.forEach(function (a, k) { a.style.top = ((k + 0.5) / n * 100) + '%'; a.style.scrollMarginTop = (march.offsetHeight + 118) + 'px'; }); });
+    }
+    var pin = document.querySelector('.sc-pin'), frame = pin && pin.querySelector('.sc-frame');
+    if (pin && frame && !pin.dataset.snap) {
+      pin.dataset.snap = '1';
+      var m = frame.querySelectorAll('.sc-tab').length, bs = anchors(pin, m);
+      sets.push(function () { var span = pin.offsetHeight - frame.offsetHeight, top = parseFloat(frame.style.top) || 84; bs.forEach(function (a, k) { a.style.top = Math.round(span * (k + 0.5) / m) + 'px'; a.style.scrollMarginTop = top + 'px'; }); });
+    }
+    if (sets.length) document.documentElement.classList.add('snap-on');
+    sets.forEach(function (f) { f(); });
+  }
+  window.addEventListener('load', function () { build(); setTimeout(build, 1800); });
+  window.addEventListener('resize', function () { setTimeout(function () { sets.forEach(function (f) { f(); }); }, 200); });
+})();
+
+/* Bump stop at every section boundary, site-wide: the next section catches the scroll at its top edge. */
+(function () {
+  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  function tag() {
+    var els = document.querySelectorAll('main section, main > header, main > .gd, main > .mcta, body > footer, .page-hero');
+    var n = 0;
+    [].forEach.call(els, function (e) {
+      if (e.closest('.sc-pin') || e.closest('.march') || e.closest('.gd-panel') || (e.closest('.gd') && !e.classList.contains('gd'))) return;
+      if (e.parentElement && e.parentElement.closest('section')) return;          /* only outer sections */
+      if (e.offsetHeight < 160) return;
+      e.classList.add('snap-sec'); n++;
+    });
+    if (n) document.documentElement.classList.add('snap-on');
+  }
+  if (document.readyState === 'complete') tag(); else window.addEventListener('load', tag);
+  setTimeout(tag, 2600);
+})();
+
+/* Bump stop (mouse wheel and trackpad): when a scroll reaches the top edge of a section or the next stepped card,
+   the page stops there and swallows the rest of that scroll gesture. A new scroll carries on. */
+(function () {
+  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var lock = false, lockAt = 0, timer = 0, prevY = window.scrollY, lastWheel = 0, lastDir = 0, GAP = 190, MIN = 520;
+  function now() { return Date.now(); }
+  function bounds() {
+    var out = [], y = window.scrollY;
+    [].forEach.call(document.querySelectorAll('.snap-sec'), function (e) { var r = e.getBoundingClientRect(); if (r.height) out.push(Math.round(r.top + y - 84)); });
+    [].forEach.call(document.querySelectorAll('.snap-a'), function (e) { if (!e.offsetParent && getComputedStyle(e).display === 'none') return; var r = e.getBoundingClientRect(); out.push(Math.round(r.top + y - (parseFloat(e.style.scrollMarginTop) || 0))); });
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    return out.filter(function (b) { return b > 4 && b < max - 4; });
+  }
+  function innerScroll(t, dy) {
+    for (var e = t; e && e !== document.body && e.nodeType === 1; e = e.parentElement) {
+      if (e.tagName === 'CHAT-WIDGET' || e.tagName === 'TEXTAREA') return true;
+      var o = getComputedStyle(e).overflowY;
+      if ((o === 'auto' || o === 'scroll') && e.scrollHeight > e.clientHeight + 2) { if (dy > 0 ? e.scrollTop + e.clientHeight < e.scrollHeight - 1 : e.scrollTop > 0) return true; }
+    }
+    return false;
+  }
+  function release() { var left = MIN - (now() - lockAt); if (left > 0) { timer = setTimeout(release, left); return; } lock = false; prevY = window.scrollY; }
+  function stopAt(b) { lock = true; lockAt = now(); window.scrollTo({ top: b, behavior: document.hidden ? 'auto' : 'smooth' }); clearTimeout(timer); timer = setTimeout(release, GAP); document.documentElement.dispatchEvent(new CustomEvent('wc-bump', { detail: b })); }
+  function crossing(from, to) {
+    var bs = bounds(), hit = null, i;
+    if (to > from) { for (i = 0; i < bs.length; i++) if (bs[i] > from + 2 && bs[i] <= to && (hit === null || bs[i] < hit)) hit = bs[i]; }
+    else { for (i = 0; i < bs.length; i++) if (bs[i] < from - 2 && bs[i] >= to && (hit === null || bs[i] > hit)) hit = bs[i]; }
+    return hit;
+  }
+  window.addEventListener('wheel', function (e) {
+    if (e.ctrlKey || e.metaKey) return;
+    var dy = e.deltaY * (e.deltaMode === 1 ? 32 : e.deltaMode === 2 ? window.innerHeight : 1); if (!dy) return;
+    if (document.documentElement.classList.contains('gxp-open') || innerScroll(e.target, dy)) return;
+    lastWheel = now(); lastDir = dy > 0 ? 1 : -1;
+    if (lock) { e.preventDefault(); clearTimeout(timer); timer = setTimeout(release, GAP); return; }
+    var y = window.scrollY, hit = crossing(y, y + dy);
+    if (hit !== null) { e.preventDefault(); stopAt(hit); }
+  }, { passive: false });
+  /* the browser's own smooth wheel scrolling can carry past an edge after the last wheel event: catch that too */
+  window.addEventListener('scroll', function () {
+    var y = window.scrollY;
+    if (!lock && now() - lastWheel < 420 && lastDir) { var hit = crossing(prevY, y); if (hit !== null) { stopAt(hit); return; } }
+    if (!lock) prevY = y;
+  }, { passive: true });
+  window.__wcBump = { bounds: bounds, state: function () { return { lock: lock }; } };
+})();
