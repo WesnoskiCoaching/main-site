@@ -79,7 +79,7 @@
     if (gate) { lockEl.innerHTML = ''; lockEl.appendChild(gate); }      /* the site's own unlock card already says what to do */
     panel.appendChild(lockEl);
     var own = document.querySelector('main .mcta a.btn, main .reference-cta a.btn, main a.js-apply');
-    var cta = { href: own ? own.getAttribute('href') : 'https://info.wesnoskicoaching.com/application', text: own && own.textContent.trim().length < 40 ? own.textContent.replace(/[→\s]+$/, '').trim() : 'Apply for the Rebuild' };
+    var cta = { href: own ? own.getAttribute('href') : 'apply.html', text: own && own.textContent.trim().length < 40 ? own.textContent.replace(/[→\s]+$/, '').trim() : 'Apply for the Rebuild' };
     var fin = document.createElement('div'); fin.className = 'gd-finish';
     fin.innerHTML = '<div class="gd-h">Guide complete</div><p>You have worked through all ' + n + ' chapters of ' + esc(title.trim()) + '. The next step is reading your own numbers with a coach.</p><a class="btn large gx-apply" href="' + esc(cta.href) + '">' + esc(cta.text) + '</a>';
     panel.appendChild(fin); wrap.classList.add('gd-src-hidden');
