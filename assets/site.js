@@ -68,7 +68,7 @@
    corner to the chat bubble once the chat has loaded. */
 (function () {
   if (!document.querySelector('nav.nav')) return;
-  if (/\/(privacy|terms|disclaimer|booked|thanks|unlocked|apply|book|jimmy-apply)(\.html)?$/.test(location.pathname)) return;
+  if (/\/(privacy|terms|disclaimer|booked|thanks|unlocked|apply|book|jimmy-apply|jimmy-book)(\.html)?$/.test(location.pathname)) return;
   var jimmy = document.querySelector('main a[href*="jimmy-apply"]');
   var house = document.querySelector('nav.nav a[href="apply.html"], nav.nav a[href*="/application"]');
   var src = jimmy || house; if (!src) return;
